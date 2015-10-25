@@ -217,12 +217,20 @@ void genTemporal(char* ref, int pageStart, int pageLimit, int refSize, int v) {
     printf("Generating String\n");
   }
   
-  tlocality* head;
-  tlocality* tail;
+  tlocality* head = 0;
+  tlocality* tail = 0;
+  
   int pages = pageLimit-pageStart;
   int x;
   for (x = 0; x <= pages; x++) {
     tlocality* temp = (tlocality*) malloc(sizeof(tlocality));
+    if (!temp) {
+      printf("Fatal Error: Could not create a new locality.\nQuitting NOW...\n");
+      if (v) {
+        printf("PageStart: %d\nPageLimit: %d\nRefSize: %d\n", pageStart, pageLimit, refSize);
+      }
+      exit(-2);
+    }
     if (!x) {
       tail = temp;
     }
@@ -258,9 +266,19 @@ void genTemporal(char* ref, int pageStart, int pageLimit, int refSize, int v) {
     references++;
   }
   
+  if (v) {
+    printf("Freeing allocated memory\n");
+  }
+  
+  while (head) {
+    tlocality* temp = head;
+    head = head->next;
+    free(temp);
+  }
+  
   
   if (v) {
-    printf("\nDone with genTemporal()\n");
+    printf("Done with genTemporal()\n");
   }
 }
 
@@ -285,7 +303,7 @@ void genSpatialTemporal(char* ref, int pageLimit, int refSize, int v, int st) {
   }
 
   int references = 0;
-  slocality* head;
+  slocality* head = 0;
 
   while (references < refSize) {
     
@@ -301,11 +319,12 @@ void genSpatialTemporal(char* ref, int pageLimit, int refSize, int v, int st) {
       if (aff > refSize-references) {
         aff = refSize-references;
       }
-      int range = rand() % (rand() % 10) + 5;
+      int range = rand() % 10 + 5;
       if (range > pageLimit) {
         range = pageLimit;
       }
-      char initPage = (char) rand() % (pageLimit-range);
+      
+      char initPage = rand() % (pageLimit-range);
       slocality* temp = (slocality*) malloc(sizeof(slocality));
       if (!temp) {
         printf("Fatal Error: Could not create a new locality.\nQuitting NOW...\n");
@@ -335,6 +354,16 @@ void genSpatialTemporal(char* ref, int pageLimit, int refSize, int v, int st) {
     }
     
     references += head->affinity;
+  }
+  
+  if (v) {
+    printf("Freeing allocated memory\n");
+  }
+  
+  while (head) {
+    slocality* temp = head;
+    head = head->next;
+    free(temp);
   }
 
   if (v) {
