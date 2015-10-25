@@ -10,13 +10,22 @@ typedef struct slocality_t {
   char initialPage;
   int range;
   int affinity;
-  struct slocality_t* next;
 } slocality;
+
+typedef struct slocalitystack_t {
+  slocality l;
+  slocality* next;
+} slocalitystack;
 
 typedef struct tlocality_t {
   char page;
-  struct tlocality_t* next;
+  int lastHit;
 } tlocality;
+
+typedef struct tlocalitystack_t {
+  tlocality l;
+  tlocality* next;
+} tlocalitystack;
 
 int main(int argc, char** argv) {
   
@@ -201,67 +210,7 @@ void genSpatial(char* ref, int pageLimit, int refSize, int v) {
 }
 
 void genTemporal(char* ref, int pageStart, int pageLimit, int refSize, int v) {
-  
-  if (v) {
-    printf("genTemporal()\n");
-    printf("Randomizing randoms\n");
-  }
-  
-  const char rft = 'r';
-  FILE* rf = fopen("/dev/urandom", &rft);
-  char r = fgetc(rf);
-  fclose(rf);
-  srand(r);
 
-  if (v) {
-    printf("Generating String\n");
-  }
-  
-  tlocality* head;
-  tlocality* tail;
-  int pages = pageLimit-pageStart;
-  int x;
-  for (x = 0; x <= pages; x++) {
-    tlocality* temp = (tlocality*) malloc(sizeof(tlocality));
-    if (!x) {
-      tail = temp;
-    }
-    temp->page = pageStart + x;
-    temp->next = head;
-    head = temp;
-  }
-  
-  int references = 0;
-  while (references < refSize) {
-    int look = rand() % (pages * 2);
-    tlocality* prev = 0;
-    tlocality* focus = head;
-    while (focus->next && look > 0) {
-      prev = focus;
-      focus = focus->next;
-      look--;
-    }
-    
-    ref[references] = focus->page;
-    if (tail != focus) {
-      if (head == focus) {
-        head = focus->next;
-      } else {
-        prev->next = focus->next;
-      }
-    
-      focus->next = 0;
-      tail->next = focus;
-      tail = focus;
-    }
-    
-    references++;
-  }
-  
-  
-  if (v) {
-    printf("\nDone with genTemporal()\n");
-  }
 }
 
 void genSpatialTemporal(char* ref, int pageLimit, int refSize, int v, int st) {
@@ -285,56 +234,34 @@ void genSpatialTemporal(char* ref, int pageLimit, int refSize, int v, int st) {
   }
 
   int references = 0;
-  slocality* head;
+  slocalitystack head;
 
   while (references < refSize) {
-    
-    if (head && head->next && ((rand() % 10) > 4)) {
-      slocality* temp = head;
-      head = head->next;
-      free(temp);
-      if (head->affinity > refSize-references) {
-        head->affinity = refSize-references;
+    int aff = rand() % 90 + 10;
+    if (aff > refSize-references) {
+      aff = refSize-references;
+    }
+    int range = rand() % (rand() % 90 + 10) + 5;
+    if (range > pageLimit) {
+      range = pageLimit;
+    }
+    char initPage = rand() % (pageLimit-range);
+    slocality p = (slocality) malloc(sizeof(slocality));
+    if (!p) {
+      printf("Fatal Error: Could not create a new locality.\nQuitting NOW...\n");
+      if (v) {
+	printf("References: %d\nInitialPage: %d\nRange: %d\nAffinity: %d\n", references, initPage, range, aff);
       }
-    } else {
-      int aff = rand() % 40 + 10;
-      if (aff > refSize-references) {
-        aff = refSize-references;
-      }
-      int range = rand() % (rand() % 10) + 5;
-      if (range > pageLimit) {
-        range = pageLimit;
-      }
-      char initPage = (char) rand() % (pageLimit-range);
-      slocality* temp = (slocality*) malloc(sizeof(slocality));
-      if (!temp) {
-        printf("Fatal Error: Could not create a new locality.\nQuitting NOW...\n");
-        if (v) {
-          printf("References: %d\nInitialPage: %d\nRange: %d\nAffinity: %d\n", references, initPage, range, aff);
-        }
-        exit(-2);
-      }
-      temp->initialPage = initPage;
-      temp->range = range;
-      temp->affinity = aff;
-      temp->next = head;
-      head = temp;
+      exit(-2);
     }
     
-    if (v) {
-      printf("Locality:\n\tInitialPage: %d\n\tRange: %d\n\tAffinity: %d\n", head->initialPage, head->range, head->affinity);
-    }
-    
-    if (st) {
-      genTemporal(&(ref[references]), head->initialPage, head->initialPage + head->range, head->affinity, 0);
-    } else {
-      int x;
-      for (x = 0; x < head->affinity; x++) {
-        ref[x+references] = rand() % head->range + head->initialPage;
-      }
-    }
-    
-    references += head->affinity;
+    p.initialPage = initPage;
+    p.range = range;
+    p.affinity = aff;
+
+
+
+
   }
 
   if (v) {
