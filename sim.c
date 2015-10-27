@@ -218,13 +218,23 @@ int main(int argc, char** argv) {
     tick(c);
     char page = pcbStep(p);
     int faults = 0;
-
+    int lastChance = 0;
+    
     while (page != '\0') {
       int try = request(m, p);
       if (!try) {
         faults++;
         rollBack(p);
         replacement(m, p);
+        lastChance += 5;
+      } else {
+        lastChance++;
+      }
+      if (replalgo == 'l') {
+        incrementFrames(m->allocated);
+      } else if (lastChance >= 50) {
+        lastChance = 0;
+        incrementFrames(m->allocated);
       }
       tick(c);
       page = pcbStep(p);
