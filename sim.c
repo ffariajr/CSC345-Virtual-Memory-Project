@@ -185,7 +185,9 @@ int main(int argc, char** argv) {
         if (v) {
           printf("Making new buffer.\n");
         }
-        char* temp = (char*) malloc(sizeof(char) * (currentBuffer + 250));
+        currentBuffer += 50;
+        char* temp = (char*) malloc(sizeof(char*) * currentBuffer);
+        temp[currentBuffer-1] = '\0';
         if (v) {
           printf("Copying old buffer to new buffer.\n");
         }
@@ -194,7 +196,6 @@ int main(int argc, char** argv) {
         temp = refstrings[currentRef];
         refstrings[currentRef] = temp2;
         free(temp);
-        currentBuffer = currentBuffer + 250;
         if (v) {
           printf("Done making new buffer.\n");
         }
@@ -209,6 +210,7 @@ int main(int argc, char** argv) {
     currentRef++;
     refc = fgetc(refs);
   }
+  fclose(refs);
 
   if (counter > currentRef) {
     printf("Error: Too Few Reference Strings Loaded:\nReference Strings in Input File: %d\n", counter);
@@ -220,31 +222,71 @@ int main(int argc, char** argv) {
     printf("Reference Strings Loaded Successfully!\n");
   }
   
-  if (v) 
-
   mm* m = mmInit(replalgo, frames);
   clok* c;
 
-  if (fullsim) {
-    //scheduler s = schedulerInit(sched);
-    c = clokInit(tquantum);
+  if (v) {
+    printf("Memory Manager Initialized.\n");
+  }
 
-    //
+  if (fullsim) {
+    if (v) {
+      printf("Starting Full Simulation.\n");
+    }
+    c = clokInit(tquantum);
+    if (v) {
+      printf("Simulation System Clock Initialized.\n");
+    }
+    //part 4
 
   } else {
+    if (v) {
+      printf("Starting Single Process Simulation.\n");
+    }
     c = clokInit(-1);
-    pcb* p = pcbInit(refstrings[0]);
+    if (v) {
+      printf("Clock Initialized.\n");
+    }
+
+    pcb* p = pcbInit(refstrings[0], refSizes[0]);
+    
+    if (v) {
+      printf("Single Process PCB Initialized.\n");
+    }
+    
     createProcess(m, p);
+    
+    if (v) {
+      printf("New Process Scheduled.\n");
+    }
 
     tick(c);
     char page = pcbStep(p);
     int faults = 0;
-    
-    while (page != '\0') {
+    int referencesCount = 0;
+
+    if (v) {
+      printf("Now Running!\n");
+    }
+
+    while (page != ~0) {
+      printf("Requesting Page: %d\n", page);
+      referencesCount++;
+      if (v) {
+        printf("Total References: %d\n", referencesCount);
+      }
       int try = request(m, p);
+      
+      if (v) {
+        printf("Request done.\n");
+      }
+
       if (!try) {
         faults++;
         rollBack(p);
+        if (v) {
+          printf("Begin search for victim page.\n");
+        }
         replacement(m, p);
       }
       if (replalgo == 'l') {

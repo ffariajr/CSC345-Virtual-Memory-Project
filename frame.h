@@ -11,6 +11,7 @@ typedef struct frame_t {
 } frame;
 
 frame* findFrame(frame*, int, char);
+frame* frameInit();
 void updateFrame(frame*);
 void incrementFrames(frame*);
 

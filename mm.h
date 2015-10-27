@@ -22,7 +22,6 @@ typedef struct mm_t {
 
 mm* mmInit(char, int);
 pt* ptInit();
-frame* frameInit();
 
 void createProcess(mm*, pcb*);
 int request(mm*, pcb*);

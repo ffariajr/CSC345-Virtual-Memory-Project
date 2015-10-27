@@ -1,7 +1,11 @@
 #include "mm.h"
 
 mm* mmInit(char replacementAlgorithm, int totalMemoryFrames) {
+  if (v) {
+    printf("========== Initializing Memory Manager.\n");
+  }
   mm* new = (mm*) malloc(sizeof(mm));
+  
   if (replacementAlgorithm == 'f') {
     new->repl = &fifoRepl;
   } else if (replacementAlgorithm == '2') {
@@ -9,18 +13,30 @@ mm* mmInit(char replacementAlgorithm, int totalMemoryFrames) {
   } else {
     new->repl = &lruRepl;
   }
-  new->pids = -1;
-  int x;
-  frame* ptr;
-  for (x = 0; x < totalMemoryFrames; x++) {
-    if (!ptr) {
-      ptr = frameInit();
-      new->freemem = ptr;
-    } else {
-      ptr->next = frameInit();
-      ptr = ptr->next;
-    }
+
+  if (v) {
+    printf("Replacement Algorithm established.\n");
   }
+
+  new->pids = -1;
+  
+  if (v) {
+    printf("Building Memory.\n");
+  }
+  
+  int x;
+  new->freemem = frameInit();
+  frame* frptr = new->freemem;
+
+  for (x = 1; x < totalMemoryFrames; x++) {
+    frptr->next = frameInit();
+    frptr = frptr->next;
+  }
+
+  if (v) {
+    printf("Memory Initialized.\n");
+  }
+
   new->allocated = 0;
   return new;
 }
@@ -35,15 +51,6 @@ pt* ptInit() {
   return new;
 }
 
-frame* frameInit() {
-  frame* new = (frame*) malloc(sizeof(frame));
-  new->pid = -1;
-  new->page = -1;
-  new->lastUsed = 0;
-  new->next = 0;
-  return new;
-}
-
 void createProcess(mm* m, pcb* p) {
   m->pids++;
   pt* new = ptInit();
@@ -52,15 +59,25 @@ void createProcess(mm* m, pcb* p) {
 
 int request(mm* m, pcb* p) {
   usleep(10);
-  frame* temp = findFrame(m->allocated, p->pid, p->ref[p->refPosition]);
+  frame* temp = findFrame(m->allocated, p->pid, p->currentPage);
+
   if (temp) {
+    if (v) {
+      printf("\tPage Found!\n");
+    }
     updateFrame(temp);
     return 1;
   } else if (m->freemem) {
+    if (v) {
+      printf("\tPage Not Found. Free Frames Available.\n");
+    }
     updateFrame(m->freemem);
     pageIn(m, p);
     return 1;
   } else {
+    if (v) {
+      printf("\tPage Not Found. No Free Frames.\n");
+    }
     return 0;
   }
 }
@@ -72,7 +89,7 @@ void pageIn(mm* m, pcb* p) {
   temp->next = m->allocated;
   m->allocated = temp;
   m->allocated->pid = p->pid;
-  m->allocated->page = p->ref[p->refPosition];
+  m->allocated->page = p->currentPage;
 }
 
 void pageOut(mm* m) {
@@ -86,12 +103,18 @@ void pageOut(mm* m) {
 }
 
 void replacement(mm* m, pcb* p) {
+  if (v) {
+    printf("<Replacement>");
+  }
   usleep(100);
   m->repl(m->allocated);
   frame* temp = m->allocated;
   pageOut(m);
   pageIn(m, p);
   updateFrame(temp);
+  if (v) {
+    printf("<\\Replacement>\n");
+  }
 }
 
 void mmDestroy(mm* m) {
@@ -113,9 +136,5 @@ void mmDestroy(mm* m) {
   }
   free(m);
 }
-
-
-
-
 
 

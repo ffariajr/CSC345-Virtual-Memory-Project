@@ -1,6 +1,9 @@
 #include "clok.h"
 
 clok* clokInit(int tquantum) {
+  if (v) {
+    printf("Initializing Clock.\n");
+  }
   clok* new = (clok*) malloc(sizeof(clok));
   new->time = 0;
   new->tq = tquantum;
@@ -33,6 +36,9 @@ void addProc(clok* c, proc* p) {
 }
 
 int tick(clok* c) {
+  if (v) {
+    printf("Time: %d\n", c->time);
+  }
   c->time++;
   usleep(1);
   if (c->tq == -1) {

@@ -9,6 +9,8 @@ typedef struct pcb_t {
   int startTime;
   char* ref;
   int refPosition;
+  int refSize;
+  char currentPage;
   struct pcb_t* next;
 } pcb;
 
@@ -18,7 +20,7 @@ typedef struct pcbl_t {
   int size;
 } pcbl;
 
-pcb* pcbInit(char*);
+pcb* pcbInit(char*, int);
 pcbl* pcblInit();
 
 void rollBack(pcb*);

@@ -1,11 +1,13 @@
 #include "pcbl.h"
 
-pcb* pcbInit(char* refs) {
+pcb* pcbInit(char* refs, int size) {
   pcb* new = (pcb*) malloc(sizeof(pcb));
   new->runTime = 0;
   new->startTime = 0;
   new->ref = refs;
+  new->currentPage = 0;
   new->refPosition = 0;
+  new->refSize = size;
   new->next = 0;
   return new;
 }
@@ -23,25 +25,41 @@ char pcblStep(pcbl* p) {
 }
 
 char pcbStep(pcb* p) {
-  p->runTime++;
-  p->refPosition++;
-  if (p->ref[p->refPosition-1] == '\0') {
-    p->refPosition--;
-    return ~0;
-  } else {
-    return p->ref[p->refPosition-1];
+  if (v) {
+    printf("<PCB Step>");
   }
+  p->runTime++;
+  if (p->currentPage != ~0) {
+    p->currentPage = p->ref[p->refPosition];
+    p->refPosition++;
+  }
+  if (v) {
+    printf("<\\PCB Step>\n");
+  }
+  return p->currentPage;
 }
 
 void rollBack(pcb* p) {
-  if (p->ref[p->refPosition] != '\0') {
+  if (v) {
+    printf("<PCB Roll Back>");
+  }
+  if (p->currentPage != ~0) {
     p->refPosition--;
+  }
+  if (v) {
+    printf("<\\PCB Roll Back>\n");
   }
 }
 
 void pageFault(pcbl* p) {
+  if (v) {
+    printf("<Page Fault>\n");
+  }
   rollBack(p->head);
   sendBack(p);
+  if (v) {
+    printf("<\\Page Fault>\n");
+  }
 }
 
 void append(pcbl* p, pcb* new) {

@@ -6,4 +6,6 @@
 #include <string.h>
 #include <unistd.h>
 
+extern int v;
+
 #endif
