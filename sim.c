@@ -50,11 +50,11 @@ int main(int argc, char** argv) {
   outputFileName[99] = '\0';
   int startTimes[100];
   
-  char c = 0;
+  char ch = 0;
   int counter = 0;
-  while (c != EOF) {
-    fscanf(inf, "%c", &c);
-    if (c == ':') {
+  while (ch != EOF) {
+    fscanf(inf, "%c", &ch);
+    if (ch == ':') {
       char s[100];
       fscanf(inf, "%100s", s);
       s[99] = '\0';
@@ -134,7 +134,7 @@ int main(int argc, char** argv) {
             startTimes[counter-6] = val;
             counter++;
           } else {
-            c = EOF;
+            ch = EOF;
           }
         }
       }
@@ -205,8 +205,8 @@ int main(int argc, char** argv) {
     printf("Reference Strings Loaded.\n");
   }
 
-  mm m = mmInit(replalgo, frames);
-  clock c;
+  mm* m = mmInit(replalgo, frames);
+  clock* c;
 
   if (fullsim) {
     //scheduler s = schedulerInit(sched);
@@ -217,7 +217,7 @@ int main(int argc, char** argv) {
   } else {
     c = clockInit(-1);
     
-    pcb* p = 
+    pcb* p; 
   }
 }
 
