@@ -1,12 +1,9 @@
 #include "sim.h"
-#include "2c.h"
 #include "clock.h"
-#include "fifo.h"
-#include "lru.h"
 #include "mm.h"
+#include "scheduler.h"
 #include "pcbl.h"
 #include "proc.h"
-#include "rrsched.h"
 
 int main(int argc, char** argv) {
   
@@ -150,23 +147,33 @@ int main(int argc, char** argv) {
   }
 
   counter = counter - 6;
-  if (counter < 1) {
+  if (counter < 1 || counter > 99) {
     printf("Error: Illegal Amount of Reference Strings: %d\n", counter);
     exit(-2);
   }
 
   fclose(inf);
 
-  FILE* refs = fopen(outputFileName, fileReadChar); 
+  FILE* refs = fopen(outputFileName, &fileReadChar); 
   if (!refs) {
     printf("Fatal Error: Could not open reference string file: %s\n", outputFileName);
     exit(-2);
   }
 
-  pcbl new;
-  pcbl 
+  mm m = mmInit(replalgo, frames);
+  clock c;
 
+  if (fullsim) {
+    scheduler s = schedulerInit(sched);
+    c = clockInit(tquantum);
 
+    //create pcbl's
+    //
+
+  } else {
+    c = clockInit(-1);
+    
+  }
 }
 
 int validNumber(char* s) {
