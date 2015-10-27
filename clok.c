@@ -34,7 +34,7 @@ void addProc(clok* c, proc* p) {
 
 int tick(clok* c) {
   c->time++;
-  usleep(1000);
+  usleep(1);
   if (c->tq == -1) {
     return 0;
   } else {
