@@ -1,8 +1,4 @@
 #include "refstr.h"
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-#include <ctype.h>
 
 extern const char* __progname;
 
@@ -166,6 +162,11 @@ int main(int argc, char** argv) {
 
     if (v) {
       printf("File opened successfully!\n");
+    }
+    
+    if (outputType == 'a') {
+      char delim = ~0;
+      fputc(delim, f);
     }
 
     fputs(ref, f);

@@ -1,0 +1,49 @@
+#! /bin/bash
+
+if [ $# -ne 1 ]
+  then
+    echo "Error: Expected destination file: $0 <destfile>"
+    exit
+  fi
+
+echo "Input file for Virtual Memory Simulator Project" > $1
+echo "If any of the pre-formatting of this file is changed, please remake the file." >> $1
+echo "" >> $1
+echo "Run Full Simulation." >> $1
+echo "        If set to \"NO\", then only part 3 of the project requirements" >> $1
+echo "        will be run.  If set to \"YES\", then part 4 will be included." >> $1
+echo ":YES" >> $1
+echo "" >> $1
+echo "Replacement Algorithm." >> $1
+echo "        Must be \"FIFO\", \"LRU\", or \"2C\"" >> $1
+echo ":2C" >> $1
+echo "" >> $1
+echo "Time Quantum." >> $1
+echo "        Must be a number between 1 and MAXINT." >> $1
+echo ":10" >> $1
+echo "" >> $1
+echo "Memory Frames." >> $1
+echo "        Must be a number from 10 to 1000." >> $1
+echo ":100" >> $1
+echo "" >> $1
+echo "Scheduler." >> $1
+echo "        Currently, can only be set to \"RR\"" >> $1
+echo ":RR" >> $1
+echo "" >> $1
+echo "Reference String File." >> $1
+echo "        The name of a file that contains the reference strings." >> $1
+echo ":strings" >> $1
+echo "" >> $1
+echo "Reference String Start Times." >> $1
+echo "        Start times can be set here. 1 means 1 second. \"-1\"'s are ignored." >> $1
+echo "        The amount of non-\"-1\"'s must match the amount of reference strings." >> $1
+for i in $(seq 1 99)
+  do
+    if [ $i -gt 9 ]
+      then
+        echo "$i:-1" >> $1
+      else
+        echo "0$i:-1" >> $1
+      fi
+  done
+
