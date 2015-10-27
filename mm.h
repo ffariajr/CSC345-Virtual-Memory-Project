@@ -2,32 +2,22 @@
 #define MM_H
 
 #include "imports.h"
-
-typedef struct frame_t {
-  struct frame_t* next;
-} frame;
-
-typedef struct pt_t {
-  int pid;
-  char validPage[127];
-  struct pt_t* next;
-  frame* allocated;
-} pt;
+#include "memory.h"
+#include "pcbl.h"
 
 typedef struct mm_t {
   char algo;
   int pids;
-  pt* pts;
   frame* freemem;
 } mm;
 
 mm* mmInit(char, int);
-pt* ptInit(int);
+pt* ptInit();
 frame* frameInit();
 
-int createProcess(mm*);
-int request(mm*, int, char);
-void replacement(mm*, int, char);
-void destroy(mm*);
+void createProcess(mm*, pcb*);
+int request(mm*, pcb*);
+void replacement(mm*, pcb*);
+void mmDestroy(mm*);
 
 #endif

@@ -20,5 +20,6 @@ proc* addNewProc(clok*, int, int);
 void addProc(clok*, proc*);
 int tick(clok*);
 proc* ltschedule(clok*);
+void clokDestroy(clok*);
 
 #endif

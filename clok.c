@@ -59,3 +59,14 @@ proc* ltschedule(clok* c) {
   }
 }
 
+void clokDestroy(clok* c) {
+  while (c && c->list && c->list->next) {
+    proc* temp = c->list;
+    c->list = c->list->next;
+    free(temp);
+  }
+  if (c && c->list) {
+    free(c->list);
+  }
+  free(c);
+} 

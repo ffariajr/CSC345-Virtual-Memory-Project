@@ -3,7 +3,6 @@
 mm* mmInit(char replacementAlgorithm, int totalMemoryFrames) {
   mm* new = (mm*) malloc(sizeof(mm));
   new->algo = replacementAlgorithm;
-  new->pts = 0;
   new->pids = -1;
   int x;
   frame* ptr;
@@ -19,9 +18,8 @@ mm* mmInit(char replacementAlgorithm, int totalMemoryFrames) {
   return new;
 }
 
-pt* ptInit(int pid) {
+pt* ptInit() {
   pt* new = (pt*) malloc(sizeof(pt));
-  new->pid = pid;
   int x;
   for (x = 0; x < 127; x++) {
     new->validPage[x] = 0;
@@ -37,16 +35,22 @@ frame* frameInit() {
   return new;
 }
 
-int createProcess(mm* m) {
+void createProcess(mm* m, pcb* p) {
   m->pids++;
-  pt* new = ptInit(pids);
-
-
-
-
-
-  return new->pid;
+  pt* new = ptInit();
+  p->ptbl = new;
+  p->pid = m->pids;
 }
 
-int request(mm* m, int pid, char page) {
+int request(mm* m, pcb* p) {
+ return 0;
+}
+
+void replacement(mm* m, pcb* p) {
   
+}
+
+void mmDestroy(mm* m) {
+
+}
+

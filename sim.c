@@ -213,29 +213,29 @@ int main(int argc, char** argv) {
   } else {
     c = clokInit(-1);
     pcb* p = pcbInit(refstrings[0]);
-    p->pid = createProcess(m);
+    createProcess(m, p);
 
     tick(c);
     char page = pcbStep(p);
     int faults = 0;
 
     while (page != '\0') {
-      int try = request(m, p->pid, page);
+      int try = request(m, p);
       if (!try) {
         faults++;
         rollBack(p);
-        replacement(m, p->pid, page);
+        replacement(m, p);
       }
       tick(c);
       page = pcbStep(p);
     }
 
-    free(p);
+    pcbDestroy(p);
 
   }
 
-  destroy(m);
-  free(c);
+  mmDestroy(m);
+  clokDestroy(c);
   for (q = 0; q < currentRef; q++) {
     free(refstrings[q]);
   }
