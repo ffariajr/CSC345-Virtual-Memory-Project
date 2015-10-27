@@ -1,8 +1,9 @@
 #include "sim.h"
 
+int v = 0;
+
 int main(int argc, char** argv) {
   
-  int v = 0;
   FILE* inf;
   const char fileReadChar = 'r';
 
@@ -118,7 +119,7 @@ int main(int argc, char** argv) {
         if (v) {
           printf("Reference String File input\n");
         }
-        strcmp(s, outputFileName);
+        strcpy(outputFileName, s);
         counter++;
       } else if (counter > 5) {
         if (v) {
@@ -136,6 +137,8 @@ int main(int argc, char** argv) {
       }
     }
   }
+
+  fclose(inf);
   
   if (v) {
     printf("Input File processed.\n");
@@ -150,8 +153,6 @@ int main(int argc, char** argv) {
     }
     exit(-2);
   }
-
-  fclose(inf);
 
   FILE* refs = fopen(outputFileName, &fileReadChar); 
   if (!refs) {
@@ -172,21 +173,39 @@ int main(int argc, char** argv) {
   char* refstrings[99];
   int currentRef = 0;
   int currentBuffer = 0;
+
+
   while (refc != EOF) {
+    if (v) {
+      printf("Loading a new string.\n");
+    }
     while (refc != ~0) {
       refSizes[currentRef]++;
       if (refSizes[currentRef] > currentBuffer) {
-        char* temp = (char*) malloc(sizeof(refstrings[0]) * (currentBuffer + 250));
+        if (v) {
+          printf("Making new buffer.\n");
+        }
+        char* temp = (char*) malloc(sizeof(char) * (currentBuffer + 250));
+        if (v) {
+          printf("Copying old buffer to new buffer.\n");
+        }
         memcpy(temp, refstrings[currentRef], refSizes[currentRef]-1);
         char* temp2 = temp;
         temp = refstrings[currentRef];
         refstrings[currentRef] = temp2;
         free(temp);
         currentBuffer = currentBuffer + 250;
+        if (v) {
+          printf("Done making new buffer.\n");
+        }
       }
-      refstrings[currentRef][refSizes[currentRef]] = refc;
+      refstrings[currentRef][refSizes[currentRef]-1] = refc;
       refc = fgetc(refs);
     }
+    if (v) {
+      printf("Done loading string:\n%s\n", refstrings[currentRef]);
+    }
+    currentBuffer = 0;
     currentRef++;
     refc = fgetc(refs);
   }
@@ -198,8 +217,10 @@ int main(int argc, char** argv) {
   }
 
   if (v) {
-    printf("Reference Strings Loaded.\n");
+    printf("Reference Strings Loaded Successfully!\n");
   }
+  
+  if (v) 
 
   mm* m = mmInit(replalgo, frames);
   clok* c;

@@ -4,11 +4,11 @@ If any of the pre-formatting of this file is changed, please remake the file.
 Run Full Simulation.
         If set to "NO", then only part 3 of the project requirements
         will be run.  If set to "YES", then part 4 will be included.
-:YES
+:NO
 
 Replacement Algorithm.
         Must be "FIFO", "LRU", or "2C"
-:2C
+:FIFO
 
 Time Quantum.
         Must be a number between 1 and MAXINT.
@@ -24,12 +24,12 @@ Scheduler.
 
 Reference String File.
         The name of a file that contains the reference strings.
-:temp
+:strings
 
 Reference String Start Times.
         Start times can be set here. 1 means 1 second. "-1"'s are ignored.
         The amount of non-"-1"'s must match the amount of reference strings.
-01:-1
+01:0
 02:-1
 03:-1
 04:-1
