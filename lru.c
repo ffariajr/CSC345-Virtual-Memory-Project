@@ -8,12 +8,12 @@ void lruRepl(frame* head) {
   while (f && f->next) {
     temp = f;
     f = f->next;
-    if (least->lastUsed <= f->lastUsed) {
+    if (least->lastUsed >= f->lastUsed) {
       leastPrev = temp;
       least = f;
     }
   }
-  if (f && least->lastUsed <= f->lastUsed) {
+  if (f && least->lastUsed >= f->lastUsed) {
     leastPrev = temp;
     least = f;
   }
