@@ -3,7 +3,6 @@
 #include "mm.h"
 #include "scheduler.h"
 #include "pcbl.h"
-#include "proc.h"
 
 int main(int argc, char** argv) {
   
@@ -164,6 +163,10 @@ int main(int argc, char** argv) {
     exit(-2);
   }
 
+  if (v) {
+    printf("Loading Reference Strings.\n");
+  }
+
   char refc = fgetc(refs);
   int refSizes[99];
   int q;
@@ -179,9 +182,9 @@ int main(int argc, char** argv) {
       if (refSizes[currentRef] > currentBuffer) {
         char* temp = (char*) malloc(sizeof(refstrings[0]) * (currentBuffer + 250));
         memcpy(temp, refstrings[currentRef], refSizes[currentRef]-1);
-        refstrings[currentRef] = refstrings[currentRef] ^ temp;
-        temp = refstrings[currentRef] ^ temp;
-        refstrings[currentRef] = refstrings[currentRef] ^ temp;
+        char* temp2 = temp;
+        temp = refstrings[currentRef];
+        refstrings[currentRef] = temp2;
         free(temp);
         currentBuffer = currentBuffer + 250;
       }
@@ -192,24 +195,29 @@ int main(int argc, char** argv) {
     refc = fgetc(refs);
   }
 
+  if (counter > currentRef) {
+    printf("Error: Too Few Reference Strings Loaded:\nReference Strings in Input File: %d\n", counter);
+    printf("Reference Strings in Reference Strings File: %d\n", currentRef);
+    exit(-2);
+  }
 
+  if (v) {
+    printf("Reference Strings Loaded.\n");
+  }
 
   mm m = mmInit(replalgo, frames);
   clock c;
 
   if (fullsim) {
-    scheduler s = schedulerInit(sched);
+    //scheduler s = schedulerInit(sched);
     c = clockInit(tquantum);
 
-    //create pcbl's
     //
 
   } else {
     c = clockInit(-1);
     
-    //create single pcbl
-    //create process
-    //
+    pcb* p = 
   }
 }
 

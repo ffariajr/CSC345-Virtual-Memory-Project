@@ -1,7 +1,7 @@
 all: sim refstr
 
-sim: sim.h sim.c 2c clock fifo lru mm pcbl proc rrsched scheduler
-	gcc sim.c 2c.o clock.o fifo.o lru.o mm.o pcbl.o proc.o rrsched.o scheduler.o -o sim 
+sim: sim.h sim.c 2c clock fifo lru mm pcbl rrsched scheduler
+	gcc sim.c 2c.o clock.o fifo.o lru.o mm.o pcbl.o rrsched.o scheduler.o -o sim 
 
 scheduler: scheduler.c scheduler.h
 	gcc -c scheduler.c -o scheduler.o
@@ -23,9 +23,6 @@ mm: mm.c mm.h
 
 pcbl: pcbl.c pcbl.h
 	gcc -c pcbl.c -o pcbl.o
-
-proc: proc.c proc.h
-	gcc -c proc.c -o proc.o
 
 rrsched: rrsched.c rrsched.h
 	gcc -c rrsched.c -o rrsched.o
