@@ -147,8 +147,12 @@ int main(int argc, char** argv) {
   }
 
   counter = counter - 6;
-  if (counter < 1 || counter > 99) {
-    printf("Error: Illegal Amount of Reference Strings: %d\n", counter);
+  if (counter < 1 || (counter > 99 && fullsim) || (counter > 1 && !fullsim)) {
+    if (fullsim) {
+      printf("Error: Illegal Amount of Reference Strings for Full Simulation: %d\n", counter);
+    } else {
+      printf("Error: Illegal Amount of Reference Strings for Single Process: %d\n", counter);
+    }
     exit(-2);
   }
 
@@ -159,6 +163,36 @@ int main(int argc, char** argv) {
     printf("Fatal Error: Could not open reference string file: %s\n", outputFileName);
     exit(-2);
   }
+
+  char refc = fgetc(refs);
+  int refSizes[99];
+  int q;
+  for (q = 0; q < 99; q++) {
+    refSizes[q] = 0;
+  }
+  char* refstrings[99];
+  int currentRef = 0;
+  int currentBuffer = 0;
+  while (refc != EOF) {
+    while (refc != ~0) {
+      refSizes[currentRef]++;
+      if (refSizes[currentRef] > currentBuffer) {
+        char* temp = (char*) malloc(sizeof(refstrings[0]) * (currentBuffer + 250));
+        memcpy(temp, refstrings[currentRef], refSizes[currentRef]-1);
+        refstrings[currentRef] = refstrings[currentRef] ^ temp;
+        temp = refstrings[currentRef] ^ temp;
+        refstrings[currentRef] = refstrings[currentRef] ^ temp;
+        free(temp);
+        currentBuffer = currentBuffer + 250;
+      }
+      refstrings[currentRef][refSizes[currentRef]] = refc;
+      refc = fgetc(refs);
+    }
+    currentRef++;
+    refc = fgetc(refs);
+  }
+
+
 
   mm m = mmInit(replalgo, frames);
   clock c;
@@ -173,6 +207,9 @@ int main(int argc, char** argv) {
   } else {
     c = clockInit(-1);
     
+    //create single pcbl
+    //create process
+    //
   }
 }
 
