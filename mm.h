@@ -2,11 +2,19 @@
 #define MM_H
 
 #include "imports.h"
-#include "memory.h"
+#include "frame.h"
 #include "pcbl.h"
+#include "fifo.h"
+#include "2c.h"
+#include "lru.h"
+
+typedef struct pt_t {
+  char validPage[127];
+  struct pt_t* next;
+} pt;
 
 typedef struct mm_t {
-  char algo;
+  void (*repl)(frame*);
   int pids;
   frame* freemem;
   frame* allocated;

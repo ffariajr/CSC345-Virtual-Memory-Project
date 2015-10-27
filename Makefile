@@ -1,7 +1,10 @@
 all: sim refstr
 
-sim: sim.h sim.c 2c clok fifo lru mm pcbl rrsched
-	gcc sim.c 2c.o clok.o fifo.o lru.o mm.o pcbl.o rrsched.o -o sim 
+sim: sim.h sim.c 2c clok fifo lru mm pcbl rrsched frame
+	gcc sim.c 2c.o clok.o fifo.o lru.o mm.o pcbl.o rrsched.o frame.o -o sim 
+
+frame: frame.c frame.h
+	gcc -c frame.c -o frame.o
 
 2c: 2c.h 2c.c
 	gcc -c 2c.c -o 2c.o

@@ -2,7 +2,6 @@
 #define PCBL_H
 
 #include "imports.h"
-#include "memory.h"
 
 typedef struct pcb_t {
   int runTime;
@@ -11,7 +10,6 @@ typedef struct pcb_t {
   char* ref;
   int refPosition;
   struct pcb_t* next;
-  pt* ptbl;
 } pcb;
 
 typedef struct pcbl_t {

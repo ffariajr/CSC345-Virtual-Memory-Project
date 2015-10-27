@@ -2,7 +2,13 @@
 
 mm* mmInit(char replacementAlgorithm, int totalMemoryFrames) {
   mm* new = (mm*) malloc(sizeof(mm));
-  new->algo = replacementAlgorithm;
+  if (replacementAlgorithm == 'f') {
+    new->repl = &fifoRepl;
+  } else if (replacementAlgorithm == '2') {
+    new->repl = &c2Repl;
+  } else {
+    new->repl = &lruRepl;
+  }
   new->pids = -1;
   int x;
   frame* ptr;
@@ -33,6 +39,7 @@ frame* frameInit() {
   frame* new = (frame*) malloc(sizeof(frame));
   new->pid = -1;
   new->page = -1;
+  new->lastUsed = 0;
   new->next = 0;
   return new;
 }
@@ -40,16 +47,17 @@ frame* frameInit() {
 void createProcess(mm* m, pcb* p) {
   m->pids++;
   pt* new = ptInit();
-  p->ptbl = new;
   p->pid = m->pids;
 }
 
 int request(mm* m, pcb* p) {
   usleep(10);
-  int valid = p->ptbl->validPage[p->ref[p->refPosition]];
-  if (valid) {
-    return valid;
+  frame* temp = findFrame(m->allocated, p->pid, p->ref[p->refPosition]);
+  if (temp) {
+    updateFrame(temp);
+    return 1;
   } else if (m->freemem) {
+    updateFrame(m->freemem);
     pageIn(m, p);
     return 1;
   } else {
@@ -64,8 +72,7 @@ void pageIn(mm* m, pcb* p) {
   temp->next = m->allocated;
   m->allocated = temp;
   m->allocated->pid = p->pid;
-  m->allocated->page = page;
-  p->ptbl->validPage[p->ref[p->refPosition]] = 1;
+  m->allocated->page = p->ref[p->refPosition];
 }
 
 void pageOut(mm* m) {
@@ -79,7 +86,12 @@ void pageOut(mm* m) {
 }
 
 void replacement(mm* m, pcb* p) {
-  
+  usleep(100);
+  m->repl(m->allocated);
+  frame* temp = m->allocated;
+  pageOut(m);
+  pageIn(m, p);
+  updateFrame(temp);
 }
 
 void mmDestroy(mm* m) {

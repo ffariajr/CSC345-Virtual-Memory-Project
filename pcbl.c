@@ -7,7 +7,6 @@ pcb* pcbInit(char* refs) {
   new->ref = refs;
   new->refPosition = 0;
   new->next = 0;
-  new->ptbl = 0;
   return new;
 }
 
@@ -75,7 +74,6 @@ void sendBack(pcbl* p) {
 }
 
 void pcbDestroy(pcb* p) {
-  free(p->ptbl);
   free(p);
 }
 
