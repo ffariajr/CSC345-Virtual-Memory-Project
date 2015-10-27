@@ -1,14 +1,14 @@
-#include "clock.h"
+#include "clok.h"
 
-clock* clockInit(int tquantum) {
-  clock* new = (clock*) malloc(sizeof(clock));
+clok* clokInit(int tquantum) {
+  clok* new = (clok*) malloc(sizeof(clok));
   new->time = 0;
   new->tq = tquantum;
   new->list = 0;
   return new;
 }
 
-proc* addNewProc(clock* c, int scheduledStart, int refStrIndex) {
+proc* addNewProc(clok* c, int scheduledStart, int refStrIndex) {
   proc* new = (proc*) malloc(sizeof(proc));
   new->startTime = scheduledStart;
   new->refIndex = refStrIndex;
@@ -17,7 +17,7 @@ proc* addNewProc(clock* c, int scheduledStart, int refStrIndex) {
   return new;
 }
 
-void addProc(clock* c, proc* p) {
+void addProc(clok* c, proc* p) {
   proc* temp = c->list;
   while (temp && temp->next && temp->next->startTime <= p->startTime) {
     temp = temp->next;
@@ -32,8 +32,9 @@ void addProc(clock* c, proc* p) {
   }
 }
 
-int tick(clock* c) {
+int tick(clok* c) {
   c->time++;
+  usleep(1000);
   if (c->tq == -1) {
     return 0;
   } else {
@@ -41,7 +42,7 @@ int tick(clock* c) {
   }
 }
 
-proc* ltschedule(clock* c) {
+proc* ltschedule(clok* c) {
   if (c->list && c->time > c->list->startTime) {
     return (proc*) -1;
   } else if (c->list && c->time == c->list->startTime) {

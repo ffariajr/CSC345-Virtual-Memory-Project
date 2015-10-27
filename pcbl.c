@@ -1,24 +1,10 @@
 #include "pcbl.h"
 
-typedef struct pcb_t {
-  int runTime;
-  int startTime;
-  char* ref;
-  int refPosition;
-  struct pcb_t* next;
-} pcb;
-
-typedef struct pcbl_t {
-  pcb* head;
-  pcb* tail;
-  int size;
-} pcbl;
-
-pcb* pcbInit() {
+pcb* pcbInit(char* refs) {
   pcb* new = (pcb*) malloc(sizeof(pcb));
   new->runTime = 0;
   new->startTime = 0;
-  new->ref = 0;
+  new->ref = refs;
   new->refPosition = 0;
   new->next = 0;
   return new;
@@ -30,6 +16,32 @@ pcbl* pcblInit() {
   new->tail = 0;
   new->size = 0;
   return new;
+}
+
+char pcblStep(pcbl* p) {
+  return pcbStep(p->head);
+}
+
+char pcbStep(pcb* p) {
+  p->runTime++;
+  p->refPosition++;
+  if (p->ref[p->refPosition-1] == '\0') {
+    p->refPosition--;
+    return ~0;
+  } else {
+    return p->ref[p->refPosition-1];
+  }
+}
+
+void rollBack(pcb* p) {
+  if (p->ref[p->refPosition] != '\0') {
+    p->refPosition--;
+  }
+}
+
+void pageFault(pcbl* p) {
+  rollBack(p->head);
+  sendBack(p);
 }
 
 void append(pcbl* p, pcb* new) {

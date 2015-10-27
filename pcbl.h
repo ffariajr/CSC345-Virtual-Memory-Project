@@ -3,11 +3,31 @@
 
 #include "imports.h"
 
-struct pcb_t* pcbInit();
-struct pcbl_t* pcblInit();
+typedef struct pcb_t {
+  int runTime;
+  int pid;
+  int startTime;
+  char* ref;
+  int refPosition;
+  struct pcb_t* next;
+} pcb;
 
-void append(struct pcbl_t*, struct pcb_t*);
-void deleteHead(struct pcbl_t*);
-void sendBack(struct pcbl_t*);
+typedef struct pcbl_t {
+  pcb* head;
+  pcb* tail;
+  int size;
+} pcbl;
+
+pcb* pcbInit(char*);
+pcbl* pcblInit();
+
+void rollBack(pcb*);
+char pcblStep(pcbl*);
+char pcbStep(pcb*);
+void pageFault(pcbl*);
+
+void append(pcbl*, pcb*);
+void deleteHead(pcbl*);
+void sendBack(pcbl*);
 
 #endif

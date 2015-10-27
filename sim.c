@@ -1,8 +1,4 @@
 #include "sim.h"
-#include "clock.h"
-#include "mm.h"
-#include "scheduler.h"
-#include "pcbl.h"
 
 int main(int argc, char** argv) {
   
@@ -206,18 +202,42 @@ int main(int argc, char** argv) {
   }
 
   mm* m = mmInit(replalgo, frames);
-  clock* c;
+  clok* c;
 
   if (fullsim) {
     //scheduler s = schedulerInit(sched);
-    c = clockInit(tquantum);
+    c = clokInit(tquantum);
 
     //
 
   } else {
-    c = clockInit(-1);
-    
-    pcb* p; 
+    c = clokInit(-1);
+    pcb* p = pcbInit(refstrings[0]);
+    p->pid = createProcess(m);
+
+    tick(c);
+    char page = pcbStep(p);
+    int faults = 0;
+
+    while (page != '\0') {
+      int try = request(m, p->pid, page);
+      if (!try) {
+        faults++;
+        rollBack(p);
+        replacement(m, p->pid, page);
+      }
+      tick(c);
+      page = pcbStep(p);
+    }
+
+    free(p);
+
+  }
+
+  destroy(m);
+  free(c);
+  for (q = 0; q < currentRef; q++) {
+    free(refstrings[q]);
   }
 }
 
