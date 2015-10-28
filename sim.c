@@ -171,6 +171,9 @@ int main(int argc, char** argv) {
     refSizes[q] = 0;
   }
   char* refstrings[99];
+  for (q = 0; q < 99; q++) {
+    refstrings[q] = 0;
+  }
   int currentRef = 0;
   int currentBuffer = 0;
 
@@ -185,17 +188,22 @@ int main(int argc, char** argv) {
         if (v) {
           printf("Making new buffer.\n");
         }
-        currentBuffer += 50;
-        char* temp = (char*) malloc(sizeof(char*) * currentBuffer);
-        temp[currentBuffer-1] = '\0';
+        
+        char* temp = (char*) malloc(sizeof(char) * (currentBuffer + 50));
         if (v) {
           printf("Copying old buffer to new buffer.\n");
         }
-        memcpy(temp, refstrings[currentRef], refSizes[currentRef]-1);
-        char* temp2 = temp;
-        temp = refstrings[currentRef];
-        refstrings[currentRef] = temp2;
-        free(temp);
+
+        if (!refstrings[currentRef]) {
+          refstrings[currentRef] = temp;
+        } else {
+          memcpy(temp, refstrings[currentRef], currentBuffer);
+          char* temp2 = temp;
+          temp = refstrings[currentRef];
+          refstrings[currentRef] = temp2;
+          free(temp);
+        }
+        currentBuffer += 50;
         if (v) {
           printf("Done making new buffer.\n");
         }
@@ -263,7 +271,7 @@ int main(int argc, char** argv) {
     tick(c);
     char page = pcbStep(p);
     int faults = 0;
-    int referencesCount = 0;
+    int referencesCount = 1;
 
     if (v) {
       printf("Now Running!\n");
@@ -271,7 +279,6 @@ int main(int argc, char** argv) {
 
     while (page != ~0) {
       printf("Requesting Page: %d\n", page);
-      referencesCount++;
       if (v) {
         printf("Total References: %d\n", referencesCount);
       }
@@ -288,6 +295,8 @@ int main(int argc, char** argv) {
           printf("Begin search for victim page.\n");
         }
         replacement(m, p);
+      } else {
+        referencesCount++;
       }
       if (replalgo == 'l') {
         incrementFrames(m->allocated);
