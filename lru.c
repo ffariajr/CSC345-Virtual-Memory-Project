@@ -1,23 +1,34 @@
 #include "lru.h"
 
 void lruRepl(frame** head) {
-  frame* temp;
-  frame* f = *head;
-  frame* least = *head;
-  frame* leastPrev;
-  while (f && f->next) {
-    temp = f;
-    f = f->next;
-    if (least->lastUsed >= f->lastUsed) {
-      leastPrev = temp;
-      least = f;
+  if (v) {
+    printf("<LRU Replacement>\n");
+  }
+
+  frame* leastPrev = 0;
+  int lastUsed = ~(1 << ((sizeof(int)*8) -1));
+
+  frame* temp = *head;
+  frame* prev = 0;
+  while (temp && temp->next) {
+    if (prev && lastUsed > temp->lastUsed) {
+      if (v) {
+        printf("Found Smaller: [ < %4d , %3d > , %5d ]\n", temp->pid, temp->page, temp->lastUsed);
+      }
+      leastPrev = prev;
+      lastUsed = temp->lastUsed;
     }
+    prev = temp;
+    temp = temp->next;
   }
-  if (f && least->lastUsed >= f->lastUsed) {
-    leastPrev = temp;
-    least = f;
+  if (leastPrev) {
+    temp = leastPrev->next;
+    leastPrev->next = temp->next;
+    temp->next = *head;
+    *head = temp;
   }
-  leastPrev->next = 0;
-  least->next = *head;
-  *head = least;
+
+  if (v) {
+    printf("<\\LRU Replacement>\n");
+  }
 }
