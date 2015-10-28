@@ -26,7 +26,7 @@ char pcblStep(pcbl* p) {
 
 char pcbStep(pcb* p) {
   if (v) {
-    printf("<PCB Step>");
+    printf("<PCB Step>\n");
   }
   p->runTime++;
   if (p->currentPage != ~0) {
@@ -41,7 +41,7 @@ char pcbStep(pcb* p) {
 
 void rollBack(pcb* p) {
   if (v) {
-    printf("<PCB Roll Back>");
+    printf("<PCB Roll Back>\n");
   }
   if (p->currentPage != ~0) {
     p->refPosition--;

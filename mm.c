@@ -83,6 +83,9 @@ int request(mm* m, pcb* p) {
 }
 
 void pageIn(mm* m, pcb* p) {
+  if (v) {
+    printf("<Page In>\n");
+  }
   usleep(100);
   frame* temp = m->freemem;
   m->freemem = m->freemem->next;
@@ -90,24 +93,40 @@ void pageIn(mm* m, pcb* p) {
   m->allocated = temp;
   m->allocated->pid = p->pid;
   m->allocated->page = p->currentPage;
+  if (v) {
+    printf("<\\Page In>\n");
+  }
 }
 
 void pageOut(mm* m) {
+  if (v) {
+    printf("<Page Out>\n");
+  }
   usleep(200);
-  frame* temp = m->allocated;
-  m->allocated = m->allocated->next;
-  temp->pid = -1;
-  temp->page = -1;
-  temp->next = m->freemem;
-  m->freemem = temp;
+  if (m->allocated) {
+    frame* temp = m->allocated;
+    m->allocated = m->allocated->next;
+    temp->pid = -1;
+    temp->page = -1;
+    temp->next = m->freemem;
+    m->freemem = temp;
+  }
+  if (v) {
+    printf("<\\Page Out>\n");
+  }
 }
 
 void replacement(mm* m, pcb* p) {
   if (v) {
-    printf("<Replacement>");
+    printf("<Replacement>\n");
   }
   usleep(100);
   m->repl(m->allocated);
+
+  if (v) {
+    printf("Replacement Algorithm Finished.\n");
+  }
+
   frame* temp = m->allocated;
   pageOut(m);
   pageIn(m, p);

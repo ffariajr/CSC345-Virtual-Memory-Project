@@ -168,7 +168,7 @@ int main(int argc, char** argv) {
       fputc(delim, f);
     }
 
-    fputs(ref, f);
+    fprintf(f, "%s", ref);
 
     if (v) {
       printf("Successfully wrote to file\n");
