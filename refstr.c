@@ -123,12 +123,13 @@ int main(int argc, char** argv) {
     }
   }
 
-  char* ref = (char*) malloc(sizeof(char) * refSize+1);
+  char* ref = (char*) malloc(sizeof(char) * (refSize+2));
   if (!ref) {
     printf("Fatal Error: Not enough memory for reference string of size: %d\nQuitting NOW...\n", refSize);
     exit(-2);
   }
-  ref[refSize] = '\0';
+  ref[refSize] = ~0;
+  ref[refSize+1] = 0;
 
   if (v) {
     printf("Starting Calculation of Reference String\n");
@@ -188,6 +189,7 @@ int main(int argc, char** argv) {
     }
     printf("\n");
   }
+  free(ref);
 
   if (v) {
     printf("End\n");
