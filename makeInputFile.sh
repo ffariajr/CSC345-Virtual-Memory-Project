@@ -32,7 +32,7 @@ echo ":RR" >> $1
 echo "" >> $1
 echo "Reference String File." >> $1
 echo "        The name of a file that contains the reference strings." >> $1
-echo ":strings" >> $1
+echo ":strings.ref" >> $1
 echo "" >> $1
 echo "Reference String Start Times." >> $1
 echo "        Start times can be set here. 1 means 1 second. \"-1\"'s are ignored." >> $1

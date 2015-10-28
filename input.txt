@@ -24,7 +24,7 @@ Scheduler.
 
 Reference String File.
         The name of a file that contains the reference strings.
-:strings
+:strings.ref
 
 Reference String Start Times.
         Start times can be set here. 1 means 1 second. "-1"'s are ignored.
