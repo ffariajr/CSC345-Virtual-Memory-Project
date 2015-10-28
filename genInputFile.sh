@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ $1 -z -o "$1" == "-h" ] then
-  if [ $1 -z ] then
+if [ $# -lt 1 -o "$1" == "-h" ]; then
+  if [ $# -lt 1 ]; then
     echo "Error: Invalid Arguments."
   fi
   echo "Usage is as follows:" 
@@ -19,7 +19,29 @@ if [ $1 -z -o "$1" == "-h" ] then
   echo "          Can be in any order.  All options default to a default value when omitted."
   echo ""
   echo "          -sim <ans>"
-  echo "              <ans> must be either \"YES\" OR \"NO\"
+  echo "          --fule-sim <ans>"
+  echo "              <ans> must be either \"YES\" or \"NO\"."
+  echo "          -a <algo>"
+  echo "          --algorithm <algo>"
+  echo "              <algo> must be one of: \"FIFO\", \"LRU\", or \"2C\"."
+  echo "          -tq <quantum>"
+  echo "          --time-quantum <quantum>"
+  echo "              <quantum> must be a number greater than 1."
+  echo "          -f <num>"
+  echo "          --frames <num>"
+  echo "              <num> must be a number."
+  echo "          -sc <sched>"
+  echo "          --scheduler <sched>"
+  echo "              Only available value is \"RR\"."
+  echo "          -ref <file>"
+  echo "          --refstr-file <file>"
+  echo "              Specifies where to look for the generated reference strings."
+  echo ""
+  echo "      -t <startTimes>"
+  echo "          Following \"-t\", you may list up to 99 space separated numbers."
+  echo "          These numbers correspond to the start time of of reference string"
+  echo "          respective to the order they are listed."
+  echo ""
   exit
 fi
 
@@ -35,37 +57,45 @@ reffile="strings.ref"
 
 i=0
 
-while [ $i -lt 6 -a $i -lt $# ] do
-  if [ "$1" == "-sim" -o "$1" == "--full-sim" ] then
+while true; do
+
+  if [ $# -eq 0 ]; then
+    break
+  elif [ "$1" == "-sim" -o "$1" == "--full-sim" ]; then
     shift
     fullsim=$1
     shift
-  elif [ "$1" == "-a" -o "$1" == "--algorithm" ] then
+    i=$((i+2))
+  elif [ "$1" == "-a" -o "$1" == "--algorithm" ]; then
     shift
     repl=$1
     shift
-  elif [ "$1" == "-tq" -o "$1" == "--time-quantum" ] then
+    i=$((i+2))
+  elif [ "$1" == "-tq" -o "$1" == "--time-quantum" ]; then
     shift
     tq=$1
     shift
-  elif [ "$1" == "-f" -o "$1" == "--frames" ] then
+    i=$((i+2))
+  elif [ "$1" == "-f" -o "$1" == "--frames" ]; then
     shift
     mframes=$1
     shift
-  elif [ "$1" == "-sc" -o "$1" == "--scheduler" ] then
+    i=$((i+2))
+  elif [ "$1" == "-sc" -o "$1" == "--scheduler" ]; then
     shift
     sched=$1
     shift
-  elif [ "$1" == "-ref" -o "$1" == "--refstr-file" ] then
+    i=$((i+2))
+  elif [ "$1" == "-ref" -o "$1" == "--refstr-file" ]; then
     shift
     reffile=$1
     shift
-  elif [ "$1" == "-t" ] then
+    i=$((i+2))
+  elif [ "$1" == "-t" ]; then
     shift
-    i=6
+    break
   fi
-  i=$i+1
-loop
+done
 
 
 echo "Input file for Virtual Memory Simulator Project" > $file
@@ -100,20 +130,21 @@ echo "Reference String Start Times." >> $file
 echo "        Start times can be set here. 1 means 1 second. \"-1\"'s are ignored." >> $file
 echo "        The amount of non-\"-1\"'s must match the amount of reference strings." >> $file
 
-for i in $(seq 1 99) do
-  t=-1
+for j in $(seq 1 99); do
 
-  if [ $# -gt 0 ] then
+  if [ $# -gt 0 ]; then
     t=$1
     shift
-  elif [ $i -e 1 ] then
+  elif [ $j -eq 1 ]; then
     t=0
+  else
+    t=-1
   fi
 
-  if [ $i -gt 9 ] then
-    echo "$i:$t" >> $file
+  if [ $j -gt 9 ]; then
+    echo "$j:$t" >> $file
   else
-    echo "0$i:$t" >> $file
+    echo "0$j:$t" >> $file
   fi
 done
 
