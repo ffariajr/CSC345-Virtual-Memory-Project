@@ -248,6 +248,8 @@ int main(int argc, char** argv) {
     //part 4
 
   } else {
+    //part 3
+
     if (v) {
       printf("Starting Single Process Simulation.\n");
     }
@@ -277,10 +279,15 @@ int main(int argc, char** argv) {
       printf("Now Running!\n");
     }
 
-    while (page != ~0) {
-      printf("Requesting Page: %d\n", page);
+    while (referencesCount <= p->refSize) {
+
+      memorySnapshot(m);
+
       if (v) {
+        printf("Requesting Page: %d\n", page);
         printf("Total References: %d\n", referencesCount);
+      } else {
+        printf("Request: %4d\tPage: %3d", referencesCount, page);
       }
       int try = request(m, p);
       
@@ -306,7 +313,10 @@ int main(int argc, char** argv) {
     }
 
     pcbDestroy(p);
+  }
 
+  if (v) {
+    memorySnapshot(m);
   }
 
   mmDestroy(m);
@@ -333,4 +343,24 @@ int validNumber(char* s) {
   }
 
   return valid;
+}
+
+void memorySnapshot(mm* m) {
+  if (v) {
+    printf("Memory Snapshot:\n");
+    frame* temp = m->allocated;
+    int q;
+    for (q = 0; q < 2; q++) {
+      while (temp) {
+        if (!q) {
+          printf("Allocated ");
+        } else {
+          printf("Free ");
+        }
+        printf("[ < %4d , %3d > , %5d ]\n", temp->pid, temp->page, temp->lastUsed);
+        temp = temp->next;
+      }
+      temp = m->freemem;
+    }
+  }
 }

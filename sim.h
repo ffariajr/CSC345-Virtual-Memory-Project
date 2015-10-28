@@ -8,6 +8,7 @@
 #include "pcbl.h"
 
 int validNumber(char*);
+void memorySnapshot(mm*);
 
 #endif
 

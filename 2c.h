@@ -4,6 +4,6 @@
 #include "imports.h"
 #include "frame.h"
 
-void c2Repl(frame*);
+void c2Repl(frame**);
 
 #endif

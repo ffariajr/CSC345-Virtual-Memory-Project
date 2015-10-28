@@ -1,9 +1,9 @@
 #include "lru.h"
 
-void lruRepl(frame* head) {
+void lruRepl(frame** head) {
   frame* temp;
-  frame* f = head;
-  frame* least = head;
+  frame* f = *head;
+  frame* least = *head;
   frame* leastPrev;
   while (f && f->next) {
     temp = f;
@@ -18,6 +18,6 @@ void lruRepl(frame* head) {
     least = f;
   }
   leastPrev->next = 0;
-  least->next = head;
-  head = least;
+  least->next = *head;
+  *head = least;
 }

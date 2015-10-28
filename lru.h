@@ -4,6 +4,6 @@
 #include "imports.h"
 #include "frame.h"
 
-void lruRepl(frame*);
+void lruRepl(frame**);
 
 #endif

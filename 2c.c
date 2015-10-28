@@ -1,9 +1,9 @@
 #include "2c.h"
 
-void c2Repl(frame* head) {
+void c2Repl(frame** head) {
   frame* temp = 0;
   frame* tempPrev;
-  frame* f = head;
+  frame* f = *head;
   frame* fPrev;
 
   while (f) {
@@ -21,6 +21,6 @@ void c2Repl(frame* head) {
   }
 
   tempPrev->next = 0;
-  temp->next = head;
-  head = temp;
+  temp->next = *head;
+  *head = temp;
 }

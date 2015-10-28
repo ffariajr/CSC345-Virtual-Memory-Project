@@ -4,6 +4,6 @@
 #include "imports.h"
 #include "frame.h"
 
-void fifoRepl(frame*);
+void fifoRepl(frame**);
 
 #endif

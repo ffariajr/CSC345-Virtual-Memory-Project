@@ -119,16 +119,14 @@ int main(int argc, char** argv) {
     }
   }
 
-  char* ref = (char*) malloc(sizeof(char) * (refSize+2));
+  char* ref = (char*) malloc(sizeof(char) * (refSize));
   if (!ref) {
     printf("Fatal Error: Not enough memory for reference string of size: %d\nQuitting NOW...\n", refSize);
     exit(-2);
   }
-  ref[refSize] = ~0;
-  ref[refSize+1] = 0;
 
   if (v) {
-    printf("Starting Calculation of Reference String\n");
+    printf("Starting Generation of Reference String\n");
   }
 
   if (reftype == 's') {
@@ -142,7 +140,7 @@ int main(int argc, char** argv) {
   }
   
   if (v) {
-    printf("Finished Calculation of Reference String\n");
+    printf("Finished Generation of Reference String\n");
     printf("Reference String is: \t %s\n", ref);
   }
 
@@ -163,12 +161,10 @@ int main(int argc, char** argv) {
       printf("File opened successfully!\n");
     }
     
-    if (outputType == 'a') {
-      char delim = ~0;
-      fputc(delim, f);
-    }
-
     fprintf(f, "%s", ref);
+
+    char delim = ~0;
+    fputc(delim, f);
 
     if (v) {
       printf("Successfully wrote to file\n");

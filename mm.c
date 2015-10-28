@@ -64,19 +64,25 @@ int request(mm* m, pcb* p) {
   if (temp) {
     if (v) {
       printf("\tPage Found!\n");
+    } else {
+      printf("\tHIT\n");
     }
     updateFrame(temp);
     return 1;
   } else if (m->freemem) {
     if (v) {
       printf("\tPage Not Found. Free Frames Available.\n");
+    } else {
+      printf("\t + Free Memory Frames Available\n");
     }
-    updateFrame(m->freemem);
     pageIn(m, p);
+    updateFrame(m->allocated);
     return 1;
   } else {
     if (v) {
       printf("\tPage Not Found. No Free Frames.\n");
+    } else {
+      printf("\t - Replacement Required\n");
     }
     return 0;
   }
@@ -121,16 +127,21 @@ void replacement(mm* m, pcb* p) {
     printf("<Replacement>\n");
   }
   usleep(100);
-  m->repl(m->allocated);
+  m->repl(&m->allocated);
 
   if (v) {
     printf("Replacement Algorithm Finished.\n");
   }
 
-  frame* temp = m->allocated;
+  int victimPID = m->allocated->pid;
+  int victimPage = m->allocated->page;
+  int victimLRU = m->allocated->lastUsed;
   pageOut(m);
+  if (v) {
+    printf("Evicted Frame: [ < %4d , %3d > , %5d ]\n", victimPID, victimPage, victimLRU);
+  }
   pageIn(m, p);
-  updateFrame(temp);
+  updateFrame(m->allocated);
   if (v) {
     printf("<\\Replacement>\n");
   }
