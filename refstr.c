@@ -4,8 +4,6 @@
 #include <stdio.h>
 #include <ctype.h>
 
-extern const char* __progname;
-
 typedef struct slocality_t {
   char initialPage;
   int range;
