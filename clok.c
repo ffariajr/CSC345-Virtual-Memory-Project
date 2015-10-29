@@ -93,27 +93,6 @@ void processEvents(clok* c) {
   }
 }
 
-void processEvent(event* e) {
-  e->behavior(e->data);
-}
-
-void eventsDestroy(event* e) {
-  while (e) {
-    event* temp = e;
-    e = e->next;
-    free(temp);
-  }
-}
-
-event* eventInit(void (*event_f)(void*), void* data, int persistence) {
-  event* new = (event*) malloc(sizeof(event));
-  new->behavior = event_f;
-  new->persistent = persistence;
-  new->data = data;
-  new->next = 0;
-  return new;
-}
-
 void clokDestroy(clok* c) {
   while (c && c->list && c->list->next) {
     proc* temp = c->list;

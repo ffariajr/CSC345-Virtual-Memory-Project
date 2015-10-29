@@ -268,6 +268,20 @@ int main(int argc, char** argv) {
       printf("New Process Scheduled.\n");
     }
 
+    if (replalgo == '2') {
+      c2* datum = (c2*) malloc(sizeof(c2));
+      datum->counter = 0;
+      datum->f = m->allocated;
+
+      event* ec2 = eventInit(&grantChance, datum, 1, 0, 1);
+      addEvent(c, ec2);
+
+      if (v) {
+        printf("Second Chance Granter Event Registered.\n");
+      }
+    }
+
+
     tick(c);
     char page = pcbStep(p);
     int faults = 0;
@@ -362,3 +376,4 @@ void memorySnapshot(mm* m) {
     }
   }
 }
+

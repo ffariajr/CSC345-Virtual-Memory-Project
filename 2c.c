@@ -1,26 +1,45 @@
 #include "2c.h"
 
 void c2Repl(frame** head) {
-  frame* temp = 0;
-  frame* tempPrev;
-  frame* f = *head;
-  frame* fPrev;
+  if (v) {
+    printf("<2C Replacement>\n");
+  }
 
-  while (f) {
-    if (f->lastUsed) {
-      temp = f;
-      tempPrev = fPrev;
+  frame* fifo2c = 0;
+
+  frame* temp = *head;
+  frame* prev = 0;
+  while (temp) {
+    if (prev && temp->lastUsed) {
+      if (v) {
+        printf("Found Older Unused: [ < %4d , %3d > , %5d ]\n", temp->pid, temp->page, temp->lastUsed);
+      }
+      fifo2c = prev;
     }
-    fPrev = f;
-    f = f->next;
+    prev = temp;
+    temp = temp->next;
+  }
+  if (fifo2c) {
+    temp = fifo2c->next;
+    fifo2c->next = temp->next;
+    temp->next = *head;
+    *head = temp;
   }
 
-  if (!temp) {
-    temp = f;
-    tempPrev = fPrev;
+  if (v) {
+    printf("<\\2C Replacement>\n");
   }
+}
 
-  tempPrev->next = 0;
-  temp->next = *head;
-  *head = temp;
+
+void grantChance(void* data) {
+  int tqs = ((c2*) data)->counter++;
+  if (!(tqs % 5)) {
+    frame* f = ((c2*) data)->f;
+
+    while (f) {
+      f->lastUsed = 1;
+      f = f->next;
+    }
+  }
 }

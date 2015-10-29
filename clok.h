@@ -2,13 +2,7 @@
 #define CLOK_H
 
 #include "imports.h"
-
-typedef struct event_t {
-  void (*behavior)(void*);
-  int persistent;
-  void* data;
-  struct event_t* next;
-} event;
+#include "events.h"
 
 typedef struct proc_t {
   int startTime;
@@ -30,9 +24,6 @@ void tick(clok*);
 proc* ltschedule(clok*);
 void clokDestroy(clok*);
 void processEvents(clok*);
-void eventsDestroy(event*);
-void processEvent(event*);
-event* eventInit(void (*)(void*), void*, int);
 void addEvent(clok*, event*);
 
 #endif
