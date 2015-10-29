@@ -8,20 +8,15 @@ pcb* pcbInit(char* refs, int size) {
   new->currentPage = 0;
   new->refPosition = 0;
   new->refSize = size;
-  new->next = 0;
   return new;
 }
 
 pcbl* pcblInit() {
   pcbl* new = (pcbl*) malloc(sizeof(pcbl));
-  new->head = 0;
-  new->tail = 0;
-  new->size = 0;
+  new->node = 0;
+  new->next = new;
+  new->prev = new;
   return new;
-}
-
-char pcblStep(pcbl* p) {
-  return pcbStep(p->head);
 }
 
 char pcbStep(pcb* p) {
@@ -51,60 +46,41 @@ void rollBack(pcb* p) {
   }
 }
 
-void pageFault(pcbl* p) {
-  if (v) {
-    printf("<Page Fault>\n");
-  }
-  rollBack(p->head);
-  sendBack(p);
-  if (v) {
-    printf("<\\Page Fault>\n");
-  }
-}
-
-void append(pcbl* p, pcb* new) {
-  p->size++;
-  if (p->size == 1) {
-    p->head = new;
-    p->tail = new;
+void insert(pcbl** pos, pcbl* new) {
+  if (*pos) {
+    pcbl* temp = *pos;
+    new->next = temp->next;
+    new->prev = temp;
+    
+    new->next->prev = new;
+    temp->next = new;
   } else {
-    p->tail->next = new;
-    p->tail = new;
-  }
-}
-
-void deleteHead(pcbl* p) {
-  if (p->size > 0) {
-    pcb* temp = p->head;
-    p->head = p->head->next;
-    p->size--;
-    free(temp);
-  }
-}
-
-void sendBack(pcbl* p) {
-  if (p->size > 0) {
-    pcb* temp = p->head;
-    p->head = p->head->next;
-    temp->next = 0;
-    append(p, temp);
+    *pos = new;
   }
 }
 
 void pcbDestroy(pcb* p) {
   free(p);
+  p = 0;
+}
+
+void extract(pcbl* p) {
+  p->prev->next = p->next;
+  p->next->prev = p->prev;
+
+  p->next = p;
+  p->prev = p;
 }
 
 void pcblDestroy(pcbl* p) {
-  while (p && p->head) {
-    pcb* temp = p->head;
-    p->head = p->head->next;
-    pcbDestroy(temp);
+  if (p && p->next != p) {
+    extract(p);
   }
-  if (p->head) {
-    pcbDestroy(p->head);
+  if (p && p->node) {
+    pcbDestroy(p->node);
   }
   free(p);
+  p=0;
 }
 
 

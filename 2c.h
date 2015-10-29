@@ -10,6 +10,6 @@ typedef struct c2_t {
 } c2;
 
 void c2Repl(frame**);
-void grantChance(void*);
+int grantChance(void*);
 
 #endif

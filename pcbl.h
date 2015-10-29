@@ -11,28 +11,23 @@ typedef struct pcb_t {
   int refPosition;
   int refSize;
   char currentPage;
-  struct pcb_t* next;
 } pcb;
 
 typedef struct pcbl_t {
-  pcb* head;
-  pcb* tail;
-  int size;
+  pcb* node;
+  struct pcbl_t* next;
+  struct pcbl_t* prev;
 } pcbl;
 
 pcb* pcbInit(char*, int);
 pcbl* pcblInit();
 
 void rollBack(pcb*);
-char pcblStep(pcbl*);
 char pcbStep(pcb*);
-void pageFault(pcbl*);
 
-void append(pcbl*, pcb*);
-void deleteHead(pcbl*);
-void sendBack(pcbl*);
-
+void insert(pcbl**, pcbl*);
 void pcblDestroy(pcbl*);
+void extract(pcbl*);
 void pcbDestroy(pcb*);
 
 #endif

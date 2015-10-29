@@ -4,7 +4,7 @@ If any of the pre-formatting of this file is changed, please remake the file.
 Run Full Simulation.
         If set to "NO", then only part 3 of the project requirements
         will be run.  If set to "YES", then part 4 will be included.
-:NO
+:YES
 
 Replacement Algorithm.
         Must be "FIFO", "LRU", or "2C"
@@ -16,7 +16,7 @@ Time Quantum.
 
 Memory Frames.
         Must be a number from 10 to 1000.
-:10
+:100
 
 Scheduler.
         Currently, can only be set to "RR"
@@ -30,9 +30,9 @@ Reference String Start Times.
         Start times can be set here. 1 means 1 second. "-1"'s are ignored.
         The amount of non-"-1"'s must match the amount of reference strings.
 01:0
-02:-1
-03:-1
-04:-1
+02:0
+03:2
+04:5
 05:-1
 06:-1
 07:-1

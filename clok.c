@@ -34,8 +34,7 @@ void processEvents(clok* c) {
   event* temp = c->elist;
   event* prev = 0;
   while (temp) {
-    processEvent(temp);
-    if (!temp->persistent) {
+    if (processEvent(temp)) {
       if (prev) {
         prev->next = temp->next;
         temp->next = 0;

@@ -1,13 +1,14 @@
 #include "events.h"
 
-void processEvent(event* e) {
+int processEvent(event* e) {
   if (v) {
     printf("<Processing Event>\n");
   }
-  e->behavior(e->data);
+  int ret = e->behavior(e->data);
   if (v) {
     printf("<\\Processing Event>\n");
   }
+  return ret;
 }
 
 void eventsDestroy(event* e) {
@@ -26,10 +27,9 @@ void eventsDestroy(event* e) {
   }
 }
 
-event* eventInit(void (*event_f)(void*), void* data, int persistence, int freeFunc, int freeData) {
+event* eventInit(int (*event_f)(void*), void* data, int freeFunc, int freeData) {
   event* new = (event*) malloc(sizeof(event));
   new->behavior = event_f;
-  new->persistent = persistence;
   new->data = data;
   new->next = 0;
   new->freeFunc = freeFunc;

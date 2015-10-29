@@ -255,7 +255,7 @@ int main(int argc, char** argv) {
     datum->counter = 0;
     datum->f = &m->allocated;
 
-    event* ec2 = eventInit(&grantChance, datum, 1, 0, 1);
+    event* ec2 = eventInit(&grantChance, datum, 0, 1);
     addEvent(c, ec2);
 
     if (v) {
@@ -269,21 +269,21 @@ int main(int argc, char** argv) {
       printf("Starting Full Simulation.\n");
     }
 
-//    sc* s = schedInit(schedalgo);
+    sc* s = schedInit(schedalgo, m, c);
     if (v) {
       printf("Scheduler Initialized.\n");
     }
-
-    pcbl* newQ = pcblInit();
-    /*
-    for (q = 0; q < counter; x++) {
-      if (startTimes[q] > -1) {
-        
-        enqueue(newQ, refstrings[q], refSizes[q], startTimes[q]);
+    
+    for (q = 0; q < counter; q++) {
+      if (startTimes[q] > -1) {   
+        event* e = ltSchedule(s, refstrings[q], refSizes[q], startTimes[q]);
+        addEvent(c, e);
       }
     }
 
-    */
+    if (v) {
+      printf("All Programs Long Term Scheduled.\n");
+    }
 
 
 
@@ -318,6 +318,18 @@ int main(int argc, char** argv) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+    schedDestroy(s);
   } else {                                                                      //part 3
   
     if (v) {
