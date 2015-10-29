@@ -70,6 +70,9 @@ void addEvent(clok* c, event* e) {
 }
 
 void processEvents(clok* c) {
+  if (v) {
+    printf("<Processing All Events>\n");
+  }
   event* temp = c->elist;
   event* prev = 0;
   while (temp) {
@@ -90,6 +93,9 @@ void processEvents(clok* c) {
       prev = temp;
       temp = temp->next;
     }
+  }
+  if (v) {
+    printf("<\\Processing All Events>\n");
   }
 }
 

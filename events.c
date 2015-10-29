@@ -1,7 +1,13 @@
 #include "events.h"
 
 void processEvent(event* e) {
+  if (v) {
+    printf("<Processing Event>\n");
+  }
   e->behavior(e->data);
+  if (v) {
+    printf("<\\Processing Event>\n");
+  }
 }
 
 void eventsDestroy(event* e) {

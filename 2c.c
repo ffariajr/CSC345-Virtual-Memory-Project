@@ -33,13 +33,25 @@ void c2Repl(frame** head) {
 
 
 void grantChance(void* data) {
+  if (v) {
+    printf("<Grant 2nd Chance>\n");
+  }
   int tqs = ((c2*) data)->counter++;
   if (!(tqs % 5)) {
     frame* f = ((c2*) data)->f;
-
+    if (v) {
+      printf("Feeling Generous\n");
+    }
     while (f) {
+      if (v) {
+        printf("Second Chance Granted: [ < %4d , %3d > , %5d ]\n", f->pid, f->page, f->lastUsed);
+      }
       f->lastUsed = 1;
       f = f->next;
     }
+  }
+  if (v) {
+    printf("Time Quantums Until Next Generosity: %d\n", 5 - (tqs % 5));
+    printf("<\\Grant 2nd Chance>\n");
   }
 }

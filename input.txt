@@ -12,7 +12,7 @@ Replacement Algorithm.
 
 Time Quantum.
         Must be a number between 1 and MAXINT.
-:50
+:10
 
 Memory Frames.
         Must be a number from 10 to 1000.
