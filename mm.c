@@ -42,19 +42,8 @@ mm* mmInit(char replacementAlgorithm, int totalMemoryFrames) {
   return new;
 }
 
-pt* ptInit() {
-  pt* new = (pt*) malloc(sizeof(pt));
-  int x;
-  for (x = 0; x < 127; x++) {
-    new->validPage[x] = 0;
-  }
-  new->next = 0;
-  return new;
-}
-
-void createProcess(mm* m, pcb* p) {
+void loadProcess(mm* m, pcb* p) {
   m->pids++;
-  pt* new = ptInit();
   p->pid = m->pids;
 }
 
@@ -65,7 +54,7 @@ int request(mm* m, pcb* p) {
   if (temp) {
     if (v) {
       printf("\tPage Found!\n");
-    } else {
+    } else if (output) {
       printf("\tHIT\n");
     }
     updateFrame(temp);
@@ -73,7 +62,7 @@ int request(mm* m, pcb* p) {
   } else if (m->freemem) {
     if (v) {
       printf("\tPage Not Found. Free Frames Available.\n");
-    } else {
+    } else if (output) {
       printf("\t + Free Memory Frames Available\n");
     }
     pageIn(m, p);
@@ -82,7 +71,7 @@ int request(mm* m, pcb* p) {
   } else {
     if (v) {
       printf("\tPage Not Found. No Free Frames.\n");
-    } else {
+    } else if (output) {
       printf("\t - Replacement Required\n");
     }
     return 0;

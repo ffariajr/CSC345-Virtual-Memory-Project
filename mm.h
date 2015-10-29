@@ -22,9 +22,8 @@ typedef struct mm_t {
 } mm;
 
 mm* mmInit(char, int);
-pt* ptInit();
 
-void createProcess(mm*, pcb*);
+void loadProcess(mm*, pcb*);
 int request(mm*, pcb*);
 void pageIn(mm*, pcb*);
 void pageOut(mm*);

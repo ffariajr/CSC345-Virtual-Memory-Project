@@ -7,6 +7,7 @@
 #include "mm.h"
 #include "pcbl.h"
 #include "events.h"
+#include "scheduler.h"
 
 int validNumber(char*);
 void memorySnapshot(mm*);

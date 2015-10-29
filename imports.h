@@ -7,5 +7,7 @@
 #include <unistd.h>
 
 extern int v;
+extern int output;
+extern int statistics;
 
 #endif

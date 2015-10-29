@@ -1,6 +1,8 @@
 #include "sim.h"
 
 int v = 0;
+int output = 0;
+int statistics = 0;
 
 int main(int argc, char** argv) {
   
@@ -12,13 +14,20 @@ int main(int argc, char** argv) {
       inf = fopen(argv[2], &fileReadChar);
       if (!strcmp(argv[1], "-v")) {
         v = 1;
+      } else if (!strcmp(argv[1], "-req")) {
+        output = 1;
+      } else if (!strcmp(argv[1], "-stats")) {
+        statistics = 1;
       } else {
         printf("Fatal Error: Invalid Option: %s\nUse %s -h for more information.\n", argv[1], argv[0]);
         exit(-1);
       }
     } else {
       if (!strcmp(argv[1], "-h")) {
-        printf("%s [-v] <inputFile>\n\t\t-v\n\t\t\tVerbose output.\n\t\t<inputFile>\n\t\t\t", argv[0]);
+        printf("%s [-v | -h | -req | -stats] <inputFile>\n\t\t-v\n\t\t\tVerbose output.\n\t\t-req", argv[0]);
+        printf("\n\t\t\tDisplay request info for each request.\n\t\t-stats\n\t\t\tDisables");
+        printf(" artificial delays within the simulation.\n\t\t\tOutputs statistics for");
+        printf(" each reference string.\n\t\t<inputFile>\n\t\t\t");
         printf("File used for input arguments. Must be specified!\n");
         exit(0);
       }
@@ -38,7 +47,7 @@ int main(int argc, char** argv) {
     printf("Input File Open.\n");
   }
  
-  char sched;
+  char schedalgo;
   char replalgo;
   int tquantum;
   int fullsim;
@@ -110,7 +119,7 @@ int main(int argc, char** argv) {
           printf("Scheduler input\n");
         }
         if (!strcmp(s, "RR")) {
-          sched = 'r';
+          schedalgo = 'r';
         } else {
           printf("Error: Illegal Input Value for \"Scheduler\": %s\n", s);
         }
@@ -231,29 +240,88 @@ int main(int argc, char** argv) {
   }
   
   mm* m = mmInit(replalgo, frames);
-  clok* c = clokInit(tquantum);
-
   if (v) {
     printf("Memory Manager Initialized.\n");
   }
 
-  if (fullsim) {
+  clok* c = clokInit(tquantum);
+  if (v) {
+    printf("Simulation System Clock Initialized.\n");
+  }
+
+
+  if (replalgo == '2') {
+    c2* datum = (c2*) malloc(sizeof(c2));
+    datum->counter = 0;
+    datum->f = &m->allocated;
+
+    event* ec2 = eventInit(&grantChance, datum, 1, 0, 1);
+    addEvent(c, ec2);
+
+    if (v) {
+      printf("Second Chance Granter Event Registered.\n");
+    }
+  }
+
+
+  if (fullsim) {                                                        //part 4
     if (v) {
       printf("Starting Full Simulation.\n");
     }
+
+//    sc* s = schedInit(schedalgo);
     if (v) {
-      printf("Simulation System Clock Initialized.\n");
+      printf("Scheduler Initialized.\n");
     }
-    //part 4
 
-  } else {
-    //part 3
+    pcbl* newQ = pcblInit();
+    /*
+    for (q = 0; q < counter; x++) {
+      if (startTimes[q] > -1) {
+        
+        enqueue(newQ, refstrings[q], refSizes[q], startTimes[q]);
+      }
+    }
 
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  } else {                                                                      //part 3
+  
     if (v) {
       printf("Starting Single Process Simulation.\n");
-    }
-    if (v) {
-      printf("Clock Initialized.\n");
     }
 
     pcb* p = pcbInit(refstrings[0], refSizes[0]);
@@ -262,25 +330,11 @@ int main(int argc, char** argv) {
       printf("Single Process PCB Initialized.\n");
     }
     
-    createProcess(m, p);
+    loadProcess(m, p);
     
     if (v) {
       printf("New Process Scheduled.\n");
     }
-
-    if (replalgo == '2') {
-      c2* datum = (c2*) malloc(sizeof(c2));
-      datum->counter = 0;
-      datum->f = &m->allocated;
-
-      event* ec2 = eventInit(&grantChance, datum, 1, 0, 1);
-      addEvent(c, ec2);
-
-      if (v) {
-        printf("Second Chance Granter Event Registered.\n");
-      }
-    }
-
 
     tick(c);
     char page = pcbStep(p);
@@ -298,7 +352,7 @@ int main(int argc, char** argv) {
       if (v) {
         printf("Requesting Page: %d\n", page);
         printf("Total References: %d\n", referencesCount);
-      } else {
+      } else if (output) {
         printf("Request: %4d\tPage: %3d", referencesCount, page);
       }
       int try = request(m, p);
