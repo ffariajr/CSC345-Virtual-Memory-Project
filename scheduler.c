@@ -25,15 +25,20 @@ event* ltSchedule(sc* s, char* ref, int size, int start) {
   data->p = pcblInit();
   data->p->node = pcbInit(ref, size);
 
-  return eventInit(&newToReadyQ, data, 0, 1);
+  return eventInit(&newToReadyQWaiter, data, 0, 1);
 }
 
-int newToReadyQ(void* datum) {
+void createProcess(sc* s, pcbl* p) {
+  loadProcess(s->m, p->node);
+  insert(&s->readyq, p);
+  p->node->startTime = s->c->time;
+}
+  
+int newToReadyQWaiter(void* datum) {
   newQProcData* data = (newQProcData*) datum;
   data->counter++;
   if (data->counter >= data->start) {
-    loadProcess(data->s->m, data->p->node);
-    insert(&data->s->readyq, data->p);
+    createProcess(data->s, data->p);
     data->p=0;
     return 1;
   }
@@ -48,4 +53,8 @@ void schedDestroy(sc* s) {
   free(s);
   s = 0;
 }
+
+int tqPreempt(void* datum) {
+  sc* s = (sc*) datum;
+
 

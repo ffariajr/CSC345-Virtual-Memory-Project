@@ -6,6 +6,7 @@
 
 typedef struct c2_t {
   int counter;
+  int forgiveness;
   frame** f;
 } c2;
 

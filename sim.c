@@ -253,6 +253,7 @@ int main(int argc, char** argv) {
   if (replalgo == '2') {
     c2* datum = (c2*) malloc(sizeof(c2));
     datum->counter = 0;
+    datum->forgiveness = 5;
     datum->f = &m->allocated;
 
     event* ec2 = eventInit(&grantChance, datum, 0, 1);
@@ -275,18 +276,39 @@ int main(int argc, char** argv) {
     }
     
     for (q = 0; q < counter; q++) {
-      if (startTimes[q] > -1) {   
+      if (startTimes[q] > 0) {   
         event* e = ltSchedule(s, refstrings[q], refSizes[q], startTimes[q]);
         addEvent(c, e);
+      } else if (startTimes[q] == 0) {
+        pcbl* p = pcblInit();
+        p->node = pcbInit(refstrings[q], refSizes[q]);
+
+        createProcess(s, p);
       }
     }
 
     if (v) {
-      printf("All Programs Long Term Scheduled.\n");
+      printf("%d Programs Long Term Scheduled.\n", counter);
     }
 
+    addEvent(c, eventInit(&tqPreempt, s, 0, 0));
+
+    s->sched(s);
+
+    while (counter > 0) {
+      tick(c);
+      int term = pcbStep(s->runningq->node);
+      if (term) {
+        
+      }
 
 
+
+
+
+
+
+    }
 
 
 
@@ -349,7 +371,7 @@ int main(int argc, char** argv) {
     }
 
     tick(c);
-    char page = pcbStep(p);
+    pcbStep(p);
     int faults = 0;
     int referencesCount = 1;
 
@@ -362,10 +384,10 @@ int main(int argc, char** argv) {
       memorySnapshot(m);
 
       if (v) {
-        printf("Requesting Page: %d\n", page);
+        printf("Requesting Page: %d\n", p->currentPage);
         printf("Total References: %d\n", referencesCount);
       } else if (output) {
-        printf("Request: %4d\tPage: %3d", referencesCount, page);
+        printf("Request: %4d\tPage: %3d", referencesCount, p->currentPage);
       }
       int try = request(m, p);
       
@@ -387,7 +409,7 @@ int main(int argc, char** argv) {
         incrementFrames(m->allocated);
       }
       tick(c);
-      page = pcbStep(p);
+      pcbStep(p);
     }
 
     pcbDestroy(p);

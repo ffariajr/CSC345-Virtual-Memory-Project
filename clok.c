@@ -6,6 +6,7 @@ clok* clokInit(int tquantum) {
   }
   clok* new = (clok*) malloc(sizeof(clok));
   new->time = 0;
+  new->offset = 0;
   new->tq = tquantum;
   new->elist = 0;
   return new;
@@ -17,7 +18,7 @@ void tick(clok* c) {
   }
   c->time++;
   usleep(1);
-  if (!(c->time % c->tq)) {
+  if (!((c->time + c->offset) % c->tq)) {
     processEvents(c);
   }
 }

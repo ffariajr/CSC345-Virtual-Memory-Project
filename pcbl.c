@@ -19,19 +19,22 @@ pcbl* pcblInit() {
   return new;
 }
 
-char pcbStep(pcb* p) {
+int pcbStep(pcb* p) {
   if (v) {
     printf("<PCB Step>\n");
   }
+  int ret = 1;
   p->runTime++;
   if (p->refPosition < p->refSize) {
     p->currentPage = p->ref[p->refPosition];
     p->refPosition++;
+  } else {
+    ret = 0;
   }
   if (v) {
     printf("<\\PCB Step>\n");
   }
-  return p->currentPage;
+  return ret;
 }
 
 void rollBack(pcb* p) {
@@ -70,6 +73,11 @@ void extract(pcbl* p) {
 
   p->next = p;
   p->prev = p;
+}
+
+void pcblMove(pcbl* p, pcbl** dest) {
+  extract(p);
+  insert(dest, p);
 }
 
 void pcblDestroy(pcbl* p) {

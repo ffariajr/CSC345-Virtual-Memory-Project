@@ -16,7 +16,7 @@ Time Quantum.
 
 Memory Frames.
         Must be a number from 10 to 1000.
-:100
+:10i0
 
 Scheduler.
         Currently, can only be set to "RR"

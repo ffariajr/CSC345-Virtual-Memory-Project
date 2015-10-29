@@ -8,6 +8,7 @@ typedef struct clok_st {
   int time;
   int tq;
   event* elist;
+  int offset;
 } clok;
 
 clok* clokInit(int);

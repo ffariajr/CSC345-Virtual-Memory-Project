@@ -28,7 +28,9 @@ typedef struct newQProcData_t {
 
 sc* schedInit(char, mm*, clok*);
 event* ltSchedule(sc*, char*, int, int);
-int newToReadyQ(void*);
+int newToReadyQWaiter(void*);
 void schedDestroy(sc*);
+void createProcess(sc*, pcbl*);
+int tqPreempt(void*);
 
 #endif
