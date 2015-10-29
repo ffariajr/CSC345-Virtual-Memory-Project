@@ -23,7 +23,7 @@ typedef struct newQProcData_t {
   int start;
   int counter;
   pcbl* p;
-  pcbl* target;
+  sc* s;
 } newQProcData;
 
 sc* schedInit(char, mm*, clok*);

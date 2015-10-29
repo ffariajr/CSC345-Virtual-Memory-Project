@@ -21,7 +21,7 @@ event* ltSchedule(sc* s, char* ref, int size, int start) {
   newQProcData* data = (newQProcData*) malloc(sizeof(newQProcData));
   data->start = start;
   data->counter = 0;
-  data->target = s->readyq;
+  data->s = s;
   data->p = pcblInit();
   data->p->node = pcbInit(ref, size);
 
@@ -32,7 +32,8 @@ int newToReadyQ(void* datum) {
   newQProcData* data = (newQProcData*) datum;
   data->counter++;
   if (data->counter >= data->start) {
-    insert(&data->target, data->p);
+    loadProcess(data->s->m, data->p->node);
+    insert(&data->s->readyq, data->p);
     data->p=0;
     return 1;
   }

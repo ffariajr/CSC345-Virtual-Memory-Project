@@ -8,11 +8,6 @@
 #include "2c.h"
 #include "lru.h"
 
-typedef struct pt_t {
-  char validPage[127];
-  struct pt_t* next;
-} pt;
-
 typedef struct mm_t {
   void (*repl)(frame**);
   int c2counter;
