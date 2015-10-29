@@ -15,6 +15,7 @@ typedef struct pt_t {
 
 typedef struct mm_t {
   void (*repl)(frame**);
+  int c2counter;
   int pids;
   frame* freemem;
   frame* allocated;

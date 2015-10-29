@@ -19,6 +19,7 @@ mm* mmInit(char replacementAlgorithm, int totalMemoryFrames) {
   }
 
   new->pids = -1;
+  new->c2counter = 0;
   
   if (v) {
     printf("Building Memory.\n");

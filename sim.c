@@ -231,7 +231,7 @@ int main(int argc, char** argv) {
   }
   
   mm* m = mmInit(replalgo, frames);
-  clok* c;
+  clok* c = clokInit(tquantum);
 
   if (v) {
     printf("Memory Manager Initialized.\n");
@@ -241,7 +241,6 @@ int main(int argc, char** argv) {
     if (v) {
       printf("Starting Full Simulation.\n");
     }
-    c = clokInit(tquantum);
     if (v) {
       printf("Simulation System Clock Initialized.\n");
     }
@@ -253,7 +252,6 @@ int main(int argc, char** argv) {
     if (v) {
       printf("Starting Single Process Simulation.\n");
     }
-    c = clokInit(-1);
     if (v) {
       printf("Clock Initialized.\n");
     }

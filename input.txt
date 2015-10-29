@@ -8,7 +8,7 @@ Run Full Simulation.
 
 Replacement Algorithm.
         Must be "FIFO", "LRU", or "2C"
-:2C
+:LRU
 
 Time Quantum.
         Must be a number between 1 and MAXINT.

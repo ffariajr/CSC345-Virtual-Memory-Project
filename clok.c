@@ -8,6 +8,7 @@ clok* clokInit(int tquantum) {
   new->time = 0;
   new->tq = tquantum;
   new->list = 0;
+  new->elist = 0;
   return new;
 }
 
@@ -35,16 +36,14 @@ void addProc(clok* c, proc* p) {
   }
 }
 
-int tick(clok* c) {
+void tick(clok* c) {
   if (v) {
     printf("Time: %d\n", c->time);
   }
   c->time++;
   usleep(1);
-  if (c->tq == -1) {
-    return 0;
-  } else {
-    return !(c->time % c->tq);
+  if (!(c->time % c->tq)) {
+    processEvents(c);
   }
 }
 
@@ -65,12 +64,63 @@ proc* ltschedule(clok* c) {
   }
 }
 
+void addEvent(clok* c, event* e) {
+  e->next = c->elist;
+  c->elist = e;
+}
+
+void processEvents(clok* c) {
+  event* temp = c->elist;
+  event* prev = 0;
+  while (temp) {
+    processEvent(temp);
+    if (!temp->persistent) {
+      if (prev) {
+        prev->next = temp->next;
+        temp->next = 0;
+        eventsDestroy(temp);
+        temp = prev->next;
+      } else {
+        c->elist = temp->next;
+        temp->next = 0;
+        eventsDestroy(temp);
+        temp = c->elist;
+      } 
+    } else {
+      prev = temp;
+      temp = temp->next;
+    }
+  }
+}
+
+void processEvent(event* e) {
+  e->behavior(e->data);
+}
+
+void eventsDestroy(event* e) {
+  while (e) {
+    event* temp = e;
+    e = e->next;
+    free(temp);
+  }
+}
+
+event* eventInit(void (*event_f)(void*), void* data, int persistence) {
+  event* new = (event*) malloc(sizeof(event));
+  new->behavior = event_f;
+  new->persistent = persistence;
+  new->data = data;
+  new->next = 0;
+  return new;
+}
+
 void clokDestroy(clok* c) {
   while (c && c->list && c->list->next) {
     proc* temp = c->list;
     c->list = c->list->next;
     free(temp);
   }
+  eventsDestroy(c->elist);
   if (c && c->list) {
     free(c->list);
   }
