@@ -271,7 +271,7 @@ int main(int argc, char** argv) {
     if (replalgo == '2') {
       c2* datum = (c2*) malloc(sizeof(c2));
       datum->counter = 0;
-      datum->f = m->allocated;
+      datum->f = &m->allocated;
 
       event* ec2 = eventInit(&grantChance, datum, 1, 0, 1);
       addEvent(c, ec2);

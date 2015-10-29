@@ -38,7 +38,7 @@ void grantChance(void* data) {
   }
   int tqs = ((c2*) data)->counter++;
   if (!(tqs % 5)) {
-    frame* f = ((c2*) data)->f;
+    frame* f = *((c2*) data)->f;
     if (v) {
       printf("Feeling Generous\n");
     }

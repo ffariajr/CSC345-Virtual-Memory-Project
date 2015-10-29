@@ -6,7 +6,7 @@
 
 typedef struct c2_t {
   int counter;
-  frame* f;
+  frame** f;
 } c2;
 
 void c2Repl(frame**);
