@@ -8,6 +8,7 @@ typedef struct pcb_t {
   int pid;
   int startTime;
   int endTime;
+  int faults;
   char* ref;
   int refPosition;
   int refSize;

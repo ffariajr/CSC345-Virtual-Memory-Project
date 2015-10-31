@@ -70,7 +70,14 @@ int tqPreempt(void* datum) {
 }
 
 int termActiveProcess(sc* s) {
+  if (v) {
+    printf("<Terminate Active Process>\n");
+  }
   pcbl* p = s->runningq;
+  p->node->endTime = s->c->time;
+  if (v) {
+    printf("Extracting from Running Queue.\n");
+  }
   extract(&s->runningq);
   mmTerm(s->m, p->node->pid);
 
@@ -78,8 +85,17 @@ int termActiveProcess(sc* s) {
   if (p->node->refPosition != p->node->refSize - 1) {
     ret = -1;
   }
+  if (v || output) {
+    printf("Process Summary:\nDetail: PID:\t\t%d\nDetail: ", p->node->pid);
+    printf("Start Time:\t%d\n", p->node->startTime);
+    printf("Detail: End Time:\t%d\nDetail: Time Given:\t%d\n", p->node->endTime, p->node->runTime);
+    printf("Detail: Faults:\t\t%d\nDetail: Size:\t\t%d\n", p->node->faults, p->node->refSize);
+  }
   pcblDestroy(p);
 
+  if (v) {
+    printf("<\\Terminate Active Process>\n");
+  }
   return ret;
 }
 

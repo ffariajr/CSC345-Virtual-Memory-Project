@@ -48,7 +48,6 @@ void loadProcess(mm* m, pcb* p) {
 }
 
 int request(mm* m, pcb* p) {
-  usleep(10);
   frame* temp = findFrame(m->allocated, p->pid, p->currentPage);
 
   if (temp) {
@@ -69,6 +68,7 @@ int request(mm* m, pcb* p) {
     updateFrame(m->allocated);
     return 1;
   } else {
+    p->faults++;
     if (v) {
       printf("\tPage Not Found. No Free Frames.\n");
     } else if (output) {
@@ -82,7 +82,6 @@ void pageIn(mm* m, pcb* p) {
   if (v) {
     printf("<Page In>\n");
   }
-  usleep(100);
   frame* temp = m->freemem;
   m->freemem = m->freemem->next;
   temp->next = m->allocated;
@@ -98,7 +97,6 @@ void pageOut(mm* m) {
   if (v) {
     printf("<Page Out>\n");
   }
-  usleep(200);
   if (m->allocated) {
     frame* temp = m->allocated;
     m->allocated = m->allocated->next;
@@ -116,7 +114,6 @@ void replacement(mm* m, pcb* p) {
   if (v) {
     printf("<Replacement>\n");
   }
-  usleep(100);
   m->repl(&m->allocated);
 
   if (v) {
@@ -158,17 +155,26 @@ void mmDestroy(mm* m) {
 }
 
 void mmTerm(mm* m, int pid) {
+  if (v) {
+    printf("<MM Process Termination>\n");
+  }
   frame* temp = m->allocated;
   frame* prev = 0;
   while (temp) {
     if (temp->pid == pid && prev) {
       prev->next = temp->next;
-      temp->next = m->allocated;
-      m->allocated = temp;
-      pageOut(m);
+      temp->next = m->freemem;
+      m->freemem = temp;
+      temp->pid = -1;
+      temp->page = -1;
+      temp = prev->next;
+    } else {
+      prev = temp;
+      temp = temp->next;
     }
-    prev = temp;
-    temp = temp->next;
+  }
+  if (v) {
+    printf("<\\MM Process Termination>\n");
   }
 }
 

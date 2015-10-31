@@ -8,7 +8,7 @@ Run Full Simulation.
 
 Replacement Algorithm.
         Must be "FIFO", "LRU", or "2C"
-:FIFO
+:2C
 
 Time Quantum.
         Must be a number between 1 and MAXINT.
@@ -33,10 +33,10 @@ Reference String Start Times.
 02:2
 03:2
 04:5
-05:-1
-06:-1
-07:-1
-08:-1
+05:4
+06:3
+07:2
+08:1
 09:-1
 10:-1
 11:-1
