@@ -3,6 +3,7 @@
 int processEvent(event* e) {
   if (v) {
     printf("<Processing Event>\n");
+    printf("\tDelete Function: %d\n\tDelete Data: %d\n", e->freeFunc, e->freeData);
   }
   int ret = e->behavior(e->data);
   if (v) {
@@ -12,15 +13,24 @@ int processEvent(event* e) {
 }
 
 void eventsDestroy(event* e) {
+  if (v) {
+    printf("Destroying Event.\n");
+  }
   while (e) {
     event* temp = e;
     e = e->next;
     if (temp->freeData) {
       free(temp->data);
+      if (v) {
+        printf("\tData Destroyed.\n");
+      }
     }
     temp->data = 0;
     if (temp->freeFunc) {
       free(temp->behavior);
+      if (v) {
+        printf("Function Destroyed.\n");
+      }
     }
     temp->behavior = 0;
     free(temp);

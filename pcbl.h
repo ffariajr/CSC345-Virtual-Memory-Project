@@ -27,8 +27,7 @@ int pcbStep(pcb*);
 
 void insert(pcbl**, pcbl*);
 void pcblDestroy(pcbl*);
-void extract(pcbl*);
+void extract(pcbl**);
 void pcbDestroy(pcb*);
-void pcblMove(pcbl*, pcbl**);
 
 #endif

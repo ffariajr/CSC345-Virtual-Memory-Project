@@ -276,38 +276,73 @@ int main(int argc, char** argv) {
     }
     
     for (q = 0; q < counter; q++) {
-      if (startTimes[q] > 0) {   
+      if (startTimes[q] > 0) {
+        if (v) {
+          printf("Program %d:\n\tStart Time: %d\n\tSize: %d\n", q, startTimes[q], refSizes[q]);
+        }
         event* e = ltSchedule(s, refstrings[q], refSizes[q], startTimes[q]);
         addEvent(c, e);
+        if (v) {
+          printf("Event Created.\n");
+        }
       } else if (startTimes[q] == 0) {
         pcbl* p = pcblInit();
         p->node = pcbInit(refstrings[q], refSizes[q]);
 
         createProcess(s, p);
+        if (v) {
+          printf("Process %d\n\tSize: %d\n\tPID: %d\n", q, refSizes[q], p->node->pid);
+        }
       }
     }
 
     if (v) {
-      printf("%d Programs Long Term Scheduled.\n", counter);
+      printf("%d Programs Scheduled.\n", counter);
     }
 
     addEvent(c, eventInit(&tqPreempt, s, 0, 0));
+    if (v) {
+      printf("Time Quantum Preempt Event Set Up.\n");
+    }
 
-    s->sched(s);
+    s->sched(&s->readyq, &s->runningq);
+    if (v) {
+      printf("Scheduled Initial Job.\nRunning.\n");
+    }
 
     while (counter > 0) {
       tick(c);
-      int term = pcbStep(s->runningq->node);
-      if (term) {
-        
+      if (v) {
+        printf("Time: %d.\n", c->time);
       }
-
-
-
-
-
-
-
+      int term = pcbStep(s->runningq->node);
+      if (v) {
+        pcb* tempp = s->runningq->node;
+        printf("Process:\n\tPID:\t\t%d\n\tSize:\t\t%d\n", tempp->pid, tempp->refSize);
+        printf("\tPosition:\t%d\n", tempp->refPosition);
+      }
+      if (term) {
+        if (v) {
+          printf("Current Active Process Finished Execution.\n");
+        }
+        counter--;
+        termActiveProcess(s);
+        if (v) {
+          printf("Process Terminated.\n");
+        }
+        s->sched(&s->readyq, &s->runningq);
+        if (v) {
+          printf("New Process Scheduled.\n");
+        }
+        offsetNow(c);
+        if (v) {
+          printf("Time Quantum Reset.\n");
+        }
+      } else {
+        if (v) {
+          printf("Process Stepped.\n");
+        }
+      }
     }
 
 
@@ -409,6 +444,9 @@ int main(int argc, char** argv) {
         incrementFrames(m->allocated);
       }
       tick(c);
+      if (v) {
+        printf("Time: %d.\n", c->time);
+      }
       pcbStep(p);
     }
 

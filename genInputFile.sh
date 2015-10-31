@@ -111,7 +111,7 @@ echo "        Must be \"FIFO\", \"LRU\", or \"2C\"" >> $file
 echo ":$repl" >> $file
 echo "" >> $file
 echo "Time Quantum." >> $file
-echo "        Must be a number between 1 and MAXINT." >> $file
+echo "        Must be a number between 1 and INT_MAX." >> $file
 echo ":$tq" >> $file
 echo "" >> $file
 echo "Memory Frames." >> $file

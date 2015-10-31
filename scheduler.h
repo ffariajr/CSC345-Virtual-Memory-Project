@@ -16,7 +16,7 @@ typedef struct sc_t {
   mm* m;
   clok* c;
 
-  void (*sched)(struct sc_t*);
+  void (*sched)(pcbl**, pcbl**);
 } sc;
 
 typedef struct newQProcData_t {
@@ -32,5 +32,6 @@ int newToReadyQWaiter(void*);
 void schedDestroy(sc*);
 void createProcess(sc*, pcbl*);
 int tqPreempt(void*);
+int termActiveProcess(sc* s);
 
 #endif

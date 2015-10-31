@@ -14,7 +14,7 @@ clok* clokInit(int tquantum) {
 
 void tick(clok* c) {
   if (v) {
-    printf("Time: %d\n", c->time);
+    printf("Ticking.\n");
   }
   c->time++;
   usleep(1);
@@ -61,3 +61,8 @@ void clokDestroy(clok* c) {
   eventsDestroy(c->elist);
   free(c);
 } 
+
+void offsetNow(clok* c) {
+  c->offset = c->tq - c->time;
+}
+

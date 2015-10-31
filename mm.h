@@ -24,5 +24,6 @@ void pageIn(mm*, pcb*);
 void pageOut(mm*);
 void replacement(mm*, pcb*);
 void mmDestroy(mm*);
+void mmTerm(mm*, int);
 
 #endif

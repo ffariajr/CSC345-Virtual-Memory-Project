@@ -2,7 +2,7 @@
 
 mm* mmInit(char replacementAlgorithm, int totalMemoryFrames) {
   if (v) {
-    printf("========== Initializing Memory Manager.\n");
+    printf("<Memory Manager Initialization>\n");
   }
   mm* new = (mm*) malloc(sizeof(mm));
   
@@ -35,7 +35,7 @@ mm* mmInit(char replacementAlgorithm, int totalMemoryFrames) {
   }
 
   if (v) {
-    printf("Memory Initialized.\n");
+    printf("<\\Memory Manager Initialization>\n");
   }
 
   new->allocated = 0;
@@ -155,6 +155,21 @@ void mmDestroy(mm* m) {
     free(m->allocated);
   }
   free(m);
+}
+
+void mmTerm(mm* m, int pid) {
+  frame* temp = m->allocated;
+  frame* prev = 0;
+  while (temp) {
+    if (temp->pid == pid && prev) {
+      prev->next = temp->next;
+      temp->next = m->allocated;
+      m->allocated = temp;
+      pageOut(m);
+    }
+    prev = temp;
+    temp = temp->next;
+  }
 }
 
 

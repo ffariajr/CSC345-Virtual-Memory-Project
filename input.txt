@@ -16,7 +16,7 @@ Time Quantum.
 
 Memory Frames.
         Must be a number from 10 to 1000.
-:10i0
+:100
 
 Scheduler.
         Currently, can only be set to "RR"
@@ -30,7 +30,7 @@ Reference String Start Times.
         Start times can be set here. 1 means 1 second. "-1"'s are ignored.
         The amount of non-"-1"'s must match the amount of reference strings.
 01:0
-02:0
+02:2
 03:2
 04:5
 05:-1

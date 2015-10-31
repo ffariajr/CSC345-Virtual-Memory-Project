@@ -16,5 +16,6 @@ void tick(clok*);
 void clokDestroy(clok*);
 void processEvents(clok*);
 void addEvent(clok*, event*);
+void offsetNow(clok*);
 
 #endif

@@ -23,13 +23,13 @@ int pcbStep(pcb* p) {
   if (v) {
     printf("<PCB Step>\n");
   }
-  int ret = 1;
+  int ret = 0;
   p->runTime++;
   if (p->refPosition < p->refSize) {
     p->currentPage = p->ref[p->refPosition];
     p->refPosition++;
   } else {
-    ret = 0;
+    ret = 1;
   }
   if (v) {
     printf("<\\PCB Step>\n");
@@ -67,22 +67,21 @@ void pcbDestroy(pcb* p) {
   p = 0;
 }
 
-void extract(pcbl* p) {
-  p->prev->next = p->next;
-  p->next->prev = p->prev;
+void extract(pcbl** p) {
+  if ((*p)->next != *p) {
+    (*p)->prev->next = (*p)->next;
+    (*p)->next->prev = (*p)->prev;
 
-  p->next = p;
-  p->prev = p;
-}
-
-void pcblMove(pcbl* p, pcbl** dest) {
-  extract(p);
-  insert(dest, p);
+    (*p)->next = (*p);
+    (*p)->prev = (*p);
+  } else {
+    *p = 0;
+  }
 }
 
 void pcblDestroy(pcbl* p) {
   if (p && p->next != p) {
-    extract(p);
+    extract(&p);
   }
   if (p && p->node) {
     pcbDestroy(p->node);
