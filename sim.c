@@ -322,11 +322,11 @@ int main(int argc, char** argv) {
       int term = 0;
       if (s->runningq) {
         term = pcbStep(s->runningq->node);
-      }
-      if (v) {
-        pcb* tempp = s->runningq->node;
-        printf("Process:\n\tPID:\t\t%d\n\tSize:\t\t%d\n", tempp->pid, tempp->refSize);
-        printf("\tPosition:\t%d\n", tempp->refPosition);
+        if (v) {
+          pcb* tempp = s->runningq->node;
+          printf("Process:\n\tPID:\t\t%d\n\tSize:\t\t%d\n", tempp->pid, tempp->refSize);
+          printf("\tPosition:\t%d\n", tempp->refPosition);
+        }
       }
       if (term) {
         if (v) {
@@ -361,7 +361,9 @@ int main(int argc, char** argv) {
 
           pcbl* temppcb = s->runningq;
           extract(&s->runningq);
-
+          if (v) {
+            printf("Removing Active Process from Running Queue.\n");
+          }
           qProcData* tempdata = (qProcData*) malloc(sizeof(qProcData));
           tempdata->start = 6;
           tempdata->counter = 0;
@@ -369,6 +371,14 @@ int main(int argc, char** argv) {
           tempdata->s = s;
 
           addEvent(c, eventInit(&waitingToRunningQWaiter, tempdata, 0, 1));
+          if (v) {
+            printf("Device Queried for New Page.\n");
+          }
+          
+          s->sched(&s->readyq, &s->runningq);
+          if (v) {
+            printf("New Process Scheduled.\n");
+          }
 
           offsetNow(c);
         }
@@ -380,6 +390,10 @@ int main(int argc, char** argv) {
           printf("No Ready Processes. Programs Still Scheduled.\nBusy Wait.\n");
         }
       }
+    }
+
+    if (v) {
+      printf("All Processes Terminated.\nHalting.\n");
     }
 
     schedDestroy(s);

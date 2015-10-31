@@ -7,6 +7,7 @@ typedef struct pcb_t {
   int runTime;
   int pid;
   int startTime;
+  int endTime;
   char* ref;
   int refPosition;
   int refSize;

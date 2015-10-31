@@ -4,6 +4,7 @@ pcb* pcbInit(char* refs, int size) {
   pcb* new = (pcb*) malloc(sizeof(pcb));
   new->runTime = 0;
   new->startTime = 0;
+  new->endTime = 0;
   new->ref = refs;
   new->currentPage = 0;
   new->refPosition = 0;
