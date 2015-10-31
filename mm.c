@@ -2,7 +2,7 @@
 
 mm* mmInit(char replacementAlgorithm, int totalMemoryFrames) {
   if (v) {
-    printf("========== Initializing Memory Manager.\n");
+    printf("<Memory Manager Initialization>\n");
   }
   mm* new = (mm*) malloc(sizeof(mm));
   
@@ -35,37 +35,25 @@ mm* mmInit(char replacementAlgorithm, int totalMemoryFrames) {
   }
 
   if (v) {
-    printf("Memory Initialized.\n");
+    printf("<\\Memory Manager Initialization>\n");
   }
 
   new->allocated = 0;
   return new;
 }
 
-pt* ptInit() {
-  pt* new = (pt*) malloc(sizeof(pt));
-  int x;
-  for (x = 0; x < 127; x++) {
-    new->validPage[x] = 0;
-  }
-  new->next = 0;
-  return new;
-}
-
-void createProcess(mm* m, pcb* p) {
+void loadProcess(mm* m, pcb* p) {
   m->pids++;
-  pt* new = ptInit();
   p->pid = m->pids;
 }
 
 int request(mm* m, pcb* p) {
-  usleep(10);
   frame* temp = findFrame(m->allocated, p->pid, p->currentPage);
 
   if (temp) {
     if (v) {
       printf("\tPage Found!\n");
-    } else {
+    } else if (memoutput) {
       printf("\tHIT\n");
     }
     updateFrame(temp);
@@ -73,16 +61,17 @@ int request(mm* m, pcb* p) {
   } else if (m->freemem) {
     if (v) {
       printf("\tPage Not Found. Free Frames Available.\n");
-    } else {
+    } else if (memoutput) {
       printf("\t + Free Memory Frames Available\n");
     }
     pageIn(m, p);
     updateFrame(m->allocated);
     return 1;
   } else {
+    p->faults++;
     if (v) {
       printf("\tPage Not Found. No Free Frames.\n");
-    } else {
+    } else if (memoutput) {
       printf("\t - Replacement Required\n");
     }
     return 0;
@@ -93,7 +82,6 @@ void pageIn(mm* m, pcb* p) {
   if (v) {
     printf("<Page In>\n");
   }
-  usleep(100);
   frame* temp = m->freemem;
   m->freemem = m->freemem->next;
   temp->next = m->allocated;
@@ -109,7 +97,6 @@ void pageOut(mm* m) {
   if (v) {
     printf("<Page Out>\n");
   }
-  usleep(200);
   if (m->allocated) {
     frame* temp = m->allocated;
     m->allocated = m->allocated->next;
@@ -127,7 +114,6 @@ void replacement(mm* m, pcb* p) {
   if (v) {
     printf("<Replacement>\n");
   }
-  usleep(100);
   m->repl(&m->allocated);
 
   if (v) {
@@ -166,6 +152,30 @@ void mmDestroy(mm* m) {
     free(m->allocated);
   }
   free(m);
+}
+
+void mmTerm(mm* m, int pid) {
+  if (v) {
+    printf("<MM Process Termination>\n");
+  }
+  frame* temp = m->allocated;
+  frame* prev = 0;
+  while (temp) {
+    if (temp->pid == pid && prev) {
+      prev->next = temp->next;
+      temp->next = m->freemem;
+      m->freemem = temp;
+      temp->pid = -1;
+      temp->page = -1;
+      temp = prev->next;
+    } else {
+      prev = temp;
+      temp = temp->next;
+    }
+  }
+  if (v) {
+    printf("<\\MM Process Termination>\n");
+  }
 }
 
 

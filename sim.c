@@ -1,6 +1,8 @@
 #include "sim.h"
 
 int v = 0;
+int output = 0;
+int memoutput = 0;
 
 int main(int argc, char** argv) {
   
@@ -12,13 +14,20 @@ int main(int argc, char** argv) {
       inf = fopen(argv[2], &fileReadChar);
       if (!strcmp(argv[1], "-v")) {
         v = 1;
+      } else if (!strcmp(argv[1], "-o")) {
+        output = 1;
+      } else if (!strcmp(argv[1], "-mo")) {
+        output = 1;
+        memoutput = 1;
       } else {
         printf("Fatal Error: Invalid Option: %s\nUse %s -h for more information.\n", argv[1], argv[0]);
         exit(-1);
       }
     } else {
       if (!strcmp(argv[1], "-h")) {
-        printf("%s [-v] <inputFile>\n\t\t-v\n\t\t\tVerbose output.\n\t\t<inputFile>\n\t\t\t", argv[0]);
+        printf("%s [-v | -h | -[m]o] <inputFile>\n\t\t-v\n\t\t\tVerbose output.\n\t\t-[m]o", argv[0]);
+        printf("\n\t\t\tDisplay request info for each request. If the [m] flag is included, then");
+        printf(" also displays memory page request info.\n\t\t<inputFile>\n\t\t\t");
         printf("File used for input arguments. Must be specified!\n");
         exit(0);
       }
@@ -38,7 +47,7 @@ int main(int argc, char** argv) {
     printf("Input File Open.\n");
   }
  
-  char sched;
+  char schedalgo;
   char replalgo;
   int tquantum;
   int fullsim;
@@ -110,7 +119,7 @@ int main(int argc, char** argv) {
           printf("Scheduler input\n");
         }
         if (!strcmp(s, "RR")) {
-          sched = 'r';
+          schedalgo = 'r';
         } else {
           printf("Error: Illegal Input Value for \"Scheduler\": %s\n", s);
         }
@@ -231,29 +240,167 @@ int main(int argc, char** argv) {
   }
   
   mm* m = mmInit(replalgo, frames);
-  clok* c = clokInit(tquantum);
-
   if (v) {
     printf("Memory Manager Initialized.\n");
   }
 
-  if (fullsim) {
+  clok* c = clokInit(tquantum);
+  if (v) {
+    printf("Simulation System Clock Initialized.\n");
+  }
+
+
+  if (replalgo == '2') {
+    c2* datum = (c2*) malloc(sizeof(c2));
+    datum->counter = 0;
+    datum->forgiveness = 10;
+    datum->f = &m->allocated;
+
+    event* ec2 = eventInit(&grantChance, datum, 0, 1);
+    addEvent(c, ec2);
+
+    if (v) {
+      printf("Second Chance Granter Event Registered.\n");
+    }
+  }
+
+
+  if (fullsim) {                                                        //part 4
     if (v) {
       printf("Starting Full Simulation.\n");
     }
+
+    sc* s = schedInit(schedalgo, m, c);
     if (v) {
-      printf("Simulation System Clock Initialized.\n");
+      printf("Scheduler Initialized.\n");
     }
-    //part 4
+    
+    for (q = 0; q < counter; q++) {
+      if (startTimes[q] > 0) {
+        if (v) {
+          printf("Program %d:\n\tStart Time: %d\n\tSize: %d\n", q, startTimes[q], refSizes[q]);
+        }
+        event* e = ltSchedule(s, refstrings[q], refSizes[q], startTimes[q]);
+        addEvent(c, e);
+        if (v) {
+          printf("Event Created.\n");
+        }
+      } else if (startTimes[q] == 0) {
+        pcbl* p = pcblInit();
+        p->node = pcbInit(refstrings[q], refSizes[q]);
 
-  } else {
-    //part 3
+        createProcess(s, p);
+        if (v) {
+          printf("Process %d\n\tSize: %d\n\tPID: %d\n", q, refSizes[q], p->node->pid);
+        }
+      }
+    }
 
+    if (v) {
+      printf("%d Programs Scheduled.\n", counter);
+    }
+
+    addEvent(c, eventInit(&tqPreempt, s, 0, 0));
+    if (v) {
+      printf("Time Quantum Preempt Event Set Up.\n");
+    }
+
+    s->sched(&s->readyq, &s->runningq);
+    if (v) {
+      printf("Scheduled Initial Job.\nRunning.\n");
+    }
+
+    while (counter > 0) {
+      tick(c);
+      pcb* p = 0;
+      if (s->runningq) {
+        p = s->runningq->node;
+      }
+      if (v) {
+        printf("Time: %d.\n", c->time);
+      }
+      int term = 0;
+      if (s->runningq) {
+        term = pcbStep(s->runningq->node);
+        if (v) {
+          pcb* tempp = s->runningq->node;
+          printf("Process:\n\tPID:\t\t%d\n\tSize:\t\t%d\n", tempp->pid, tempp->refSize);
+          printf("\tPosition:\t%d\n", tempp->refPosition);
+        }
+      }
+      if (term) {
+        if (v) {
+          printf("Current Active Process Finished Execution.\n");
+        }
+        counter--;
+        termActiveProcess(s);
+        if (v) {
+          printf("Process Terminated.\n");
+        }
+        s->sched(&s->readyq, &s->runningq);
+        if (v) {
+          printf("New Process Scheduled.\n");
+        }
+        offsetNow(c);
+        if (v) {
+          printf("Time Quantum Reset.\n");
+        }
+      } else if (s->runningq) {
+        if (v) {
+          printf("Process Stepped.\n");
+          printf("Requesting Page: %d\n", p->currentPage);
+        }
+        int try = request(m, p);
+      
+        if (v) {
+          printf("Request done.\n");
+        }
+
+        if (!try) {
+          rollBack(p);
+
+          pcbl* temppcb = s->runningq;
+          extract(&s->runningq);
+          if (v) {
+            printf("Removing Active Process from Running Queue.\n");
+          }
+          qProcData* tempdata = (qProcData*) malloc(sizeof(qProcData));
+          tempdata->start = 6;
+          tempdata->counter = 0;
+          tempdata->p = temppcb;
+          tempdata->s = s;
+
+          addEvent(c, eventInit(&waitingToRunningQWaiter, tempdata, 0, 1));
+          if (v) {
+            printf("Device Queried for New Page.\n");
+          }
+          
+          s->sched(&s->readyq, &s->runningq);
+          if (v) {
+            printf("New Process Scheduled.\n");
+          }
+
+          offsetNow(c);
+        }
+        if (replalgo == 'l') {
+          incrementFrames(m->allocated);
+        }
+      } else {
+        if (v) {
+          printf("No Ready Processes. Programs Still Scheduled.\nBusy Wait.\n");
+        }
+      }
+    }
+
+    if (v) {
+      printf("All Processes Terminated.\nHalting.\n");
+    }
+
+    schedDestroy(s);
+  } else {                                                                      //part 3
+  
     if (v) {
       printf("Starting Single Process Simulation.\n");
-    }
-    if (v) {
-      printf("Clock Initialized.\n");
     }
 
     pcb* p = pcbInit(refstrings[0], refSizes[0]);
@@ -262,28 +409,14 @@ int main(int argc, char** argv) {
       printf("Single Process PCB Initialized.\n");
     }
     
-    createProcess(m, p);
+    loadProcess(m, p);
     
     if (v) {
       printf("New Process Scheduled.\n");
     }
 
-    if (replalgo == '2') {
-      c2* datum = (c2*) malloc(sizeof(c2));
-      datum->counter = 0;
-      datum->f = &m->allocated;
-
-      event* ec2 = eventInit(&grantChance, datum, 1, 0, 1);
-      addEvent(c, ec2);
-
-      if (v) {
-        printf("Second Chance Granter Event Registered.\n");
-      }
-    }
-
-
     tick(c);
-    char page = pcbStep(p);
+    pcbStep(p);
     int faults = 0;
     int referencesCount = 1;
 
@@ -296,10 +429,10 @@ int main(int argc, char** argv) {
       memorySnapshot(m);
 
       if (v) {
-        printf("Requesting Page: %d\n", page);
+        printf("Requesting Page: %d\n", p->currentPage);
         printf("Total References: %d\n", referencesCount);
-      } else {
-        printf("Request: %4d\tPage: %3d", referencesCount, page);
+      } else if (memoutput) {
+        printf("Request: %4d\tPage: %3d", referencesCount, p->currentPage);
       }
       int try = request(m, p);
       
@@ -321,7 +454,10 @@ int main(int argc, char** argv) {
         incrementFrames(m->allocated);
       }
       tick(c);
-      page = pcbStep(p);
+      if (v) {
+        printf("Time: %d.\n", c->time);
+      }
+      pcbStep(p);
     }
 
     pcbDestroy(p);

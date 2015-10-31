@@ -32,12 +32,12 @@ void c2Repl(frame** head) {
 }
 
 
-void grantChance(void* data) {
+int grantChance(void* data) {
   if (v) {
     printf("<Grant 2nd Chance>\n");
   }
   int tqs = ((c2*) data)->counter++;
-  if (!(tqs % 5)) {
+  if (!((((c2*) data)->counter++) % (((c2*) data)->forgiveness))) {
     frame* f = *((c2*) data)->f;
     if (v) {
       printf("Feeling Generous\n");
@@ -51,7 +51,8 @@ void grantChance(void* data) {
     }
   }
   if (v) {
-    printf("Time Quantums Until Next Generosity: %d\n", 5 - (tqs % 5));
+    printf("Time Quantums Until Next Generosity: %d\n", (((c2*) data)->forgiveness) - ((((c2*) data)->counter++) % (((c2*) data)->forgiveness)));
     printf("<\\Grant 2nd Chance>\n");
   }
+  return 0;
 }

@@ -6,10 +6,11 @@
 
 typedef struct c2_t {
   int counter;
+  int forgiveness;
   frame** f;
 } c2;
 
 void c2Repl(frame**);
-void grantChance(void*);
+int grantChance(void*);
 
 #endif

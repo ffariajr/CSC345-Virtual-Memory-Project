@@ -94,14 +94,14 @@ int main(int argc, char** argv) {
     } else if (!strcmp(arg, "-refSize")) {
       z++;
       if(z < argc) {
-	int zz = 0;
-	char valid = 1;
-	while (argv[z][zz] != '\0') {
-	  if (!isdigit(argv[z][zz])) {
-	    valid = 0;
-	  }
-	  zz++;
-	}
+        int zz = 0;
+        char valid = 1;
+        while (argv[z][zz] != '\0') {
+        if (!isdigit(argv[z][zz])) {
+	        valid = 0;
+	      }
+	      zz++;
+      }
 	if (valid) {
 	  refSize = atoi(argv[z]);
 	  if (refSize < 1) {

@@ -4,8 +4,7 @@
 #include "imports.h"
 
 typedef struct event_t {
-  void (*behavior)(void*);
-  int persistent;
+  int (*behavior)(void*);
   void* data;
   int freeData;
   int freeFunc;
@@ -13,7 +12,7 @@ typedef struct event_t {
 } event;
 
 void eventsDestroy(event*);
-void processEvent(event*);
-event* eventInit(void (*)(void*), void*, int, int, int);
+int processEvent(event*);
+event* eventInit(int (*)(void*), void*, int, int);
 
 #endif

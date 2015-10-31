@@ -4,39 +4,38 @@ pcb* pcbInit(char* refs, int size) {
   pcb* new = (pcb*) malloc(sizeof(pcb));
   new->runTime = 0;
   new->startTime = 0;
+  new->endTime = 0;
   new->ref = refs;
   new->currentPage = 0;
   new->refPosition = 0;
   new->refSize = size;
-  new->next = 0;
   return new;
 }
 
 pcbl* pcblInit() {
   pcbl* new = (pcbl*) malloc(sizeof(pcbl));
-  new->head = 0;
-  new->tail = 0;
-  new->size = 0;
+  new->node = 0;
+  new->next = new;
+  new->prev = new;
   return new;
 }
 
-char pcblStep(pcbl* p) {
-  return pcbStep(p->head);
-}
-
-char pcbStep(pcb* p) {
+int pcbStep(pcb* p) {
   if (v) {
     printf("<PCB Step>\n");
   }
+  int ret = 0;
   p->runTime++;
   if (p->refPosition < p->refSize) {
     p->currentPage = p->ref[p->refPosition];
     p->refPosition++;
+  } else {
+    ret = 1;
   }
   if (v) {
     printf("<\\PCB Step>\n");
   }
-  return p->currentPage;
+  return ret;
 }
 
 void rollBack(pcb* p) {
@@ -51,60 +50,51 @@ void rollBack(pcb* p) {
   }
 }
 
-void pageFault(pcbl* p) {
-  if (v) {
-    printf("<Page Fault>\n");
-  }
-  rollBack(p->head);
-  sendBack(p);
-  if (v) {
-    printf("<\\Page Fault>\n");
-  }
-}
+void insert(pcbl** pos, pcbl* new) {
+  if (*pos) {
+    new->next = (*pos)->next;
+    new->prev = *pos;
+    
+    (*pos)->next = new;
+    new->next->prev = new;
 
-void append(pcbl* p, pcb* new) {
-  p->size++;
-  if (p->size == 1) {
-    p->head = new;
-    p->tail = new;
+    *pos = new;
   } else {
-    p->tail->next = new;
-    p->tail = new;
-  }
-}
-
-void deleteHead(pcbl* p) {
-  if (p->size > 0) {
-    pcb* temp = p->head;
-    p->head = p->head->next;
-    p->size--;
-    free(temp);
-  }
-}
-
-void sendBack(pcbl* p) {
-  if (p->size > 0) {
-    pcb* temp = p->head;
-    p->head = p->head->next;
-    temp->next = 0;
-    append(p, temp);
+    *pos = new;
+    new->next = new;
+    new->prev = new;
   }
 }
 
 void pcbDestroy(pcb* p) {
   free(p);
+  p = 0;
+}
+
+void extract(pcbl** p) {
+  if ((*p)->next != *p) {
+    *p = (*p)->next;
+    pcbl* tempPrev = (*p)->prev;
+    
+    tempPrev->prev->next = tempPrev->next;
+    tempPrev->next->prev = tempPrev->prev;
+
+    tempPrev->next = tempPrev;
+    tempPrev->prev = tempPrev;
+  } else {
+    *p = 0;
+  }
 }
 
 void pcblDestroy(pcbl* p) {
-  while (p && p->head) {
-    pcb* temp = p->head;
-    p->head = p->head->next;
-    pcbDestroy(temp);
+  if (p && p->next != p) {
+    extract(&p);
   }
-  if (p->head) {
-    pcbDestroy(p->head);
+  if (p && p->node) {
+    pcbDestroy(p->node);
   }
   free(p);
+  p=0;
 }
 
 
