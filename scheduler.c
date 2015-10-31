@@ -4,7 +4,6 @@ sc* schedInit(char schedulingAlgorithm, mm* m, clok* c) {
   sc* new = (sc*) malloc(sizeof(sc));
   new->runningq = 0;
   new->readyq = 0;
-  new->waitingq = 0;
 
   new->m = m;
   new->c = c;
@@ -21,7 +20,7 @@ sc* schedInit(char schedulingAlgorithm, mm* m, clok* c) {
 }
 
 event* ltSchedule(sc* s, char* ref, int size, int start) {
-  newQProcData* data = (newQProcData*) malloc(sizeof(newQProcData));
+  qProcData* data = (qProcData*) malloc(sizeof(qProcData));
   data->start = start;
   data->counter = 0;
   data->s = s;
@@ -38,7 +37,7 @@ void createProcess(sc* s, pcbl* p) {
 }
   
 int newToReadyQWaiter(void* datum) {
-  newQProcData* data = (newQProcData*) datum;
+  qProcData* data = (qProcData*) datum;
   data->counter++;
   if (data->counter >= data->start) {
     if (v) {
@@ -56,7 +55,6 @@ int newToReadyQWaiter(void* datum) {
 void schedDestroy(sc* s) {
   pcblDestroy(s->runningq);
   pcblDestroy(s->readyq);
-  pcblDestroy(s->waitingq);
 
   free(s);
   s = 0;
@@ -83,5 +81,24 @@ int termActiveProcess(sc* s) {
   pcblDestroy(p);
 
   return ret;
+}
+
+int waitingToRunningQWaiter(void* datum) {
+  qProcData* data = (qProcData*) datum;
+  data->counter++;
+  if (data->counter >= data->start) {
+    if (v) {
+      printf("Swapping Process Back In.\n");
+    }
+    
+    replacement(data->s->m, data->p->node);
+    insert(&data->s->readyq, data->p);
+
+    if (v) {
+      printf("Process:\n\tPID:\t\t%d\n\tSize:\t%d\n", data->p->node->pid, data->p->node->refSize);
+    }
+    return 1;
+  }
+  return 0;
 }
 

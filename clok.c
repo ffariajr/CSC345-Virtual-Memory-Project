@@ -63,6 +63,6 @@ void clokDestroy(clok* c) {
 } 
 
 void offsetNow(clok* c) {
-  c->offset = c->tq - c->time;
+  c->offset = -c->time;
 }
 

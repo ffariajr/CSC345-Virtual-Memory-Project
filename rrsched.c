@@ -7,14 +7,34 @@ void rrsched(pcbl** pool, pcbl** dest) {
   pcbl* temp = *dest;
   if (temp) {
     extract(dest);
-    *pool = (*pool)->prev;
+    if (v) {
+      printf("\tProcess %d Extracted.\n", temp->node->pid);
+    }
+
+    if (*pool) {
+      *pool = (*pool)->prev;
+    }
+
     insert(pool, temp);
-    *pool = (*pool)->next;
+    if (v) {
+      printf("\tProcess %d Placed into Ready Queue.\n", temp->node->pid);
+    }
+    if (*pool) {
+      *pool = (*pool)->next;
+    }
   }
 
   temp = *pool;
-  extract(pool);
-  insert(dest, temp);
+  if (temp) {
+    extract(pool);
+    if (v) {
+      printf("\tTook Process %d Out of Ready Queue.\n", temp->node->pid);
+    }
+    insert(dest, temp);
+    if (v) {
+      printf("\tProcess %d Now in Running Queue.\n", temp->node->pid);
+    }
+  }
   if (v) {
     printf("<\\Round Robin>\n");
   }

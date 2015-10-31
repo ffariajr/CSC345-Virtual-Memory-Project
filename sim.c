@@ -312,10 +312,17 @@ int main(int argc, char** argv) {
 
     while (counter > 0) {
       tick(c);
+      pcb* p = 0;
+      if (s->runningq) {
+        p = s->runningq->node;
+      }
       if (v) {
         printf("Time: %d.\n", c->time);
       }
-      int term = pcbStep(s->runningq->node);
+      int term = 0;
+      if (s->runningq) {
+        term = pcbStep(s->runningq->node);
+      }
       if (v) {
         pcb* tempp = s->runningq->node;
         printf("Process:\n\tPID:\t\t%d\n\tSize:\t\t%d\n", tempp->pid, tempp->refSize);
@@ -338,53 +345,42 @@ int main(int argc, char** argv) {
         if (v) {
           printf("Time Quantum Reset.\n");
         }
-      } else {
+      } else if (s->runningq) {
         if (v) {
           printf("Process Stepped.\n");
+          printf("Requesting Page: %d\n", p->currentPage);
+        }
+        int try = request(m, p);
+      
+        if (v) {
+          printf("Request done.\n");
+        }
+
+        if (!try) {
+          rollBack(p);
+
+          pcbl* temppcb = s->runningq;
+          extract(&s->runningq);
+
+          qProcData* tempdata = (qProcData*) malloc(sizeof(qProcData));
+          tempdata->start = 6;
+          tempdata->counter = 0;
+          tempdata->p = temppcb;
+          tempdata->s = s;
+
+          addEvent(c, eventInit(&waitingToRunningQWaiter, tempdata, 0, 1));
+
+          offsetNow(c);
+        }
+        if (replalgo == 'l') {
+          incrementFrames(m->allocated);
+        }
+      } else {
+        if (v) {
+          printf("No Ready Processes. Programs Still Scheduled.\nBusy Wait.\n");
         }
       }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     schedDestroy(s);
   } else {                                                                      //part 3

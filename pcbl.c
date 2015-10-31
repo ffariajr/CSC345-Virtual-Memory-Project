@@ -51,14 +51,17 @@ void rollBack(pcb* p) {
 
 void insert(pcbl** pos, pcbl* new) {
   if (*pos) {
-    pcbl* temp = *pos;
-    new->next = temp->next;
-    new->prev = temp;
+    new->next = (*pos)->next;
+    new->prev = *pos;
     
+    (*pos)->next = new;
     new->next->prev = new;
-    temp->next = new;
+
+    *pos = new;
   } else {
     *pos = new;
+    new->next = new;
+    new->prev = new;
   }
 }
 
@@ -69,11 +72,14 @@ void pcbDestroy(pcb* p) {
 
 void extract(pcbl** p) {
   if ((*p)->next != *p) {
-    (*p)->prev->next = (*p)->next;
-    (*p)->next->prev = (*p)->prev;
+    *p = (*p)->next;
+    pcbl* tempPrev = (*p)->prev;
+    
+    tempPrev->prev->next = tempPrev->next;
+    tempPrev->next->prev = tempPrev->prev;
 
-    (*p)->next = (*p);
-    (*p)->prev = (*p);
+    tempPrev->next = tempPrev;
+    tempPrev->prev = tempPrev;
   } else {
     *p = 0;
   }
