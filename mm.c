@@ -53,7 +53,7 @@ int request(mm* m, pcb* p) {
   if (temp) {
     if (v) {
       printf("\tPage Found!\n");
-    } else if (output) {
+    } else if (memoutput) {
       printf("\tHIT\n");
     }
     updateFrame(temp);
@@ -61,7 +61,7 @@ int request(mm* m, pcb* p) {
   } else if (m->freemem) {
     if (v) {
       printf("\tPage Not Found. Free Frames Available.\n");
-    } else if (output) {
+    } else if (memoutput) {
       printf("\t + Free Memory Frames Available\n");
     }
     pageIn(m, p);
@@ -71,7 +71,7 @@ int request(mm* m, pcb* p) {
     p->faults++;
     if (v) {
       printf("\tPage Not Found. No Free Frames.\n");
-    } else if (output) {
+    } else if (memoutput) {
       printf("\t - Replacement Required\n");
     }
     return 0;

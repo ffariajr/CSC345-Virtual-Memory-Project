@@ -8,6 +8,6 @@
 
 extern int v;
 extern int output;
-extern int statistics;
+extern int memoutput;
 
 #endif

@@ -2,7 +2,7 @@
 
 int v = 0;
 int output = 0;
-int statistics = 0;
+int memoutput = 0;
 
 int main(int argc, char** argv) {
   
@@ -14,20 +14,20 @@ int main(int argc, char** argv) {
       inf = fopen(argv[2], &fileReadChar);
       if (!strcmp(argv[1], "-v")) {
         v = 1;
-      } else if (!strcmp(argv[1], "-req")) {
+      } else if (!strcmp(argv[1], "-o")) {
         output = 1;
-      } else if (!strcmp(argv[1], "-stats")) {
-        statistics = 1;
+      } else if (!strcmp(argv[1], "-mo")) {
+        output = 1;
+        memoutput = 1;
       } else {
         printf("Fatal Error: Invalid Option: %s\nUse %s -h for more information.\n", argv[1], argv[0]);
         exit(-1);
       }
     } else {
       if (!strcmp(argv[1], "-h")) {
-        printf("%s [-v | -h | -req | -stats] <inputFile>\n\t\t-v\n\t\t\tVerbose output.\n\t\t-req", argv[0]);
-        printf("\n\t\t\tDisplay request info for each request.\n\t\t-stats\n\t\t\tDisables");
-        printf(" artificial delays within the simulation.\n\t\t\tOutputs statistics for");
-        printf(" each reference string.\n\t\t<inputFile>\n\t\t\t");
+        printf("%s [-v | -h | -[m]o] <inputFile>\n\t\t-v\n\t\t\tVerbose output.\n\t\t-[m]o", argv[0]);
+        printf("\n\t\t\tDisplay request info for each request. If the [m] flag is included, then");
+        printf(" also displays memory page request info.\n\t\t<inputFile>\n\t\t\t");
         printf("File used for input arguments. Must be specified!\n");
         exit(0);
       }
@@ -431,7 +431,7 @@ int main(int argc, char** argv) {
       if (v) {
         printf("Requesting Page: %d\n", p->currentPage);
         printf("Total References: %d\n", referencesCount);
-      } else if (output) {
+      } else if (memoutput) {
         printf("Request: %4d\tPage: %3d", referencesCount, p->currentPage);
       }
       int try = request(m, p);
