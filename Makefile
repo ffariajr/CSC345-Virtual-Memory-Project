@@ -1,40 +1,40 @@
 all: sim refstr
 
-sim: sim.h sim.c 2c clok fifo lru mm pcbl rrsched frame events scheduler
-	gcc sim.c 2c.o clok.o fifo.o lru.o mm.o pcbl.o rrsched.o frame.o events.o scheduler.o -o sim 
+sim: src/sim.h src/sim.c 2c clok fifo lru mm pcbl rrsched frame events scheduler
+	gcc src/sim.c src/obj/2c.o src/obj/clok.o src/obj/fifo.o src/obj/lru.o src/obj/mm.o src/obj/pcbl.o src/obj/rrsched.o src/obj/frame.o src/obj/events.o src/obj/scheduler.o -o sim 
 
-scheduler: scheduler.c scheduler.h
-	gcc -c scheduler.c -o scheduler.o
+scheduler: src/scheduler.c src/scheduler.h
+	gcc -c src/scheduler.c -o src/obj/scheduler.o
 
-events: events.c events.h
-	gcc -c events.c -o events.o
+events: src/events.c src/events.h
+	gcc -c src/events.c -o src/obj/events.o
 
-frame: frame.c frame.h
-	gcc -c frame.c -o frame.o
+frame: src/frame.c src/frame.h
+	gcc -c src/frame.c -o src/obj/frame.o
 
-2c: 2c.h 2c.c
-	gcc -c 2c.c -o 2c.o
+2c: src/2c.h src/2c.c
+	gcc -c src/2c.c -o src/obj/2c.o
 
-clok: clok.c clok.h
-	gcc -c clok.c -o clok.o
+clok: src/clok.c src/clok.h
+	gcc -c src/clok.c -o src/obj/clok.o
 
-fifo: fifo.c fifo.h
-	gcc -c fifo.c -o fifo.o
+fifo: src/fifo.c src/fifo.h
+	gcc -c src/fifo.c -o src/obj/fifo.o
 
-lru: lru.c lru.h
-	gcc -c lru.c -o lru.o
+lru: src/lru.c src/lru.h
+	gcc -c src/lru.c -o src/obj/lru.o
 
-mm: mm.c mm.h
-	gcc -c mm.c -o mm.o
+mm: src/mm.c src/mm.h
+	gcc -c src/mm.c -o src/obj/mm.o
 
-pcbl: pcbl.c pcbl.h
-	gcc -c pcbl.c -o pcbl.o
+pcbl: src/pcbl.c src/pcbl.h
+	gcc -c src/pcbl.c -o src/obj/pcbl.o
 
-rrsched: rrsched.c rrsched.h
-	gcc -c rrsched.c -o rrsched.o
+rrsched: src/rrsched.c src/rrsched.h
+	gcc -c src/rrsched.c -o src/obj/rrsched.o
 
-refstr: refstr.c refstr.h
-	gcc refstr.c -o refstr
+refstr: src/refstr.c src/refstr.h
+	gcc src/refstr.c -o refstr
 
 clean:
-	rm *~ *.o
+	rm src/obj/*.o
