@@ -52,7 +52,7 @@ int request(mm* m, pcb* p) {
 
   if (temp) {
     if (v) {
-      printf("\tPage Found!\n");
+      printf("\t\t\tPage Found!\n");
     } else if (memoutput) {
       printf("\tHIT\n");
     }
@@ -60,7 +60,7 @@ int request(mm* m, pcb* p) {
     return 1;
   } else if (m->freemem) {
     if (v) {
-      printf("\tPage Not Found. Free Frames Available.\n");
+      printf("\t\t\tPage Not Found. Free Frames Available.\n");
     } else if (memoutput) {
       printf("\t + Free Memory Frames Available\n");
     }
@@ -70,7 +70,7 @@ int request(mm* m, pcb* p) {
   } else {
     p->faults++;
     if (v) {
-      printf("\tPage Not Found. No Free Frames.\n");
+      printf("\t\t\tPage Not Found. No Free Frames.\n");
     } else if (memoutput) {
       printf("\t - Replacement Required\n");
     }
@@ -102,6 +102,7 @@ void pageOut(mm* m) {
     m->allocated = m->allocated->next;
     temp->pid = -1;
     temp->page = -1;
+    temp->lastUsed = 0;
     temp->next = m->freemem;
     m->freemem = temp;
   }
@@ -161,13 +162,22 @@ void mmTerm(mm* m, int pid) {
   frame* temp = m->allocated;
   frame* prev = 0;
   while (temp) {
-    if (temp->pid == pid && prev) {
-      prev->next = temp->next;
+    if (temp->pid == pid) {
+      if (prev) {
+        prev->next = temp->next;
+      } else {
+        m->allocated = temp->next;
+      }
       temp->next = m->freemem;
       m->freemem = temp;
       temp->pid = -1;
       temp->page = -1;
-      temp = prev->next;
+      temp->lastUsed = 0;
+      if (prev) {
+        temp = prev->next;
+      } else {
+        temp = m->allocated;
+      }
     } else {
       prev = temp;
       temp = temp->next;

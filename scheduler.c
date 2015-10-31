@@ -111,7 +111,7 @@ int waitingToRunningQWaiter(void* datum) {
     insert(&data->s->readyq, data->p);
 
     if (v) {
-      printf("Process:\n\tPID:\t\t%d\n\tSize:\t%d\n", data->p->node->pid, data->p->node->refSize);
+      printf("Process:\n\tPID:\t\t%d\n\tSize:\t\t%d\n", data->p->node->pid, data->p->node->refSize);
     }
     return 1;
   }

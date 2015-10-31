@@ -23,7 +23,10 @@ if [ $# -lt 1 -o "$1" == "-h" ]; then
   echo "              <ans> must be either \"YES\" or \"NO\"."
   echo "          -a <algo>"
   echo "          --algorithm <algo>"
-  echo "              <algo> must be one of: \"FIFO\", \"LRU\", or \"2C\"."
+  echo "              <algo> must be one of: \"FIFO\", \"LRU\", or \"2C <#>\"."
+  echo "              The <#> after \"2C\" is the amount of time quantums the"
+  echo "              second chance algorithm waits before giving another chance."
+  echo "              <#> must be a number greater than 1 and less than 1000."
   echo "          -tq <quantum>"
   echo "          --time-quantum <quantum>"
   echo "              <quantum> must be a number greater than 1."
@@ -50,6 +53,7 @@ shift
 
 fullsim="NO"
 repl="FIFO"
+c2forgive=5
 tq=10
 mframes=20
 sched="RR"
@@ -70,6 +74,11 @@ while true; do
     shift
     repl=$1
     shift
+    if [ "$repl" == "2C" ]; then
+      c2forgive=$1
+      shift
+      i=$((i+1))
+    fi
     i=$((i+2))
   elif [ "$1" == "-tq" -o "$1" == "--time-quantum" ]; then
     shift
@@ -107,15 +116,22 @@ echo "        will be run.  If set to \"YES\", then part 4 will be included." >>
 echo ":$fullsim" >> $file
 echo "" >> $file
 echo "Replacement Algorithm." >> $file
-echo "        Must be \"FIFO\", \"LRU\", or \"2C\"" >> $file
-echo ":$repl" >> $file
+echo "        Must be \"FIFO\", \"LRU\", or \"2C <#>\"" >> $file
+echo "        Option 2C must be followed by a space and then a number. That number is the" >> $file
+echo "        amount of time quantums to wait before resetting the last used counter in all" >> $file
+echo "        pages in memory. It must be greater than 1 and less than 1000." >> $file
+if [ "$repl" == "2C" ]; then
+  echo ":$repl $c2forgive" >> $file
+else
+  echo ":$repl" >> $file
+fi
 echo "" >> $file
 echo "Time Quantum." >> $file
 echo "        Must be a number between 1 and INT_MAX." >> $file
 echo ":$tq" >> $file
 echo "" >> $file
 echo "Memory Frames." >> $file
-echo "        Must be a number from 10 to 1000." >> $file
+echo "        Must be a number greater than 1." >> $file
 echo ":$mframes" >> $file
 echo "" >> $file
 echo "Scheduler." >> $file

@@ -14,6 +14,9 @@ int main(int argc, char** argv) {
       inf = fopen(argv[2], &fileReadChar);
       if (!strcmp(argv[1], "-v")) {
         v = 1;
+      } else if (!strcmp(argv[1], "-mv")) {
+        v = 1;
+        memoutput = 1;
       } else if (!strcmp(argv[1], "-o")) {
         output = 1;
       } else if (!strcmp(argv[1], "-mo")) {
@@ -25,8 +28,10 @@ int main(int argc, char** argv) {
       }
     } else {
       if (!strcmp(argv[1], "-h")) {
-        printf("%s [-v | -h | -[m]o] <inputFile>\n\t\t-v\n\t\t\tVerbose output.\n\t\t-[m]o", argv[0]);
-        printf("\n\t\t\tDisplay request info for each request. If the [m] flag is included, then");
+        printf("%s [-[m]v | -h | -[m]o] <inputFile>\n\t\t-[m]v\n\t\t\tVerbose output.\n", argv[0]);
+        printf("\t\t\tThe option [m] flag outputs the contents of memory after each page\n");
+        printf("\t\t\tfault, or memory cleaning after a process terminates.\n");
+        printf("\t\t-[m]o\n\t\t\tDisplay request info for each request. If the [m] flag is included, then");
         printf(" also displays memory page request info.\n\t\t<inputFile>\n\t\t\t");
         printf("File used for input arguments. Must be specified!\n");
         exit(0);
@@ -46,16 +51,24 @@ int main(int argc, char** argv) {
   if (v) {
     printf("Input File Open.\n");
   }
- 
+
+  int totalIdleTime = 0;
+  int totalRunTime = 0;
+  int procsExecuted = 0;
+  int totalFaults = 0;
+  int totalContextSwitches = 0;
+  int totalReferences = 0;
+
   char schedalgo;
   char replalgo;
+  int c2forgiveness;
   int tquantum;
   int fullsim;
   int frames;
   char outputFileName[100];
   outputFileName[99] = '\0';
   int startTimes[100];
-  
+
   char ch = 0;
   int counter = 0;
   while (ch != EOF) {
@@ -87,6 +100,26 @@ int main(int argc, char** argv) {
           replalgo = 'l';
         } else if (!strcmp(s, "2C")) {
           replalgo = '2';
+          char num[4];
+          num[0] = '\0';
+          num[1] = '\0';
+          num[2] = '\0';
+          num[3] = '\0';
+          int q;
+          int qlimit = 3;
+          for (q = 0; q < qlimit; q++) {
+            fscanf(inf, "%c", &ch);
+            num[q] = ch;
+            if (!validNumber(num)) {
+              q--;
+              qlimit--;
+            }
+          }
+          if (validNumber(num)) {
+            c2forgiveness = atoi(num);
+          } else {
+            printf("Error: Illegal Input Value for \"Second Chance Forgiveness\": %s\n", num);
+          } 
         } else {
           printf("Error: Illegal Input Value for \"Replacement Algorithm\": %s\n", s);
           exit(-2);
@@ -253,14 +286,14 @@ int main(int argc, char** argv) {
   if (replalgo == '2') {
     c2* datum = (c2*) malloc(sizeof(c2));
     datum->counter = 0;
-    datum->forgiveness = 10;
+    datum->forgiveness = c2forgiveness;
     datum->f = &m->allocated;
 
     event* ec2 = eventInit(&grantChance, datum, 0, 1);
     addEvent(c, ec2);
 
     if (v) {
-      printf("Second Chance Granter Event Registered.\n");
+      printf("Second Chance Granter Event Registered with Forgiveness: %d.\n", c2forgiveness);
     }
   }
 
@@ -306,12 +339,19 @@ int main(int argc, char** argv) {
     }
 
     s->sched(&s->readyq, &s->runningq);
+    totalContextSwitches++;
     if (v) {
-      printf("Scheduled Initial Job.\nRunning.\n");
+      printf("Scheduled Initial Job.\n");
+      printf("================================================>  System Running\n");
     }
 
     while (counter > 0) {
       tick(c);
+      if (!((c->time + c->offset) % c->tq)) {
+        totalContextSwitches++;
+      }
+      totalRunTime++;
+
       pcb* p = 0;
       if (s->runningq) {
         p = s->runningq->node;
@@ -329,6 +369,7 @@ int main(int argc, char** argv) {
         }
       }
       if (term) {
+        procsExecuted++;
         if (v) {
           printf("Current Active Process Finished Execution.\n");
         }
@@ -336,8 +377,12 @@ int main(int argc, char** argv) {
         termActiveProcess(s);
         if (v) {
           printf("Process Terminated.\n");
+          if (memoutput) {
+            memorySnapshot(m);
+          }
         }
         s->sched(&s->readyq, &s->runningq);
+        totalContextSwitches++;
         if (v) {
           printf("New Process Scheduled.\n");
         }
@@ -348,15 +393,18 @@ int main(int argc, char** argv) {
       } else if (s->runningq) {
         if (v) {
           printf("Process Stepped.\n");
-          printf("Requesting Page: %d\n", p->currentPage);
+          printf("Requesting Page:\t%d\n", p->currentPage);
         }
         int try = request(m, p);
+        totalReferences++;
       
         if (v) {
           printf("Request done.\n");
         }
 
         if (!try) {
+          totalFaults++;
+          totalReferences--;
           rollBack(p);
 
           pcbl* temppcb = s->runningq;
@@ -373,9 +421,13 @@ int main(int argc, char** argv) {
           addEvent(c, eventInit(&waitingToRunningQWaiter, tempdata, 0, 1));
           if (v) {
             printf("Device Queried for New Page.\n");
+            if (memoutput) {
+              memorySnapshot(m);
+            }
           }
           
           s->sched(&s->readyq, &s->runningq);
+          totalContextSwitches++;
           if (v) {
             printf("New Process Scheduled.\n");
           }
@@ -387,13 +439,14 @@ int main(int argc, char** argv) {
         }
       } else {
         if (v) {
+          totalIdleTime++;
           printf("No Ready Processes. Programs Still Scheduled.\nBusy Wait.\n");
         }
       }
     }
 
     if (v) {
-      printf("All Processes Terminated.\nHalting.\n");
+      printf("All Processes Terminated.\n");
     }
 
     schedDestroy(s);
@@ -426,8 +479,6 @@ int main(int argc, char** argv) {
 
     while (referencesCount <= p->refSize) {
 
-      memorySnapshot(m);
-
       if (v) {
         printf("Requesting Page: %d\n", p->currentPage);
         printf("Total References: %d\n", referencesCount);
@@ -446,6 +497,9 @@ int main(int argc, char** argv) {
         if (v) {
           printf("Begin search for victim page.\n");
         }
+        if (memoutput && v) {
+          memorySnapshot(m);
+        }
         replacement(m, p);
       } else {
         referencesCount++;
@@ -463,14 +517,35 @@ int main(int argc, char** argv) {
     pcbDestroy(p);
   }
 
-  if (v) {
+  if (v || memoutput) {
     memorySnapshot(m);
   }
 
   mmDestroy(m);
+  if (v) {
+    printf("Memory Manager Destroyed.\n");
+  }
   clokDestroy(c);
+  if (v) {
+    printf("Simulation System Clock Destroyed.\n");
+  }
   for (q = 0; q < currentRef; q++) {
     free(refstrings[q]);
+  }
+  if (v) {
+    printf("Initial Reference Strings Destroyed.\n");
+  }
+  if (v) {
+    printf("Halt.\n");
+  }
+  if (v || output || memoutput) {
+    printf("System Simulation Summary:\n");
+    printf("Total Run Time: \t\t%d\n", totalRunTime);
+    printf("Total Idle Time: \t\t%d\n", totalIdleTime);
+    printf("Processes Executed: \t\t%d\n", procsExecuted);
+    printf("Total Context Switches: \t%d\n", totalContextSwitches);
+    printf("Total References: \t\t%d\n", totalReferences);
+    printf("Total Page Faults: \t\t%d\n", totalFaults);
   }
 }
 

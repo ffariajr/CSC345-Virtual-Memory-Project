@@ -7,11 +7,14 @@ Run Full Simulation.
 :YES
 
 Replacement Algorithm.
-        Must be "FIFO", "LRU", or "2C"
-:2C
+        Must be "FIFO", "LRU", or "2C <#>"
+        Option 2C must be followed by a space and then a number. That number is the
+        amount of time quantums to wait before resetting the last used counter in all
+        pages in memory. It must be greater than 1 and less than 1000.
+:LRU
 
 Time Quantum.
-        Must be a number between 1 and MAXINT.
+        Must be a number between 1 and INT_MAX.
 :10
 
 Memory Frames.
@@ -27,28 +30,28 @@ Reference String File.
 :strings.ref
 
 Reference String Start Times.
-        Start times can be set here. 1 means 1 second. "-1"'s are ignored.
+        Start times can be set here. 1 means 1 time quantum. "-1"'s are ignored.
         The amount of non-"-1"'s must match the amount of reference strings.
 01:0
-02:2
-03:2
-04:5
-05:4
-06:3
-07:2
-08:1
-09:-1
-10:-1
-11:-1
-12:-1
-13:-1
-14:-1
-15:-1
-16:-1
-17:-1
-18:-1
-19:-1
-20:-1
+02:0
+03:0
+04:0
+05:0
+06:0
+07:0
+08:0
+09:0
+10:0
+11:0
+12:0
+13:0
+14:0
+15:0
+16:0
+17:0
+18:0
+19:0
+20:0
 21:-1
 22:-1
 23:-1
