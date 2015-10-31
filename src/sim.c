@@ -3,6 +3,7 @@
 int v = 0;
 int output = 0;
 int memoutput = 0;
+int sysoutput = 0;
 
 int main(int argc, char** argv) {
   
@@ -22,6 +23,8 @@ int main(int argc, char** argv) {
       } else if (!strcmp(argv[1], "-mo")) {
         output = 1;
         memoutput = 1;
+      } else if (!strcmp(argv[1], "-s")) {
+        sysoutput = 1;
       } else {
         printf("Fatal Error: Invalid Option: %s\nUse %s -h for more information.\n", argv[1], argv[0]);
         exit(-1);
@@ -32,7 +35,9 @@ int main(int argc, char** argv) {
         printf("\t\t\tThe option [m] flag outputs the contents of memory after each page\n");
         printf("\t\t\tfault, or memory cleaning after a process terminates.\n");
         printf("\t\t-[m]o\n\t\t\tDisplay request info for each request. If the [m] flag is included, then");
-        printf(" also displays memory page request info.\n\t\t<inputFile>\n\t\t\t");
+        printf(" also displays memory page request info.\n\t\t");
+        printf("-s\n\t\t\tShows only summary system info after the");
+        printf(" system has finished.\n\t\t<inputFile>\n\t\t\t");
         printf("File used for input arguments. Must be specified!\n");
         exit(0);
       }
@@ -538,7 +543,7 @@ int main(int argc, char** argv) {
   if (v) {
     printf("Halt.\n");
   }
-  if (v || output || memoutput) {
+  if (v || output || memoutput || sysoutput) {
     printf("System Simulation Summary:\n");
     printf("Total Run Time: \t\t%d\n", totalRunTime);
     printf("Total Idle Time: \t\t%d\n", totalIdleTime);
