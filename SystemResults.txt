@@ -1,96 +1,6961 @@
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
-Fatal Error: Could not open input file.
+
+manysmall
+mixed
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		12164
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1334
+Total References: 		5977
+Total Page Faults: 		893
+
+manysmall
+mixed
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		16396
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	5178
+Total References: 		5977
+Total Page Faults: 		3627
+
+manysmall
+mixed
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		450429
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	57740
+Total References: 		5969
+Total Page Faults: 		41441
+
+manysmall
+mixed
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		130827
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	45641
+Total References: 		5968
+Total Page Faults: 		33679
+
+manysmall
+mixed
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		7623
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	549
+Total References: 		5977
+Total Page Faults: 		283
+
+manysmall
+mixed
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		6609
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1109
+Total References: 		5976
+Total Page Faults: 		440
+
+manysmall
+mixed
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		31482
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	3471
+Total References: 		5972
+Total Page Faults: 		2480
+
+manysmall
+mixed
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		14917
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	3648
+Total References: 		5974
+Total Page Faults: 		2583
+
+manysmall
+mixed
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		7623
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	549
+Total References: 		5977
+Total Page Faults: 		283
+
+manysmall
+mixed
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		6609
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1109
+Total References: 		5976
+Total Page Faults: 		440
+
+manysmall
+mixed
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		32989
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	3593
+Total References: 		5975
+Total Page Faults: 		2547
+
+manysmall
+mixed
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		14620
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	3573
+Total References: 		5974
+Total Page Faults: 		2529
+
+manysmall
+mixed
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		7490
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	536
+Total References: 		5977
+Total Page Faults: 		274
+
+manysmall
+mixed
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		6480
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1068
+Total References: 		5977
+Total Page Faults: 		393
+
+manysmall
+mixed
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		29836
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	3260
+Total References: 		5974
+Total Page Faults: 		2319
+
+manysmall
+mixed
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		14883
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	3583
+Total References: 		5972
+Total Page Faults: 		2489
+
+manysmall
+mixed
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		5356
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	237
+Total References: 		5332
+Total Page Faults: 		0
+
+manysmall
+mixed
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		5356
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	686
+Total References: 		5332
+Total Page Faults: 		0
+
+manysmall
+mixed
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		198275
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	27339
+Total References: 		5326
+Total Page Faults: 		20273
+
+manysmall
+mixed
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		45060
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	14248
+Total References: 		5326
+Total Page Faults: 		10043
+
+manysmall
+mixed
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		5356
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	237
+Total References: 		5332
+Total Page Faults: 		0
+
+manysmall
+mixed
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		5356
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	686
+Total References: 		5332
+Total Page Faults: 		0
+
+manysmall
+mixed
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		20480
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2257
+Total References: 		5327
+Total Page Faults: 		1643
+
+manysmall
+mixed
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		10413
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2512
+Total References: 		5326
+Total Page Faults: 		1790
+
+manysmall
+mixed
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		5356
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	237
+Total References: 		5332
+Total Page Faults: 		0
+
+manysmall
+mixed
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		5356
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	686
+Total References: 		5332
+Total Page Faults: 		0
+
+manysmall
+mixed
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		20185
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2261
+Total References: 		5325
+Total Page Faults: 		1660
+
+manysmall
+mixed
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		10332
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2476
+Total References: 		5327
+Total Page Faults: 		1751
+
+manysmall
+mixed
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		5356
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	237
+Total References: 		5332
+Total Page Faults: 		0
+
+manysmall
+mixed
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		5356
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	686
+Total References: 		5332
+Total Page Faults: 		0
+
+manysmall
+mixed
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		19100
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2078
+Total References: 		5327
+Total Page Faults: 		1505
+
+manysmall
+mixed
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		10231
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2374
+Total References: 		5327
+Total Page Faults: 		1635
+
+manysmall
+spatial
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		5953
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	262
+Total References: 		5929
+Total Page Faults: 		0
+
+manysmall
+spatial
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		5953
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	760
+Total References: 		5929
+Total Page Faults: 		0
+
+manysmall
+spatial
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		375325
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	46805
+Total References: 		5919
+Total Page Faults: 		33159
+
+manysmall
+spatial
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		75423
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	27354
+Total References: 		5922
+Total Page Faults: 		20590
+
+manysmall
+spatial
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		5953
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	262
+Total References: 		5929
+Total Page Faults: 		0
+
+manysmall
+spatial
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		5953
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	760
+Total References: 		5929
+Total Page Faults: 		0
+
+manysmall
+spatial
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		18272
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2186
+Total References: 		5926
+Total Page Faults: 		1667
+
+manysmall
+spatial
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		10202
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2487
+Total References: 		5928
+Total Page Faults: 		1816
+
+manysmall
+spatial
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		5953
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	262
+Total References: 		5929
+Total Page Faults: 		0
+
+manysmall
+spatial
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		5953
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	760
+Total References: 		5929
+Total Page Faults: 		0
+
+manysmall
+spatial
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		18086
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2197
+Total References: 		5929
+Total Page Faults: 		1686
+
+manysmall
+spatial
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		10155
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2496
+Total References: 		5928
+Total Page Faults: 		1841
+
+manysmall
+spatial
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		5953
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	262
+Total References: 		5929
+Total Page Faults: 		0
+
+manysmall
+spatial
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		5953
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	760
+Total References: 		5929
+Total Page Faults: 		0
+
+manysmall
+spatial
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		18493
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2212
+Total References: 		5926
+Total Page Faults: 		1679
+
+manysmall
+spatial
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		9730
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2384
+Total References: 		5927
+Total Page Faults: 		1735
+
+manysmall
+spatial
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		5050
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	224
+Total References: 		5026
+Total Page Faults: 		0
+
+manysmall
+spatial
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		5050
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	647
+Total References: 		5026
+Total Page Faults: 		0
+
+manysmall
+spatial
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		88693
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	11835
+Total References: 		5023
+Total Page Faults: 		8674
+
+manysmall
+spatial
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		27882
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	9336
+Total References: 		5022
+Total Page Faults: 		6787
+
+manysmall
+spatial
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		5050
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	224
+Total References: 		5026
+Total Page Faults: 		0
+
+manysmall
+spatial
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		5050
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	647
+Total References: 		5026
+Total Page Faults: 		0
+
+manysmall
+spatial
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		13169
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1396
+Total References: 		5024
+Total Page Faults: 		1012
+
+manysmall
+spatial
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		7867
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1800
+Total References: 		5026
+Total Page Faults: 		1252
+
+manysmall
+spatial
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		5050
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	224
+Total References: 		5026
+Total Page Faults: 		0
+
+manysmall
+spatial
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		5050
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	647
+Total References: 		5026
+Total Page Faults: 		0
+
+manysmall
+spatial
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		11302
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1158
+Total References: 		5023
+Total Page Faults: 		816
+
+manysmall
+spatial
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		7729
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1774
+Total References: 		5024
+Total Page Faults: 		1225
+
+manysmall
+spatial
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		5050
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	224
+Total References: 		5026
+Total Page Faults: 		0
+
+manysmall
+spatial
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		5050
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	647
+Total References: 		5026
+Total Page Faults: 		0
+
+manysmall
+spatial
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		10840
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1097
+Total References: 		5025
+Total Page Faults: 		772
+
+manysmall
+spatial
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		7141
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1607
+Total References: 		5026
+Total Page Faults: 		1082
+
+manysmall
+temporal
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		42596
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	6035
+Total References: 		6000
+Total Page Faults: 		4537
+
+manysmall
+temporal
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		21928
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	7156
+Total References: 		6001
+Total Page Faults: 		5150
+
+manysmall
+temporal
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		331388
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	42161
+Total References: 		5989
+Total Page Faults: 		30206
+
+manysmall
+temporal
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		149712
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	51618
+Total References: 		5988
+Total Page Faults: 		37928
+
+manysmall
+temporal
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		11652
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1137
+Total References: 		6000
+Total Page Faults: 		786
+
+manysmall
+temporal
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		7953
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1539
+Total References: 		6000
+Total Page Faults: 		885
+
+manysmall
+temporal
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		23842
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	3089
+Total References: 		5995
+Total Page Faults: 		2414
+
+manysmall
+temporal
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		13039
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	3364
+Total References: 		5993
+Total Page Faults: 		2608
+
+manysmall
+temporal
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		11652
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1137
+Total References: 		6000
+Total Page Faults: 		786
+
+manysmall
+temporal
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		7953
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1539
+Total References: 		6000
+Total Page Faults: 		885
+
+manysmall
+temporal
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		23842
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	3089
+Total References: 		5995
+Total Page Faults: 		2414
+
+manysmall
+temporal
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		13039
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	3364
+Total References: 		5993
+Total Page Faults: 		2608
+
+manysmall
+temporal
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		11684
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1136
+Total References: 		6001
+Total Page Faults: 		790
+
+manysmall
+temporal
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		7996
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1551
+Total References: 		6001
+Total Page Faults: 		908
+
+manysmall
+temporal
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		25482
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	3293
+Total References: 		5996
+Total Page Faults: 		2566
+
+manysmall
+temporal
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		13143
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	3371
+Total References: 		5996
+Total Page Faults: 		2609
+
+manysmall
+temporal
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	265
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+temporal
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	769
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+temporal
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		275906
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	35937
+Total References: 		5994
+Total Page Faults: 		26040
+
+manysmall
+temporal
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		96212
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	33977
+Total References: 		5997
+Total Page Faults: 		25382
+
+manysmall
+temporal
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	265
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+temporal
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	769
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+temporal
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		21623
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2761
+Total References: 		6001
+Total Page Faults: 		2164
+
+manysmall
+temporal
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		11860
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2945
+Total References: 		5999
+Total Page Faults: 		2258
+
+manysmall
+temporal
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	265
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+temporal
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	769
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+temporal
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		21623
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2761
+Total References: 		6001
+Total Page Faults: 		2164
+
+manysmall
+temporal
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		11826
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2929
+Total References: 		6000
+Total Page Faults: 		2245
+
+manysmall
+temporal
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	265
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+temporal
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	769
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+temporal
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		22048
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2808
+Total References: 		6001
+Total Page Faults: 		2195
+
+manysmall
+temporal
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		11724
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2907
+Total References: 		6000
+Total Page Faults: 		2223
+
+manysmall
+both
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		5806
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	256
+Total References: 		5782
+Total Page Faults: 		0
+
+manysmall
+both
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		5806
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	741
+Total References: 		5782
+Total Page Faults: 		0
+
+manysmall
+both
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		192304
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	24218
+Total References: 		5775
+Total Page Faults: 		17291
+
+manysmall
+both
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		71338
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	24232
+Total References: 		5777
+Total Page Faults: 		17736
+
+manysmall
+both
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		5806
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	256
+Total References: 		5782
+Total Page Faults: 		0
+
+manysmall
+both
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		5806
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	741
+Total References: 		5782
+Total Page Faults: 		0
+
+manysmall
+both
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		14655
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1580
+Total References: 		5782
+Total Page Faults: 		1184
+
+manysmall
+both
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		8399
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1859
+Total References: 		5780
+Total Page Faults: 		1315
+
+manysmall
+both
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		5806
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	256
+Total References: 		5782
+Total Page Faults: 		0
+
+manysmall
+both
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		5806
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	741
+Total References: 		5782
+Total Page Faults: 		0
+
+manysmall
+both
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		14655
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1580
+Total References: 		5782
+Total Page Faults: 		1184
+
+manysmall
+both
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		8501
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1883
+Total References: 		5781
+Total Page Faults: 		1331
+
+manysmall
+both
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		5806
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	256
+Total References: 		5782
+Total Page Faults: 		0
+
+manysmall
+both
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		5806
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	741
+Total References: 		5782
+Total Page Faults: 		0
+
+manysmall
+both
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		14462
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1572
+Total References: 		5780
+Total Page Faults: 		1182
+
+manysmall
+both
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		8301
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1822
+Total References: 		5780
+Total Page Faults: 		1266
+
+manysmall
+both
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		4986
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	221
+Total References: 		4962
+Total Page Faults: 		0
+
+manysmall
+both
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		4986
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	638
+Total References: 		4962
+Total Page Faults: 		0
+
+manysmall
+both
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		88082
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	12065
+Total References: 		4960
+Total Page Faults: 		8951
+
+manysmall
+both
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		36658
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	12302
+Total References: 		4957
+Total Page Faults: 		8972
+
+manysmall
+both
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		4986
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	221
+Total References: 		4962
+Total Page Faults: 		0
+
+manysmall
+both
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		4986
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	638
+Total References: 		4962
+Total Page Faults: 		0
+
+manysmall
+both
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		11306
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1095
+Total References: 		4958
+Total Page Faults: 		781
+
+manysmall
+both
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		6631
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1342
+Total References: 		4958
+Total Page Faults: 		845
+
+manysmall
+both
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		4986
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	221
+Total References: 		4962
+Total Page Faults: 		0
+
+manysmall
+both
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		4986
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	638
+Total References: 		4962
+Total Page Faults: 		0
+
+manysmall
+both
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		11306
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1095
+Total References: 		4958
+Total Page Faults: 		781
+
+manysmall
+both
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		6754
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1378
+Total References: 		4958
+Total Page Faults: 		868
+
+manysmall
+both
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		4986
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	221
+Total References: 		4962
+Total Page Faults: 		0
+
+manysmall
+both
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		4986
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	638
+Total References: 		4962
+Total Page Faults: 		0
+
+manysmall
+both
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		10570
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1001
+Total References: 		4958
+Total Page Faults: 		706
+
+manysmall
+both
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		6374
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	1286
+Total References: 		4959
+Total Page Faults: 		796
+
+manysmall
+random
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		153068
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	21908
+Total References: 		5748
+Total Page Faults: 		16474
+
+manysmall
+random
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		48587
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	17028
+Total References: 		5750
+Total Page Faults: 		12657
+
+manysmall
+random
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		603006
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	70347
+Total References: 		5737
+Total Page Faults: 		48180
+
+manysmall
+random
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		257988
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	82520
+Total References: 		5735
+Total Page Faults: 		57555
+
+manysmall
+random
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		20572
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2604
+Total References: 		5752
+Total Page Faults: 		1982
+
+manysmall
+random
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		11755
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2955
+Total References: 		5753
+Total Page Faults: 		2132
+
+manysmall
+random
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		42523
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	6185
+Total References: 		5750
+Total Page Faults: 		4863
+
+manysmall
+random
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		21174
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	6441
+Total References: 		5747
+Total Page Faults: 		5065
+
+manysmall
+random
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		20572
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2604
+Total References: 		5752
+Total Page Faults: 		1982
+
+manysmall
+random
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		11755
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2955
+Total References: 		5753
+Total Page Faults: 		2132
+
+manysmall
+random
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		42523
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	6185
+Total References: 		5750
+Total Page Faults: 		4863
+
+manysmall
+random
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		21174
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	6441
+Total References: 		5747
+Total Page Faults: 		5065
+
+manysmall
+random
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		18228
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2234
+Total References: 		5753
+Total Page Faults: 		1674
+
+manysmall
+random
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		11670
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	2934
+Total References: 		5751
+Total Page Faults: 		2108
+
+manysmall
+random
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		41502
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	6027
+Total References: 		5752
+Total Page Faults: 		4735
+
+manysmall
+random
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		21100
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	6409
+Total References: 		5749
+Total Page Faults: 		5036
+
+manysmall
+random
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	265
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+random
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	769
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+random
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		447150
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	58803
+Total References: 		5990
+Total Page Faults: 		42670
+
+manysmall
+random
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		207217
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	70318
+Total References: 		5990
+Total Page Faults: 		50947
+
+manysmall
+random
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	265
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+random
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	769
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+random
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		37748
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	5507
+Total References: 		5997
+Total Page Faults: 		4362
+
+manysmall
+random
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		19770
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	5890
+Total References: 		5991
+Total Page Faults: 		4649
+
+manysmall
+random
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	265
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+random
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	769
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+random
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		37748
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	5507
+Total References: 		5997
+Total Page Faults: 		4362
+
+manysmall
+random
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		19770
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	5890
+Total References: 		5991
+Total Page Faults: 		4649
+
+manysmall
+random
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	265
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+random
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		6025
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	769
+Total References: 		6001
+Total Page Faults: 		0
+
+manysmall
+random
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		37671
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	5521
+Total References: 		5997
+Total Page Faults: 		4383
+
+manysmall
+random
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		19528
+Total Idle Time: 		0
+Processes Executed: 		24
+Total Context Switches: 	5812
+Total References: 		5995
+Total Page Faults: 		4595
+
+fewlarge
+mixed
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		37442
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1503
+Total References: 		37436
+Total Page Faults: 		0
+
+fewlarge
+mixed
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		37442
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4684
+Total References: 		37436
+Total Page Faults: 		0
+
+fewlarge
+mixed
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		1545485
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	102906
+Total References: 		37436
+Total Page Faults: 		43685
+
+fewlarge
+mixed
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		642087
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	132998
+Total References: 		37435
+Total Page Faults: 		62030
+
+fewlarge
+mixed
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		37442
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1503
+Total References: 		37436
+Total Page Faults: 		0
+
+fewlarge
+mixed
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		37442
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4684
+Total References: 		37436
+Total Page Faults: 		0
+
+fewlarge
+mixed
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		366907
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	22197
+Total References: 		37435
+Total Page Faults: 		8828
+
+fewlarge
+mixed
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		135381
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	22977
+Total References: 		37435
+Total Page Faults: 		8962
+
+fewlarge
+mixed
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		37442
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1503
+Total References: 		37436
+Total Page Faults: 		0
+
+fewlarge
+mixed
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		37442
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4684
+Total References: 		37436
+Total Page Faults: 		0
+
+fewlarge
+mixed
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		365023
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	22151
+Total References: 		37435
+Total Page Faults: 		8815
+
+fewlarge
+mixed
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		135910
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	23088
+Total References: 		37435
+Total Page Faults: 		9015
+
+fewlarge
+mixed
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		37442
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1503
+Total References: 		37436
+Total Page Faults: 		0
+
+fewlarge
+mixed
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		37442
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4684
+Total References: 		37436
+Total Page Faults: 		0
+
+fewlarge
+mixed
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		347486
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	20805
+Total References: 		37435
+Total Page Faults: 		8111
+
+fewlarge
+mixed
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		133778
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	22537
+Total References: 		37435
+Total Page Faults: 		8582
+
+fewlarge
+mixed
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		29284
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1177
+Total References: 		29278
+Total Page Faults: 		0
+
+fewlarge
+mixed
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		29284
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	3664
+Total References: 		29278
+Total Page Faults: 		0
+
+fewlarge
+mixed
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		149916
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	10417
+Total References: 		29277
+Total Page Faults: 		4853
+
+fewlarge
+mixed
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		46835
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	7906
+Total References: 		29278
+Total Page Faults: 		2584
+
+fewlarge
+mixed
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		29284
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1177
+Total References: 		29278
+Total Page Faults: 		0
+
+fewlarge
+mixed
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		29284
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	3664
+Total References: 		29278
+Total Page Faults: 		0
+
+fewlarge
+mixed
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		41851
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	2134
+Total References: 		29277
+Total Page Faults: 		625
+
+fewlarge
+mixed
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		32864
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4623
+Total References: 		29277
+Total Page Faults: 		874
+
+fewlarge
+mixed
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		29284
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1177
+Total References: 		29278
+Total Page Faults: 		0
+
+fewlarge
+mixed
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		29284
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	3664
+Total References: 		29278
+Total Page Faults: 		0
+
+fewlarge
+mixed
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		42029
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	2144
+Total References: 		29277
+Total Page Faults: 		631
+
+fewlarge
+mixed
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		32577
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4573
+Total References: 		29277
+Total Page Faults: 		841
+
+fewlarge
+mixed
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		29284
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1177
+Total References: 		29278
+Total Page Faults: 		0
+
+fewlarge
+mixed
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		29284
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	3664
+Total References: 		29278
+Total Page Faults: 		0
+
+fewlarge
+mixed
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		29802
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1395
+Total References: 		29277
+Total Page Faults: 		271
+
+fewlarge
+mixed
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		30010
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4127
+Total References: 		29277
+Total Page Faults: 		601
+
+fewlarge
+spatial
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		32234
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1294
+Total References: 		32228
+Total Page Faults: 		0
+
+fewlarge
+spatial
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		32234
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4032
+Total References: 		32228
+Total Page Faults: 		0
+
+fewlarge
+spatial
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		946247
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	61839
+Total References: 		32225
+Total Page Faults: 		25347
+
+fewlarge
+spatial
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		377920
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	72817
+Total References: 		32225
+Total Page Faults: 		30071
+
+fewlarge
+spatial
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		32234
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1294
+Total References: 		32228
+Total Page Faults: 		0
+
+fewlarge
+spatial
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		32234
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4032
+Total References: 		32228
+Total Page Faults: 		0
+
+fewlarge
+spatial
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		162324
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	9801
+Total References: 		32227
+Total Page Faults: 		4050
+
+fewlarge
+spatial
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		66072
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	10998
+Total References: 		32227
+Total Page Faults: 		4105
+
+fewlarge
+spatial
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		32234
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1294
+Total References: 		32228
+Total Page Faults: 		0
+
+fewlarge
+spatial
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		32234
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4032
+Total References: 		32228
+Total Page Faults: 		0
+
+fewlarge
+spatial
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		162279
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	9796
+Total References: 		32227
+Total Page Faults: 		4047
+
+fewlarge
+spatial
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		66097
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	11047
+Total References: 		32227
+Total Page Faults: 		4154
+
+fewlarge
+spatial
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		32234
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1294
+Total References: 		32228
+Total Page Faults: 		0
+
+fewlarge
+spatial
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		32234
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4032
+Total References: 		32228
+Total Page Faults: 		0
+
+fewlarge
+spatial
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		147428
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	8849
+Total References: 		32227
+Total Page Faults: 		3611
+
+fewlarge
+spatial
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		60286
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	10032
+Total References: 		32227
+Total Page Faults: 		3692
+
+fewlarge
+spatial
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		9429
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	382
+Total References: 		9423
+Total Page Faults: 		0
+
+fewlarge
+spatial
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		9429
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1183
+Total References: 		9423
+Total Page Faults: 		0
+
+fewlarge
+spatial
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		9431
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	383
+Total References: 		9423
+Total Page Faults: 		2
+
+fewlarge
+spatial
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		9431
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1184
+Total References: 		9423
+Total Page Faults: 		2
+
+fewlarge
+spatial
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		9429
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	382
+Total References: 		9423
+Total Page Faults: 		0
+
+fewlarge
+spatial
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		9429
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1183
+Total References: 		9423
+Total Page Faults: 		0
+
+fewlarge
+spatial
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		9431
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	383
+Total References: 		9423
+Total Page Faults: 		2
+
+fewlarge
+spatial
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		9431
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1184
+Total References: 		9423
+Total Page Faults: 		2
+
+fewlarge
+spatial
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		9429
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	382
+Total References: 		9423
+Total Page Faults: 		0
+
+fewlarge
+spatial
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		9429
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1183
+Total References: 		9423
+Total Page Faults: 		0
+
+fewlarge
+spatial
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		9431
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	383
+Total References: 		9423
+Total Page Faults: 		2
+
+fewlarge
+spatial
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		9431
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1184
+Total References: 		9423
+Total Page Faults: 		2
+
+fewlarge
+spatial
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		9429
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	382
+Total References: 		9423
+Total Page Faults: 		0
+
+fewlarge
+spatial
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		9429
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1183
+Total References: 		9423
+Total Page Faults: 		0
+
+fewlarge
+spatial
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		9431
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	383
+Total References: 		9423
+Total Page Faults: 		2
+
+fewlarge
+spatial
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		9431
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1184
+Total References: 		9423
+Total Page Faults: 		2
+
+fewlarge
+temporal
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		1671485
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	109712
+Total References: 		45001
+Total Page Faults: 		45848
+
+fewlarge
+temporal
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		804608
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	171616
+Total References: 		45001
+Total Page Faults: 		84292
+
+fewlarge
+temporal
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		473158
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	33179
+Total References: 		45000
+Total Page Faults: 		16569
+
+fewlarge
+temporal
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		180223
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	33425
+Total References: 		45000
+Total Page Faults: 		16553
+
+fewlarge
+temporal
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		473158
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	33179
+Total References: 		45000
+Total Page Faults: 		16569
+
+fewlarge
+temporal
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		180223
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	33425
+Total References: 		45000
+Total Page Faults: 		16553
+
+fewlarge
+temporal
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		472238
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	33091
+Total References: 		45001
+Total Page Faults: 		16512
+
+fewlarge
+temporal
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		178360
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	33230
+Total References: 		45000
+Total Page Faults: 		16449
+
+fewlarge
+temporal
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		615589
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	44555
+Total References: 		45001
+Total Page Faults: 		21639
+
+fewlarge
+temporal
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		173275
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	34654
+Total References: 		45000
+Total Page Faults: 		16302
+
+fewlarge
+temporal
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		197161
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	12330
+Total References: 		45001
+Total Page Faults: 		6097
+
+fewlarge
+temporal
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		81866
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	13835
+Total References: 		45001
+Total Page Faults: 		6216
+
+fewlarge
+temporal
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		197707
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	12340
+Total References: 		45001
+Total Page Faults: 		6108
+
+fewlarge
+temporal
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		80071
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	13483
+Total References: 		45001
+Total Page Faults: 		6025
+
+fewlarge
+temporal
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+temporal
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		46928
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	2245
+Total References: 		45001
+Total Page Faults: 		469
+
+fewlarge
+temporal
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		49684
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	7458
+Total References: 		45001
+Total Page Faults: 		2128
+
+fewlarge
+both
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		32426
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1303
+Total References: 		32420
+Total Page Faults: 		0
+
+fewlarge
+both
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		32426
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4057
+Total References: 		32420
+Total Page Faults: 		0
+
+fewlarge
+both
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		836189
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	57345
+Total References: 		32420
+Total Page Faults: 		25497
+
+fewlarge
+both
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		286069
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	54771
+Total References: 		32420
+Total Page Faults: 		23254
+
+fewlarge
+both
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		32426
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1303
+Total References: 		32420
+Total Page Faults: 		0
+
+fewlarge
+both
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		32426
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4057
+Total References: 		32420
+Total Page Faults: 		0
+
+fewlarge
+both
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		166777
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	9872
+Total References: 		32420
+Total Page Faults: 		4118
+
+fewlarge
+both
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		66104
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	10764
+Total References: 		32420
+Total Page Faults: 		4079
+
+fewlarge
+both
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		32426
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1303
+Total References: 		32420
+Total Page Faults: 		0
+
+fewlarge
+both
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		32426
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4057
+Total References: 		32420
+Total Page Faults: 		0
+
+fewlarge
+both
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		161254
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	9553
+Total References: 		32420
+Total Page Faults: 		3994
+
+fewlarge
+both
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		66215
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	10817
+Total References: 		32420
+Total Page Faults: 		4113
+
+fewlarge
+both
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		32426
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1303
+Total References: 		32420
+Total Page Faults: 		0
+
+fewlarge
+both
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		32426
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4057
+Total References: 		32420
+Total Page Faults: 		0
+
+fewlarge
+both
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		149229
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	8842
+Total References: 		32420
+Total Page Faults: 		3689
+
+fewlarge
+both
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		61497
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	10018
+Total References: 		32420
+Total Page Faults: 		3746
+
+fewlarge
+both
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		16074
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	646
+Total References: 		16068
+Total Page Faults: 		0
+
+fewlarge
+both
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		16074
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	2014
+Total References: 		16068
+Total Page Faults: 		0
+
+fewlarge
+both
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		70069
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	4879
+Total References: 		16068
+Total Page Faults: 		2275
+
+fewlarge
+both
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		28246
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5010
+Total References: 		16068
+Total Page Faults: 		1813
+
+fewlarge
+both
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		16074
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	646
+Total References: 		16068
+Total Page Faults: 		0
+
+fewlarge
+both
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		16074
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	2014
+Total References: 		16068
+Total Page Faults: 		0
+
+fewlarge
+both
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		22782
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1234
+Total References: 		16067
+Total Page Faults: 		464
+
+fewlarge
+both
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		16851
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	2382
+Total References: 		16068
+Total Page Faults: 		475
+
+fewlarge
+both
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		16074
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	646
+Total References: 		16068
+Total Page Faults: 		0
+
+fewlarge
+both
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		16074
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	2014
+Total References: 		16068
+Total Page Faults: 		0
+
+fewlarge
+both
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		23092
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1236
+Total References: 		16068
+Total Page Faults: 		453
+
+fewlarge
+both
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		16910
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	2405
+Total References: 		16067
+Total Page Faults: 		496
+
+fewlarge
+both
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		16074
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	646
+Total References: 		16068
+Total Page Faults: 		0
+
+fewlarge
+both
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		16074
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	2014
+Total References: 		16068
+Total Page Faults: 		0
+
+fewlarge
+both
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		17269
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	810
+Total References: 		16068
+Total Page Faults: 		171
+
+fewlarge
+both
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		16448
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	2267
+Total References: 		16067
+Total Page Faults: 		361
+
+fewlarge
+random
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		3499853
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	230273
+Total References: 		44998
+Total Page Faults: 		94899
+
+fewlarge
+random
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		1324869
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	267348
+Total References: 		44997
+Total Page Faults: 		118236
+
+fewlarge
+random
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		907227
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	66734
+Total References: 		44999
+Total Page Faults: 		33335
+
+fewlarge
+random
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		334101
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	66731
+Total References: 		45000
+Total Page Faults: 		33319
+
+fewlarge
+random
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		907227
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	66734
+Total References: 		44999
+Total Page Faults: 		33335
+
+fewlarge
+random
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		334101
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	66731
+Total References: 		45000
+Total Page Faults: 		33319
+
+fewlarge
+random
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		907156
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	66711
+Total References: 		44998
+Total Page Faults: 		33316
+
+fewlarge
+random
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		327554
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	66433
+Total References: 		44998
+Total Page Faults: 		33149
+
+fewlarge
+random
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		773626
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	55584
+Total References: 		45000
+Total Page Faults: 		26144
+
+fewlarge
+random
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		407629
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	85158
+Total References: 		45000
+Total Page Faults: 		41345
+
+fewlarge
+random
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		355642
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	24570
+Total References: 		45001
+Total Page Faults: 		12252
+
+fewlarge
+random
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		138335
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	24838
+Total References: 		45001
+Total Page Faults: 		12114
+
+fewlarge
+random
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		355642
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	24570
+Total References: 		45001
+Total Page Faults: 		12252
+
+fewlarge
+random
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		138150
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	24755
+Total References: 		45001
+Total Page Faults: 		12051
+
+fewlarge
+random
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	1807
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		45007
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	5629
+Total References: 		45001
+Total Page Faults: 		0
+
+fewlarge
+random
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		46957
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	2329
+Total References: 		45001
+Total Page Faults: 		498
+
+fewlarge
+random
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		46976
+Total Idle Time: 		0
+Processes Executed: 		6
+Total Context Switches: 	6884
+Total References: 		45001
+Total Page Faults: 		1450
+
+mixed
+mixed
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		20420
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	826
+Total References: 		20410
+Total Page Faults: 		0
+
+mixed
+mixed
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		20420
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2558
+Total References: 		20410
+Total Page Faults: 		0
+
+mixed
+mixed
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		1149771
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	90220
+Total References: 		20406
+Total Page Faults: 		46413
+
+mixed
+mixed
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		429278
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	101698
+Total References: 		20406
+Total Page Faults: 		55855
+
+mixed
+mixed
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		20420
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	826
+Total References: 		20410
+Total Page Faults: 		0
+
+mixed
+mixed
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		20420
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2558
+Total References: 		20410
+Total Page Faults: 		0
+
+mixed
+mixed
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		201073
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	13936
+Total References: 		20407
+Total Page Faults: 		6756
+
+mixed
+mixed
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		76507
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	14350
+Total References: 		20407
+Total Page Faults: 		6907
+
+mixed
+mixed
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		20420
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	826
+Total References: 		20410
+Total Page Faults: 		0
+
+mixed
+mixed
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		20420
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2558
+Total References: 		20410
+Total Page Faults: 		0
+
+mixed
+mixed
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		201073
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	13936
+Total References: 		20407
+Total Page Faults: 		6756
+
+mixed
+mixed
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		76485
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	14351
+Total References: 		20407
+Total Page Faults: 		6907
+
+mixed
+mixed
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		20420
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	826
+Total References: 		20410
+Total Page Faults: 		0
+
+mixed
+mixed
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		20420
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2558
+Total References: 		20410
+Total Page Faults: 		0
+
+mixed
+mixed
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		175816
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	12369
+Total References: 		20407
+Total Page Faults: 		6129
+
+mixed
+mixed
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		72979
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	13694
+Total References: 		20407
+Total Page Faults: 		6541
+
+mixed
+mixed
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		21065
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	851
+Total References: 		21055
+Total Page Faults: 		0
+
+mixed
+mixed
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		21065
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2638
+Total References: 		21055
+Total Page Faults: 		0
+
+mixed
+mixed
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		560414
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	49437
+Total References: 		21054
+Total Page Faults: 		28493
+
+mixed
+mixed
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		200198
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	50106
+Total References: 		21054
+Total Page Faults: 		29458
+
+mixed
+mixed
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		21065
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	851
+Total References: 		21055
+Total Page Faults: 		0
+
+mixed
+mixed
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		21065
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2638
+Total References: 		21055
+Total Page Faults: 		0
+
+mixed
+mixed
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		72047
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	5171
+Total References: 		21055
+Total Page Faults: 		2869
+
+mixed
+mixed
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		35679
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	6540
+Total References: 		21053
+Total Page Faults: 		3342
+
+mixed
+mixed
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		21065
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	851
+Total References: 		21055
+Total Page Faults: 		0
+
+mixed
+mixed
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		21065
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2638
+Total References: 		21055
+Total Page Faults: 		0
+
+mixed
+mixed
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		72041
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	5176
+Total References: 		21055
+Total Page Faults: 		2877
+
+mixed
+mixed
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		35346
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	6483
+Total References: 		21053
+Total Page Faults: 		3315
+
+mixed
+mixed
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		21065
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	851
+Total References: 		21055
+Total Page Faults: 		0
+
+mixed
+mixed
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		21065
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2638
+Total References: 		21055
+Total Page Faults: 		0
+
+mixed
+mixed
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		40632
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2837
+Total References: 		21055
+Total Page Faults: 		1474
+
+mixed
+mixed
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		28139
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	4981
+Total References: 		21055
+Total Page Faults: 		2291
+
+mixed
+spatial
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		22745
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	919
+Total References: 		22735
+Total Page Faults: 		0
+
+mixed
+spatial
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		22745
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2848
+Total References: 		22735
+Total Page Faults: 		0
+
+mixed
+spatial
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		1436607
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	118475
+Total References: 		22732
+Total Page Faults: 		63832
+
+mixed
+spatial
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		447308
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	109206
+Total References: 		22731
+Total Page Faults: 		61449
+
+mixed
+spatial
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		22745
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	919
+Total References: 		22735
+Total Page Faults: 		0
+
+mixed
+spatial
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		22745
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2848
+Total References: 		22735
+Total Page Faults: 		0
+
+mixed
+spatial
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		98243
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	7671
+Total References: 		22734
+Total Page Faults: 		4499
+
+mixed
+spatial
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		41312
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	8157
+Total References: 		22734
+Total Page Faults: 		4538
+
+mixed
+spatial
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		22745
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	919
+Total References: 		22735
+Total Page Faults: 		0
+
+mixed
+spatial
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		22745
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2848
+Total References: 		22735
+Total Page Faults: 		0
+
+mixed
+spatial
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		97713
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	7660
+Total References: 		22734
+Total Page Faults: 		4502
+
+mixed
+spatial
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		41443
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	8198
+Total References: 		22734
+Total Page Faults: 		4558
+
+mixed
+spatial
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		22745
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	919
+Total References: 		22735
+Total Page Faults: 		0
+
+mixed
+spatial
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		22745
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2848
+Total References: 		22735
+Total Page Faults: 		0
+
+mixed
+spatial
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		89569
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	6940
+Total References: 		22734
+Total Page Faults: 		4030
+
+mixed
+spatial
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		37927
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	7464
+Total References: 		22734
+Total Page Faults: 		4081
+
+mixed
+spatial
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		10948
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	443
+Total References: 		10938
+Total Page Faults: 		0
+
+mixed
+spatial
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		10948
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1376
+Total References: 		10938
+Total Page Faults: 		0
+
+mixed
+spatial
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		54227
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	4219
+Total References: 		10936
+Total Page Faults: 		2179
+
+mixed
+spatial
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		34231
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	7151
+Total References: 		10937
+Total Page Faults: 		3396
+
+mixed
+spatial
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		10948
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	443
+Total References: 		10938
+Total Page Faults: 		0
+
+mixed
+spatial
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		10948
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1376
+Total References: 		10938
+Total Page Faults: 		0
+
+mixed
+spatial
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		18236
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1096
+Total References: 		10938
+Total Page Faults: 		465
+
+mixed
+spatial
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		12276
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1854
+Total References: 		10938
+Total Page Faults: 		477
+
+mixed
+spatial
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		10948
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	443
+Total References: 		10938
+Total Page Faults: 		0
+
+mixed
+spatial
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		10948
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1376
+Total References: 		10938
+Total Page Faults: 		0
+
+mixed
+spatial
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		18217
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1093
+Total References: 		10938
+Total Page Faults: 		463
+
+mixed
+spatial
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		12335
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1860
+Total References: 		10937
+Total Page Faults: 		476
+
+mixed
+spatial
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		10948
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	443
+Total References: 		10938
+Total Page Faults: 		0
+
+mixed
+spatial
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		10948
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1376
+Total References: 		10938
+Total Page Faults: 		0
+
+mixed
+spatial
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		13760
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	758
+Total References: 		10938
+Total Page Faults: 		265
+
+mixed
+spatial
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		11506
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1661
+Total References: 		10937
+Total Page Faults: 		332
+
+mixed
+temporal
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		1187816
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	94611
+Total References: 		24997
+Total Page Faults: 		49688
+
+mixed
+temporal
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		518996
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	133423
+Total References: 		24998
+Total Page Faults: 		80050
+
+mixed
+temporal
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		190858
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	16710
+Total References: 		25000
+Total Page Faults: 		10418
+
+mixed
+temporal
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		79292
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	16799
+Total References: 		25000
+Total Page Faults: 		10386
+
+mixed
+temporal
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		190858
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	16710
+Total References: 		25000
+Total Page Faults: 		10418
+
+mixed
+temporal
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		79007
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	16771
+Total References: 		25000
+Total Page Faults: 		10375
+
+mixed
+temporal
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		190560
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	16676
+Total References: 		25000
+Total Page Faults: 		10395
+
+mixed
+temporal
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		78502
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	16680
+Total References: 		24999
+Total Page Faults: 		10322
+
+mixed
+temporal
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		653418
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	56780
+Total References: 		25001
+Total Page Faults: 		32361
+
+mixed
+temporal
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		267537
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	68760
+Total References: 		25001
+Total Page Faults: 		41664
+
+mixed
+temporal
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		133220
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	11001
+Total References: 		25000
+Total Page Faults: 		6835
+
+mixed
+temporal
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		57262
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	11318
+Total References: 		25000
+Total Page Faults: 		6859
+
+mixed
+temporal
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		133220
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	11001
+Total References: 		25000
+Total Page Faults: 		6835
+
+mixed
+temporal
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		57206
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	11302
+Total References: 		25000
+Total Page Faults: 		6843
+
+mixed
+temporal
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+temporal
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		132047
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	10863
+Total References: 		25000
+Total Page Faults: 		6725
+
+mixed
+temporal
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		56878
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	11257
+Total References: 		25000
+Total Page Faults: 		6791
+
+mixed
+both
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		19271
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	779
+Total References: 		19261
+Total Page Faults: 		0
+
+mixed
+both
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		19271
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2414
+Total References: 		19261
+Total Page Faults: 		0
+
+mixed
+both
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		779832
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	64424
+Total References: 		19258
+Total Page Faults: 		34996
+
+mixed
+both
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		268999
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	63174
+Total References: 		19259
+Total Page Faults: 		34789
+
+mixed
+both
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		19271
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	779
+Total References: 		19261
+Total Page Faults: 		0
+
+mixed
+both
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		19271
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2414
+Total References: 		19261
+Total Page Faults: 		0
+
+mixed
+both
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		82036
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	5910
+Total References: 		19259
+Total Page Faults: 		3290
+
+mixed
+both
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		35069
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	6467
+Total References: 		19260
+Total Page Faults: 		3362
+
+mixed
+both
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		19271
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	779
+Total References: 		19261
+Total Page Faults: 		0
+
+mixed
+both
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		19271
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2414
+Total References: 		19261
+Total Page Faults: 		0
+
+mixed
+both
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		82036
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	5910
+Total References: 		19259
+Total Page Faults: 		3290
+
+mixed
+both
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		35431
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	6538
+Total References: 		19259
+Total Page Faults: 		3404
+
+mixed
+both
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		19271
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	779
+Total References: 		19261
+Total Page Faults: 		0
+
+mixed
+both
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		19271
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2414
+Total References: 		19261
+Total Page Faults: 		0
+
+mixed
+both
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		81201
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	5862
+Total References: 		19259
+Total Page Faults: 		3266
+
+mixed
+both
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		34333
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	6330
+Total References: 		19259
+Total Page Faults: 		3276
+
+mixed
+both
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		13528
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	549
+Total References: 		13518
+Total Page Faults: 		0
+
+mixed
+both
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		13528
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1696
+Total References: 		13518
+Total Page Faults: 		0
+
+mixed
+both
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		102394
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	8884
+Total References: 		13518
+Total Page Faults: 		5160
+
+mixed
+both
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		44860
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	10054
+Total References: 		13518
+Total Page Faults: 		5349
+
+mixed
+both
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		13528
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	549
+Total References: 		13518
+Total Page Faults: 		0
+
+mixed
+both
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		13528
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1696
+Total References: 		13518
+Total Page Faults: 		0
+
+mixed
+both
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		21138
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1282
+Total References: 		13518
+Total Page Faults: 		578
+
+mixed
+both
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		15072
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2299
+Total References: 		13518
+Total Page Faults: 		685
+
+mixed
+both
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		13528
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	549
+Total References: 		13518
+Total Page Faults: 		0
+
+mixed
+both
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		13528
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1696
+Total References: 		13518
+Total Page Faults: 		0
+
+mixed
+both
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		20763
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1252
+Total References: 		13518
+Total Page Faults: 		556
+
+mixed
+both
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		15253
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2360
+Total References: 		13517
+Total Page Faults: 		748
+
+mixed
+both
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		13528
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	549
+Total References: 		13518
+Total Page Faults: 		0
+
+mixed
+both
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		13528
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1696
+Total References: 		13518
+Total Page Faults: 		0
+
+mixed
+both
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		17137
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1002
+Total References: 		13518
+Total Page Faults: 		410
+
+mixed
+both
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		14553
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	2183
+Total References: 		13518
+Total Page Faults: 		587
+
+mixed
+random
+manypages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+manypages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+manypages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		2605104
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	207993
+Total References: 		24994
+Total Page Faults: 		108339
+
+mixed
+random
+manypages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		890106
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	203611
+Total References: 		24995
+Total Page Faults: 		106468
+
+mixed
+random
+manypages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+manypages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+manypages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		356800
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	33402
+Total References: 		24997
+Total Page Faults: 		20859
+
+mixed
+random
+manypages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		142950
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	33411
+Total References: 		24998
+Total Page Faults: 		20845
+
+mixed
+random
+manypages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+manypages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+manypages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		356800
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	33402
+Total References: 		24997
+Total Page Faults: 		20859
+
+mixed
+random
+manypages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		142950
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	33411
+Total References: 		24998
+Total Page Faults: 		20845
+
+mixed
+random
+manypages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+manypages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+manypages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		355811
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	33291
+Total References: 		24998
+Total Page Faults: 		20784
+
+mixed
+random
+manypages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		142393
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	33259
+Total References: 		24998
+Total Page Faults: 		20738
+
+mixed
+random
+fewpages
+2c-10
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+fewpages
+2c-10
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+fewpages
+2c-10
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		1077618
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	95695
+Total References: 		24998
+Total Page Faults: 		55055
+
+mixed
+random
+fewpages
+2c-10
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		560888
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	140014
+Total References: 		24998
+Total Page Faults: 		81295
+
+mixed
+random
+fewpages
+2c-3
+highmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+fewpages
+2c-3
+highmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+fewpages
+2c-3
+lowmemory
+hightq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		249040
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	22570
+Total References: 		25000
+Total Page Faults: 		14089
+
+mixed
+random
+fewpages
+2c-3
+lowmemory
+lowtq
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+System Simulation Summary:
+Total Run Time: 		100245
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	22666
+Total References: 		25000
+Total Page Faults: 		14125
+
+mixed
+random
+fewpages
+fifo
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+fewpages
+fifo
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+fewpages
+fifo
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		249040
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	22570
+Total References: 		25000
+Total Page Faults: 		14089
+
+mixed
+random
+fewpages
+fifo
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		100245
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	22666
+Total References: 		25000
+Total Page Faults: 		14125
+
+mixed
+random
+fewpages
+lru
+highmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	1011
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+fewpages
+lru
+highmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		25011
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	3131
+Total References: 		25001
+Total Page Faults: 		0
+
+mixed
+random
+fewpages
+lru
+lowmemory
+hightq
+System Simulation Summary:
+Total Run Time: 		241027
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	21766
+Total References: 		25000
+Total Page Faults: 		13569
+
+mixed
+random
+fewpages
+lru
+lowmemory
+lowtq
+System Simulation Summary:
+Total Run Time: 		96687
+Total Idle Time: 		0
+Processes Executed: 		10
+Total Context Switches: 	21731
+Total References: 		24997
+Total Page Faults: 		13482
+

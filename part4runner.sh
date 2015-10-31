@@ -1,17 +1,29 @@
 #!/bin/bash
 
 
-"" > SystemResults.txt
-"" > ProcessResults.txt
+echo "" > SystemResults.txt
+echo "" > ProcessResults.txt
 
+if [ ! -e part4testing ]; then
+  mkdir part4testing
+fi
 
 for a in manysmall fewlarge mixed ; do
+  if [ ! -e $(echo "part4testing/"$a) ]; then
+    mkdir $(echo "part4testing/"$a)
+  fi
   for b in mixed spatial temporal both random ; do
+    if [ ! -e $(echo "part4testing/"$a"/"$b) ]; then
+      mkdir $(echo "part4testing/"$a"/"$b)
+    fi
     for c in manypages fewpages ; do
+      if [ ! -e $(echo "part4testing/"$a"/"$b"/"$c) ]; then
+        mkdir $(echo "part4testing/"$a"/"$b"/"$c)
+      fi
       if [ "$a" == "manysmall" ]; then
         dl=1
         dh=24
-        el=250
+        e=250
       elif [ "$a" == "fewlarge" ]; then
         dl=1
         dh=6
@@ -26,22 +38,34 @@ for a in manysmall fewlarge mixed ; do
       else
         f=35
       fi
-      "" > $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref")
+      echo "" > $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref")
       for d in $(seq $dl $dh); do
+        if [ ! -e $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") ]; then
+          touch $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref")
+        fi
         if [ "$b" == "mixed" ]; then
-          ./refstr spatial -refSize $e -pageLimit $f -o $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") a 
-          ./refstr temporal -refSize $e -pageLimit $f -o $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") a 
-          ./refstr both -refSize $e -pageLimit $f -o $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") a 
-          ./refstr random -refSize $e -pageLimit $f -o $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") a 
+          ./refstr spatial -refSize $(echo $e) -pageLimit $(echo $f) $(echo "-o") $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") a 
+          ./refstr temporal -refSize $(echo $e) -pageLimit $(echo $f) $(echo "-o") $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") a 
+          ./refstr both -refSize $(echo $e) -pageLimit $(echo $f) $(echo "-o") $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") a 
+          ./refstr random -refSize $(echo $e) -pageLimit $(echo $f) $(echo "-o") $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") a 
         else
           for g in 1 2 3 4 ; do
-            ./refstr $b -refSize $e -pageLimit $f -o $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") a 
+            ./refstr $(echo $b) -refSize $(echo $e) -pageLimit $(echo $f) $(echo "-o") $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") a 
           done
         fi
       done
       for h in 2c-10 2c-3 fifo lru ; do
+        if [ ! -e $(echo "part4testing/"$a"/"$b"/"$c"/"$h) ]; then
+          mkdir $(echo "part4testing/"$a"/"$b"/"$c"/"$h)
+        fi
         for i in highmemory lowmemory ; do
+          if [ ! -e $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i) ]; then
+            mkdir $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i)
+          fi
           for j in hightq lowtq ; do
+            if [ ! -e $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j) ]; then
+              mkdir $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j)
+            fi
             if [ "$h" == "fifo" ]; then
               harg="FIFO"
             elif [ "$h" == "lru" ]; then
@@ -62,25 +86,30 @@ for a in manysmall fewlarge mixed ; do
               mem=150
             fi
 
-            ./genInputFile.sh $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/input.txt") -sim YES --algorithm $harg -tq $tq --frames $mem -sc RR -ref $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") $(echo "-t") 
 
-            $a >> ProcessResults.txt
-            $b >> ProcessResults.txt
-            $c >> ProcessResults.txt
-            $h >> ProcessResults.txt
-            $i >> ProcessResults.txt
-            $j >> ProcessResults.txt
-            ./sim $(echo "-s") $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/input.txt") >> ProcessResults.txt
-            "" >> ProcessResults.txt
+            if [ ! -e $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/inpu.txt") ]; then
+              touch $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/input.txt")
+            fi
 
-            $a >> SystemResults.txt
-            $b >> SystemResults.txt
-            $c >> SystemResults.txt
-            $h >> SystemResults.txt
-            $i >> SystemResults.txt
-            $j >> SystemResults.txt
-            ./sim $(echo "-o") $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/input.txt") >> SystemResults.txt
-            "" >> SystemResults.txt
+            ./genInputFile.sh $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/input.txt") -sim YES --algorithm $(echo $harg) -tq $(echo $tq) --frames $(echo $mem) -sc RR -ref $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") $(echo "-t") $(seq -f "0" -s " " $d)
+
+            echo $a >> ProcessResults.txt
+            echo $b >> ProcessResults.txt
+            echo $c >> ProcessResults.txt
+            echo $h >> ProcessResults.txt
+            echo $i >> ProcessResults.txt
+            echo $j >> ProcessResults.txt
+            ./sim $(echo "-o") $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/input.txt") >> ProcessResults.txt
+            echo "" >> ProcessResults.txt
+
+            echo $a >> SystemResults.txt
+            echo $b >> SystemResults.txt
+            echo $c >> SystemResults.txt
+            echo $h >> SystemResults.txt
+            echo $i >> SystemResults.txt
+            echo $j >> SystemResults.txt
+            ./sim $(echo "-s") $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/input.txt") >> SystemResults.txt
+            echo "" >> SystemResults.txt
 
           done
         done
