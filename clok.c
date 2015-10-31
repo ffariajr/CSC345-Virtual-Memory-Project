@@ -17,7 +17,6 @@ void tick(clok* c) {
     printf("Ticking.\n");
   }
   c->time++;
-  usleep(1);
   if (!((c->time + c->offset) % c->tq)) {
     processEvents(c);
   }
