@@ -1,5 +1,9 @@
 #include "events.h"
 
+/*
+execute this event's function
+return if it should be deleted or not (is persistent)
+*/
 int processEvent(event* e) {
   if (v) {
     printf("<Processing Event>\n");
@@ -12,6 +16,9 @@ int processEvent(event* e) {
   return ret;
 }
 
+/*
+delete me and my data
+*/
 void eventsDestroy(event* e) {
   if (v) {
     printf("Destroying Event.\n");
@@ -37,6 +44,9 @@ void eventsDestroy(event* e) {
   }
 }
 
+/*
+initialize the event data structures
+*/
 event* eventInit(int (*event_f)(void*), void* data, int freeFunc, int freeData) {
   event* new = (event*) malloc(sizeof(event));
   new->behavior = event_f;

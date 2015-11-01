@@ -1,5 +1,8 @@
 #include "fifo.h"
 
+/*
+this function is called by the memory manager to put the next page to page out at th head of the list
+*/
 void fifoRepl(frame** head) {
   if (v) {
     printf("<FIFO Replacement>\n");

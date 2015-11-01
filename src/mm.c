@@ -1,5 +1,8 @@
 #include "mm.h"
 
+//initialize the memory manager
+//decides the replacement algo
+//builds free frames
 mm* mmInit(char replacementAlgorithm, int totalMemoryFrames) {
   if (v) {
     printf("<Memory Manager Initialization>\n");
@@ -42,11 +45,13 @@ mm* mmInit(char replacementAlgorithm, int totalMemoryFrames) {
   return new;
 }
 
+//assigns a pid to a new process
 void loadProcess(mm* m, pcb* p) {
   m->pids++;
   p->pid = m->pids;
 }
 
+//returns if that page is in memory
 int request(mm* m, pcb* p) {
   frame* temp = findFrame(m->allocated, p->pid, p->currentPage);
 
@@ -78,6 +83,7 @@ int request(mm* m, pcb* p) {
   }
 }
 
+//bring a page in from "disk" into a frame that should be at the head of the freemem list before calling this
 void pageIn(mm* m, pcb* p) {
   if (v) {
     printf("<Page In>\n");
@@ -93,6 +99,7 @@ void pageIn(mm* m, pcb* p) {
   }
 }
 
+//take a page out of memory to make room
 void pageOut(mm* m) {
   if (v) {
     printf("<Page Out>\n");
@@ -111,6 +118,7 @@ void pageOut(mm* m) {
   }
 }
 
+//replace the frame at the head of the allocated list with the new page
 void replacement(mm* m, pcb* p) {
   if (v) {
     printf("<Replacement>\n");
@@ -135,6 +143,7 @@ void replacement(mm* m, pcb* p) {
   }
 }
 
+//free all frames and then myself
 void mmDestroy(mm* m) {
   while (m->freemem && m->freemem->next) {
     frame* temp = m->freemem;
@@ -155,6 +164,7 @@ void mmDestroy(mm* m) {
   free(m);
 }
 
+//free the dying processes frames
 void mmTerm(mm* m, int pid) {
   if (v) {
     printf("<MM Process Termination>\n");

@@ -1,5 +1,9 @@
 #include "frame.h"
 
+/*
+memory physical frame
+holds a pid and a page
+*/
 frame* findFrame(frame* list, int pid, char page) {
   frame* temp = list;
   while (temp) {
@@ -11,6 +15,9 @@ frame* findFrame(frame* list, int pid, char page) {
   return 0;
 }
 
+/*
+initialize a memory frame
+*/
 frame* frameInit() {
   frame* new = (frame*) malloc(sizeof(frame));
   new->pid = -1;
@@ -20,10 +27,16 @@ frame* frameInit() {
   return new;
 }
 
+/*
+set this frame's last used counter to 0
+*/
 void updateFrame(frame* f) {
   f->lastUsed = 0;
 }
 
+/*
+in case of lru or 2c, sets or increments the last used counter
+*/
 void incrementFrames(frame* list) {
   while (list && list->next) {
     list->lastUsed++;

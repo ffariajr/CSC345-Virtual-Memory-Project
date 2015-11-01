@@ -1,5 +1,9 @@
 #include "2c.h"
-
+/*
+this function is meant to be a function pointer.
+it is to be called by the memory manager when 
+a page is to be chosen to be replaced.
+*/
 void c2Repl(frame** head) {
   if (v) {
     printf("<2C Replacement>\n");
@@ -31,7 +35,11 @@ void c2Repl(frame** head) {
   }
 }
 
-
+/*
+this function is meant to be a function pointer
+An event is supposed to call this function when it is time for the event to execute
+the event passes in a void* data type, but in this case, it is a clok pointer
+*/
 int grantChance(void* data) {
   if (v) {
     printf("<Grant 2nd Chance>\n");

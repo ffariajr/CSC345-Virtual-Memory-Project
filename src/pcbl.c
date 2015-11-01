@@ -1,5 +1,6 @@
 #include "pcbl.h"
 
+//initialize a process control block list
 pcb* pcbInit(char* refs, int size) {
   pcb* new = (pcb*) malloc(sizeof(pcb));
   new->runTime = 0;
@@ -12,6 +13,7 @@ pcb* pcbInit(char* refs, int size) {
   return new;
 }
 
+//init a process control block
 pcbl* pcblInit() {
   pcbl* new = (pcbl*) malloc(sizeof(pcbl));
   new->node = 0;
@@ -20,6 +22,7 @@ pcbl* pcblInit() {
   return new;
 }
 
+//execute that process's next instr
 int pcbStep(pcb* p) {
   if (v) {
     printf("<PCB Step>\n");
@@ -38,6 +41,7 @@ int pcbStep(pcb* p) {
   return ret;
 }
 
+//fault! roll back because previous instr must wait for page in
 void rollBack(pcb* p) {
   if (v) {
     printf("<PCB Roll Back>\n");
@@ -50,6 +54,7 @@ void rollBack(pcb* p) {
   }
 }
 
+//insert a pcbl here
 void insert(pcbl** pos, pcbl* new) {
   if (*pos) {
     new->next = (*pos)->next;
@@ -66,11 +71,13 @@ void insert(pcbl** pos, pcbl* new) {
   }
 }
 
+//free a pcb
 void pcbDestroy(pcb* p) {
   free(p);
   p = 0;
 }
 
+//extract a pcbl from a pcbl circle
 void extract(pcbl** p) {
   if ((*p)->next != *p) {
     *p = (*p)->next;
@@ -86,6 +93,7 @@ void extract(pcbl** p) {
   }
 }
 
+//free pcb then myself
 void pcblDestroy(pcbl* p) {
   if (p && p->next != p) {
     extract(&p);

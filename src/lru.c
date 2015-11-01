@@ -1,5 +1,6 @@
 #include "lru.h"
 
+//called by memory manager to find next page to page out
 void lruRepl(frame** head) {
   if (v) {
     printf("<LRU Replacement>\n");
