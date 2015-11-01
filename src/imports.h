@@ -7,7 +7,9 @@
 #include <unistd.h>
 
 extern int v;
-extern int output;
+extern int proutput;
 extern int memoutput;
+extern int tabular;
+extern int sysoutput;
 
 #endif

@@ -1,14 +1,17 @@
 #include "sim.h"
 
 int v = 0;
-int output = 0;
+int proutput = 0;
 int memoutput = 0;
 int sysoutput = 0;
+int tabular = 0;
 
 int main(int argc, char** argv) {
   
   FILE* inf;
   const char fileReadChar = 'r';
+
+  char loca = 'r';
 
   if (argc == 2 || argc == 3) {
     if (argc == 3) {
@@ -18,27 +21,55 @@ int main(int argc, char** argv) {
       } else if (!strcmp(argv[1], "-mv")) {
         v = 1;
         memoutput = 1;
-      } else if (!strcmp(argv[1], "-o")) {
-        output = 1;
-      } else if (!strcmp(argv[1], "-mo")) {
-        output = 1;
+      } else if (!strcmp(argv[1], "-p")) {
+        proutput = 1;
+      } else if (!strcmp(argv[1], "-m")) {
         memoutput = 1;
       } else if (!strcmp(argv[1], "-s")) {
         sysoutput = 1;
+      } else if (!strcmp(argv[1], "-ts")) {
+        tabular = 1;
+        sysoutput = 1;
+      } else if (!strcmp(argv[1], "-tp")) {
+        tabular = 1;
+        proutput = 1;
+      } else if (!strcmp(argv[1], "-t")) {
+        printf("-tp:\nPID\tStart Time\tEnd Time\tSize\tFaults\n\n-ts:\n");
+        printf("Run Time\tIdle Time\tProcesses\t");
+        printf("Context Switches\tReferences\tPage Faults\tFrames\tReplacement Algorithm\tLocality\n");
+        exit(0);
+      } else if (!strcmp(argv[1], "-loc-temporal")) {
+        tabular = 1;
+        sysoutput = 1;
+        loca = 't';
+      } else if (!strcmp(argv[1], "-loc-spatial")) {
+        tabular = 1;
+        sysoutput = 1;
+        loca = 's';
+      } else if (!strcmp(argv[1], "-loc-both")) {
+        tabular = 1;
+        sysoutput = 1;
+        loca = 'b';
+      } else if (!strcmp(argv[1], "-loc-random")) {
+        tabular = 1;
+        sysoutput = 1;
+        loca = 'r';
       } else {
         printf("Fatal Error: Invalid Option: %s\nUse %s -h for more information.\n", argv[1], argv[0]);
         exit(-1);
       }
     } else {
       if (!strcmp(argv[1], "-h")) {
-        printf("%s [-[m]v | -h | -[m]o] <inputFile>\n\t\t-[m]v\n\t\t\tVerbose output.\n", argv[0]);
+        printf("%s [-[m]v | -h | -m | -[t]p | -[t]s | -t] <inputFile>\n\t\t-[m]v\n\t\t\tVerbose output.\n", argv[0]);
         printf("\t\t\tThe option [m] flag outputs the contents of memory after each page\n");
         printf("\t\t\tfault, or memory cleaning after a process terminates.\n");
-        printf("\t\t-[m]o\n\t\t\tDisplay request info for each request. If the [m] flag is included, then");
-        printf(" also displays memory page request info.\n\t\t");
-        printf("-s\n\t\t\tShows only summary system info after the");
-        printf(" system has finished.\n\t\t<inputFile>\n\t\t\t");
-        printf("File used for input arguments. Must be specified!\n");
+        printf("\t\t-[t]p\n\t\t\tDisplay summary info on each process termination.\n\t\t\tThe [t] option");
+        printf(" indicates that output should be delimetered and in a table format.\n\t\t-m\n\t\t\t");
+        printf("Displays memory page request info.\n\t\t");
+        printf("-[t]s\n\t\t\tShows summary system info after the system has finished.\n\t\t\tThe [t]");
+        printf(" option indicated that output should be delimetered and in a table format.\n\t\t");
+        printf("-t\n\t\t\tPrint Table Headers from using Tabular format.\n\t\t<inputFile>");
+        printf("\n\t\t\tFile used for input arguments. Must be specified!\n");
         exit(0);
       }
       inf = fopen(argv[1], &fileReadChar);
@@ -76,7 +107,7 @@ int main(int argc, char** argv) {
 
   char ch = 0;
   int counter = 0;
-  while (ch != EOF) {
+  while (ch != EOF && counter < 98) {
     fscanf(inf, "%c", &ch);
     if (ch == ':') {
       char s[100];
@@ -474,8 +505,9 @@ int main(int argc, char** argv) {
     }
 
     tick(c);
+    totalRunTime++;
     pcbStep(p);
-    int faults = 0;
+    totalFaults = 0;
     int referencesCount = 1;
 
     if (v) {
@@ -491,13 +523,15 @@ int main(int argc, char** argv) {
         printf("Request: %4d\tPage: %3d", referencesCount, p->currentPage);
       }
       int try = request(m, p);
+      totalReferences++;
       
       if (v) {
         printf("Request done.\n");
       }
 
       if (!try) {
-        faults++;
+        totalReferences--;
+        totalFaults++;
         rollBack(p);
         if (v) {
           printf("Begin search for victim page.\n");
@@ -513,6 +547,7 @@ int main(int argc, char** argv) {
         incrementFrames(m->allocated);
       }
       tick(c);
+      totalRunTime++;
       if (v) {
         printf("Time: %d.\n", c->time);
       }
@@ -543,14 +578,18 @@ int main(int argc, char** argv) {
   if (v) {
     printf("Halt.\n");
   }
-  if (v || output || memoutput || sysoutput) {
-    printf("System Simulation Summary:\n");
-    printf("Total Run Time: \t\t%d\n", totalRunTime);
-    printf("Total Idle Time: \t\t%d\n", totalIdleTime);
-    printf("Processes Executed: \t\t%d\n", procsExecuted);
-    printf("Total Context Switches: \t%d\n", totalContextSwitches);
-    printf("Total References: \t\t%d\n", totalReferences);
-    printf("Total Page Faults: \t\t%d\n", totalFaults);
+  if (v || sysoutput) {
+    if (tabular) {
+      printf("%d\t\t%d\t\t%d\t\t%d\t\t\t%d\t\t%d\t\t%d\t%c\t\t\t%c\n", totalRunTime, totalIdleTime, procsExecuted, totalContextSwitches, totalReferences, totalFaults, frames, replalgo, loca);
+    } else {
+      printf("System Simulation Summary:\n");
+      printf("Total Run Time: \t\t%d\n", totalRunTime);
+      printf("Total Idle Time: \t\t%d\n", totalIdleTime);
+      printf("Processes Executed: \t\t%d\n", procsExecuted);
+      printf("Total Context Switches: \t%d\n", totalContextSwitches);
+      printf("Total References: \t\t%d\n", totalReferences);
+      printf("Total Page Faults: \t\t%d\n", totalFaults);
+    }
   }
 }
 

@@ -85,7 +85,7 @@ int termActiveProcess(sc* s) {
   if (p->node->refPosition != p->node->refSize - 1) {
     ret = -1;
   }
-  if (v || output) {
+  if (v || proutput) {
     printf("Process Summary:\nDetail: PID:\t\t%d\nDetail: ", p->node->pid);
     printf("Start Time:\t%d\n", p->node->startTime);
     printf("Detail: End Time:\t%d\nDetail: Time Given:\t%d\n", p->node->endTime, p->node->runTime);

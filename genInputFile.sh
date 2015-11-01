@@ -19,7 +19,7 @@ if [ $# -lt 1 -o "$1" == "-h" ]; then
   echo "          Can be in any order.  All options default to a default value when omitted."
   echo ""
   echo "          -sim <ans>"
-  echo "          --fule-sim <ans>"
+  echo "          --full-sim <ans>"
   echo "              <ans> must be either \"YES\" or \"NO\"."
   echo "          -a <algo>"
   echo "          --algorithm <algo>"
