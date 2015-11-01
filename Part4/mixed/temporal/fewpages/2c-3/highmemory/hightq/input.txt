@@ -1,0 +1,133 @@
+Input file for Virtual Memory Simulator Project
+If any of the pre-formatting of this file is changed, please remake the file.
+
+Run Full Simulation.
+        If set to "NO", then only part 3 of the project requirements
+        will be run.  If set to "YES", then part 4 will be included.
+:YES
+
+Replacement Algorithm.
+        Must be "FIFO", "LRU", or "2C <#>"
+        Option 2C must be followed by a space and then a number. That number is the
+        amount of time quantums to wait before resetting the last used counter in all
+        pages in memory. It must be greater than 1 and less than 1000.
+:2C 3
+
+Time Quantum.
+        Must be a number between 1 and INT_MAX.
+:25
+
+Memory Frames.
+        Must be a number greater than 1.
+:1000
+
+Scheduler.
+        Currently, can only be set to "RR"
+:RR
+
+Reference String File.
+        The name of a file that contains the reference strings.
+:Part4/mixed/temporal/fewpages/strings.ref
+
+Reference String Start Times.
+        Start times can be set here. 1 means 1 time quantum. "-1"'s are ignored.
+        The amount of non-"-1"'s must match the amount of reference strings.
+01:0
+02:0
+03:0
+04:0
+05:0
+06:0
+07:0
+08:0
+09:0
+10:0
+11:0
+12:0
+13:0
+14:0
+15:0
+16:0
+17:0
+18:0
+19:0
+20:0
+21:0
+22:0
+23:0
+24:0
+25:0
+26:0
+27:0
+28:0
+29:0
+30:0
+31:0
+32:0
+33:0
+34:0
+35:0
+36:0
+37:0
+38:0
+39:0
+40:0
+41:0
+42:0
+43:0
+44:0
+45:0
+46:0
+47:0
+48:0
+49:0
+50:0
+51:-1
+52:-1
+53:-1
+54:-1
+55:-1
+56:-1
+57:-1
+58:-1
+59:-1
+60:-1
+61:-1
+62:-1
+63:-1
+64:-1
+65:-1
+66:-1
+67:-1
+68:-1
+69:-1
+70:-1
+71:-1
+72:-1
+73:-1
+74:-1
+75:-1
+76:-1
+77:-1
+78:-1
+79:-1
+80:-1
+81:-1
+82:-1
+83:-1
+84:-1
+85:-1
+86:-1
+87:-1
+88:-1
+89:-1
+90:-1
+91:-1
+92:-1
+93:-1
+94:-1
+95:-1
+96:-1
+97:-1
+98:-1
+99:-1

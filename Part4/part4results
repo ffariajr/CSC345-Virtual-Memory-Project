@@ -1,0 +1,741 @@
+-tp:
+PID	Start Time	End Time	Size	Faults
+
+-ts:
+Run Time	Idle Time	Processes	Context Switches	References	Page Faults	Frames	Replacement Algorithm	Locality
+381678		0		92		130145			21961		119756		1000	2			s
+311829		0		92		194449			21958		177972		1000	2			s
+1950230		0		92		526444			21930		467264		150	2			s
+915390		0		92		529937			21917		475362		150	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+29679		0		92		4357			21973		3731		1000	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+26517		0		92		6243			21969		4456		1000	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+67273		0		92		17808			21953		16528		150	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+46613		0		92		17768			21940		16459		150	2			s
+29990		0		92		4490			21972		3874		1000	f			s
+26517		0		92		6243			21969		4456		1000	f			s
+67273		0		92		17808			21953		16528		150	f			s
+46583		0		92		17757			21942		16445		150	f			s
+28373		0		92		4053			21971		3422		1000	l			s
+26299		0		92		6065			21971		4215		1000	l			s
+66380		0		92		17424			21942		16168		150	l			s
+45538		0		92		17240			21947		15935		150	l			s
+43287		0		92		10238			19445		8883		1000	2			s
+81879		0		92		45395			19440		40374		1000	2			s
+1035176		0		92		259699			19419		227525		150	2			s
+783773		0		92		468005			19409		423379		150	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+21425		0		92		2101			19446		1479		1000	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+21923		0		92		4299			19444		2387		1000	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+58836		0		92		14608			19428		13408		150	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+41639		0		92		15458			19428		14159		150	2			s
+21425		0		92		2101			19446		1479		1000	f			s
+21923		0		92		4299			19444		2387		1000	f			s
+58836		0		92		14608			19428		13408		150	f			s
+41775		0		92		15507			19426		14216		150	f			s
+20927		0		92		1799			19446		1147		1000	l			s
+21472		0		92		3980			19445		1935		1000	l			s
+58606		0		92		14545			19421		13365		150	l			s
+40403		0		92		14943			19421		13677		150	l			s
+1128271		0		92		352883			22974		320869		1000	2			t
+626985		0		92		382209			22975		348309		1000	2			t
+1723341		0		92		465395			22967		413369		150	2			t
+971205		0		92		552336			22964		493887		150	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+44042		0		92		8804			23000		8038		1000	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+34074		0		92		9629			22997		8485		1000	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+51490		0		92		11537			22984		10709		150	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+37945		0		92		11779			22972		10836		150	2			t
+44042		0		92		8804			23000		8038		1000	f			t
+34003		0		92		9625			22994		8482		1000	f			t
+51490		0		92		11537			22984		10709		150	f			t
+37945		0		92		11779			22972		10836		150	f			t
+44244		0		92		8858			22998		8093		1000	l			t
+34118		0		92		9660			22993		8504		1000	l			t
+51531		0		92		11557			22982		10727		150	l			t
+37900		0		92		11727			22977		10786		150	l			t
+364667		0		92		124999			22993		115200		1000	2			t
+308750		0		92		193463			22997		177803		1000	2			t
+1350069		0		92		370479			22976		330072		150	2			t
+860767		0		92		504458			22974		454887		150	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+38931		0		92		6808			23000		6139		1000	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+30179		0		92		7652			22999		6383		1000	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+51749		0		92		11502			22976		10658		150	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+37545		0		92		11605			22973		10661		150	2			t
+38931		0		92		6808			23000		6139		1000	f			t
+30257		0		92		7727			22997		6497		1000	f			t
+51749		0		92		11502			22976		10658		150	f			t
+37545		0		92		11605			22973		10661		150	f			t
+38793		0		92		6743			22995		6075		1000	l			t
+29962		0		92		7558			23000		6270		1000	l			t
+51515		0		92		11456			22980		10615		150	l			t
+37560		0		92		11599			22975		10653		150	l			t
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 38
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 92
+Reference Strings in Reference Strings File: 17
+2090370		0		92		617854			22953		556640		1000	2			r
+1359699		0		92		813654			22942		736164		1000	2			r
+3307209		0		92		900982			22926		800808		150	2			r
+1922293		0		92		1085825			22922		966517		150	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+69666		0		92		19017			22998		17670		1000	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+50734		0		92		19880			22997		18339		1000	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+81197		0		92		23606			22992		22055		150	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+56421		0		92		23624			22984		22020		150	2			r
+69666		0		92		19017			22998		17670		1000	f			r
+50734		0		92		19880			22997		18339		1000	f			r
+81197		0		92		23606			22992		22055		150	f			r
+56421		0		92		23624			22984		22020		150	f			r
+69688		0		92		19039			22997		17693		1000	l			r
+50656		0		92		19824			22997		18278		1000	l			r
+81196		0		92		23605			22992		22054		150	l			r
+56513		0		92		23665			22985		22065		150	l			r
+398022		0		92		142408			22992		131842		1000	2			r
+752017		0		92		468868			22978		429196		1000	2			r
+1857545		0		92		535594			22959		480691		150	2			r
+1457195		0		92		827384			22937		737837		150	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+56187		0		92		13742			22998		12690		1000	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+43253		0		92		15132			22998		13804		1000	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+79250		0		92		22813			22984		21308		150	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+55189		0		92		22760			22990		21212		150	2			r
+56187		0		92		13742			22998		12690		1000	f			r
+43253		0		92		15132			22998		13804		1000	f			r
+79250		0		92		22813			22984		21308		150	f			r
+55189		0		92		22760			22990		21212		150	f			r
+56253		0		92		13711			22995		12654		1000	l			r
+43028		0		92		15000			22989		13681		1000	l			r
+79419		0		92		22841			22982		21330		150	l			r
+55302		0		92		22835			22984		21292		150	l			r
+1667035		0		25		233680			114535		174990		1000	2			s
+635373		0		25		214252			114534		155871		1000	2			s
+11403729		0		25		1379578			114525		963143		150	2			s
+3672865		0		25		1221766			114525		874586		150	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+137113		0		25		10289			114537		6319		1000	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+120999		0		25		19204			114536		6401		1000	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+449344		0		25		47011			114531		33922		150	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+208071		0		25		48547			114530		34018		150	2			s
+136634		0		25		10167			114537		6179		1000	f			s
+120991		0		25		19189			114536		6393		1000	f			s
+449891		0		25		47016			114531		33916		150	f			s
+208279		0		25		48622			114531		34122		150	f			s
+127464		0		25		8954			114535		4992		1000	l			s
+119915		0		25		18503			114535		5355		1000	l			s
+435180		0		25		45628			114530		32932		150	l			s
+201381		0		25		47317			114532		33178		150	l			s
+54907		0		25		2212			54882		0		1000	2			s
+54907		0		25		6879			54882		0		1000	2			s
+3252617		0		25		453200			54867		336958		150	2			s
+833544		0		25		276731			54872		198765		150	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+54907		0		25		2212			54882		0		1000	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+54907		0		25		6879			54882		0		1000	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+141094		0		25		12946			54873		8768		150	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+76414		0		25		15380			54875		9133		150	2			s
+54907		0		25		2212			54882		0		1000	f			s
+54907		0		25		6879			54882		0		1000	f			s
+140268		0		25		12953			54874		8794		150	f			s
+76728		0		25		15467			54875		9200		150	f			s
+54907		0		25		2212			54882		0		1000	l			s
+54907		0		25		6879			54882		0		1000	l			s
+117645		0		25		10866			54874		7346		150	l			s
+71080		0		25		14070			54876		7978		150	l			s
+5305444		0		25		787942			187497		603911		1000	2			t
+2981024		0		25		1208389			187497		966614		1000	2			t
+12459748		0		25		1494800			187493		1042249		150	2			t
+5731435		0		25		2188823			187492		1695720		150	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+562397		0		25		67848			187501		54495		1000	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+299604		0		25		69646			187500		54280		1000	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+805335		0		25		109572			187495		88184		150	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+416343		0		25		109753			187495		88048		150	2			t
+562397		0		25		67848			187501		54495		1000	f			t
+299564		0		25		69706			187500		54386		1000	f			t
+805335		0		25		109572			187495		88184		150	f			t
+416612		0		25		109806			187495		88078		150	f			t
+555200		0		25		66961			187499		53745		1000	l			t
+298702		0		25		69367			187500		54000		1000	l			t
+805165		0		25		109590			187493		88212		150	l			t
+416723		0		25		109770			187493		88040		150	l			t
+187526		0		25		7526			187501		0		1000	2			t
+187526		0		25		23451			187501		0		1000	2			t
+9284723		0		25		1216277			187494		884300		150	2			t
+4684019		0		25		1806087			187495		1407732		150	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+187526		0		25		7526			187501		0		1000	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+187526		0		25		23451			187501		0		1000	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+743114		0		25		98736			187494		79490		150	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+387556		0		25		98838			187494		79119		150	2			t
+187526		0		25		7526			187501		0		1000	f			t
+187526		0		25		23451			187501		0		1000	f			t
+743114		0		25		98736			187494		79490		150	f			t
+387248		0		25		98838			187495		79123		150	f			t
+187526		0		25		7526			187501		0		1000	l			t
+187526		0		25		23451			187501		0		1000	l			t
+743633		0		25		98753			187495		79489		150	l			t
+385150		0		25		98061			187496		78456		150	l			t
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 25
+Reference Strings in Reference Strings File: 6
+37253		0		25		1503			37228		0		1000	2			b
+37253		0		25		4671			37228		0		1000	2			b
+1312343		0		25		191759			37221		145621		150	2			b
+395292		0		25		142204			37218		107391		150	2			b
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+37253		0		25		1503			37228		0		1000	2			b
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+37253		0		25		4671			37228		0		1000	2			b
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+78207		0		25		7136			37224		4946		150	2			b
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+47427		0		25		9029			37221		5146		150	2			b
+37253		0		25		1503			37228		0		1000	f			b
+37253		0		25		4671			37228		0		1000	f			b
+78769		0		25		7197			37222		5004		150	f			b
+47818		0		25		9128			37224		5214		150	f			b
+37253		0		25		1503			37228		0		1000	l			b
+37253		0		25		4671			37228		0		1000	l			b
+74874		0		25		6679			37224		4573		150	l			b
+45497		0		25		8518			37225		4668		150	l			b
+8327314		0		25		1208025			187496		914957		1000	2			r
+6416829		0		25		2590293			187497		2053582		1000	2			r
+23117685		0		25		2817571			187482		1973328		150	2			r
+9814223		0		25		3205892			187481		2265305		150	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+952970		0		25		136481			187496		109926		1000	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+482443		0		25		136745			187496		109874		1000	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+1412484		0		25		218000			187488		175713		150	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+694102		0		25		218068			187491		175758		150	2			r
+952970		0		25		136481			187496		109926		1000	f			r
+482443		0		25		136745			187496		109874		1000	f			r
+1412484		0		25		218000			187488		175713		150	f			r
+694102		0		25		218068			187491		175758		150	f			r
+944362		0		25		135061			187498		108759		1000	l			r
+478029		0		25		135319			187497		108619		1000	l			r
+1411828		0		25		217826			187488		175554		150	l			r
+693858		0		25		217957			187485		175644		150	l			r
+187526		0		25		7526			187501		0		1000	2			r
+187526		0		25		23451			187501		0		1000	2			r
+14823369		0		25		1955343			187487		1421150		150	2			r
+7604906		0		25		2637543			187485		1935040		150	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+187526		0		25		7526			187501		0		1000	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+187526		0		25		23451			187501		0		1000	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+1265497		0		25		191895			187491		154667		150	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+627924		0		25		192194			187490		154871		150	2			r
+187526		0		25		7526			187501		0		1000	f			r
+187526		0		25		23451			187501		0		1000	f			r
+1265497		0		25		191895			187491		154667		150	f			r
+627924		0		25		192194			187490		154871		150	f			r
+187526		0		25		7526			187501		0		1000	l			r
+187526		0		25		23451			187501		0		1000	l			r
+1263171		0		25		191520			187493		154370		150	l			r
+613132		0		25		190201			187494		153256		150	l			r
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+58669		0		50		2413			58577		42		1000	2			s
+58679		0		50		7403			58578		51		1000	2			s
+5199907		0		50		968749			58547		792932		150	2			s
+1891816		0		50		831690			58553		681893		150	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+58661		0		50		2402			58578		33		1000	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+58686		0		50		7402			58578		58		1000	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+200970		0		50		27722			58563		22442		150	2			s
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+106464		0		50		28415			58562		22587		150	2			s
+58661		0		50		2402			58578		33		1000	f			s
+58686		0		50		7402			58578		58		1000	f			s
+201090		0		50		27759			58562		22478		150	f			s
+107183		0		50		28548			58562		22695		150	f			s
+58663		0		50		2402			58577		36		1000	l			s
+58660		0		50		7381			58578		32		1000	l			s
+179363		0		50		24794			58561		20120		150	l			s
+97935		0		50		26142			58562		20607		150	l			s
+5862008		0		50		1225179			124990		1034694		1000	2			t
+3477578		0		50		1824958			124992		1596824		1000	2			t
+9371449		0		50		1719022			124982		1403057		150	2			t
+4835106		0		50		2375829			124982		2032919		150	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+318526		0		50		54629			124998		48569		1000	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+202416		0		50		55325			124996		48451		1000	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+368587		0		50		68037			124987		60585		150	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+231169		0		50		68248			124986		60548		150	2			t
+318526		0		50		54629			124998		48569		1000	f			t
+202163		0		50		55174			124997		48250		1000	f			t
+368587		0		50		68037			124987		60585		150	f			t
+231256		0		50		68265			124989		60573		150	f			t
+317160		0		50		54225			124999		48179		1000	l			t
+202068		0		50		55132			124997		48226		1000	l			t
+368976		0		50		68088			124987		60624		150	l			t
+231499		0		50		68307			124989		60583		150	l			t
+1260988		0		50		311716			124999		273427		1000	2			t
+1132442		0		50		593677			125000		521537		1000	2			t
+6850300		0		50		1329267			124987		1102109		150	2			t
+4443146		0		50		2240963			124985		1934872		150	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+221525		0		50		28785			125001		25371		1000	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+150502		0		50		33045			125000		25086		1000	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+357610		0		50		65142			124989		58020		150	2			t
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+224664		0		50		65322			124990		57908		150	2			t
+221525		0		50		28785			125001		25371		1000	f			t
+150502		0		50		33045			125000		25086		1000	f			t
+357610		0		50		65142			124989		58020		150	f			t
+224801		0		50		65369			124988		57952		150	f			t
+134978		0		50		11509			125001		7947		1000	l			t
+149909		0		50		32766			124998		24571		1000	l			t
+358661		0		50		65239			124990		58084		150	l			t
+224952		0		50		65328			124987		57879		150	l			t
+2433648		0		50		530668			100178		453111		1000	2			b
+1264642		0		50		631329			100177		545061		1000	2			b
+6404222		0		50		1202895			100169		988213		150	2			b
+3076442		0		50		1461782			100170		1237366		150	2			b
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+145785		0		50		16555			100185		13825		1000	2			b
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+114719		0		50		23048			100185		14477		1000	2			b
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+269230		0		50		41746			100181		36179		150	2			b
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+160415		0		50		42245			100179		36074		150	2			b
+144871		0		50		16321			100184		13568		1000	f			b
+114719		0		50		23048			100185		14477		1000	f			b
+267933		0		50		41583			100181		36053		150	f			b
+160633		0		50		42251			100180		36008		150	f			b
+136958		0		50		15144			100184		12439		1000	l			b
+113561		0		50		22240			100184		13327		1000	l			b
+263030		0		50		40341			100179		34923		150	l			b
+157545		0		50		41371			100180		35203		150	l			b
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+Error: Too Few Reference Strings Loaded:
+Reference Strings in Input File: 50
+Reference Strings in Reference Strings File: 25
+11171631		0		50		2363250			124976		1997910		1000	2			r
+5609256		0		50		2688579			124977		2276270		1000	2			r
+17308836		0		50		3234007			124963		2648372		150	2			r
+8215560		0		50		3611256			124956		2955340		150	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+512564		0		50		109212			124995		97393		1000	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+307303		0		50		109543			124995		97495		1000	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+606060		0		50		135193			124983		120621		150	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+358985		0		50		135137			124988		120546		150	2			r
+512564		0		50		109212			124995		97393		1000	f			r
+307303		0		50		109543			124995		97495		1000	f			r
+606060		0		50		135193			124983		120621		150	f			r
+358985		0		50		135137			124988		120546		150	f			r
+511180		0		50		108856			124995		97062		1000	l			r
+308743		0		50		109133			124992		97094		1000	l			r
+606077		0		50		135212			124981		120640		150	l			r
+359212		0		50		135243			124982		120644		150	l			r
+1667571		0		50		408341			124999		356873		1000	2			r
+2292678		0		50		1223948			124999		1076036		1000	2			r
+8037542		0		50		1556069			124982		1287428		150	2			r
+6835026		0		50		3128479			124967		2602257		150	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+315557		0		50		55536			124999		49292		1000	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+207184		0		50		57326			124998		50257		1000	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+577345		0		50		127108			124985		113390		150	2			r
+Error: Illegal Input Value for "Second Chance Forgiveness": 3
+
+345533		0		50		127321			124985		113544		150	2			r
+319196		0		50		56093			124998		49821		1000	f			r
+206871		0		50		57343			124998		50338		1000	f			r
+577345		0		50		127108			124985		113390		150	f			r
+345533		0		50		127321			124985		113544		150	f			r
+134773		0		50		12426			125001		8234		1000	l			r
+155743		0		50		37811			124998		29250		1000	l			r
+577307		0		50		127117			124980		113402		150	l			r
+345484		0		50		127260			124982		113479		150	l			r

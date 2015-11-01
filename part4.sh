@@ -1,23 +1,23 @@
 #!/bin/bash
 
 
-./sim -t sim >  part4results
+./sim -t sim >  Part4/part4results
 
-if [ ! -e part4testing ]; then
-  mkdir part4testing
+if [ ! -e Part4 ]; then
+  mkdir Part4
 fi
 
 for a in manysmall fewlarge mixed ; do
-  if [ ! -e $(echo "part4testing/"$a) ]; then
-    mkdir $(echo "part4testing/"$a)
+  if [ ! -e $(echo "Part4/"$a) ]; then
+    mkdir $(echo "Part4/"$a)
   fi
   for b in spatial temporal both random ; do
-    if [ ! -e $(echo "part4testing/"$a"/"$b) ]; then
-      mkdir $(echo "part4testing/"$a"/"$b)
+    if [ ! -e $(echo "Part4/"$a"/"$b) ]; then
+      mkdir $(echo "Part4/"$a"/"$b)
     fi
     for c in manypages fewpages ; do
-      if [ ! -e $(echo "part4testing/"$a"/"$b"/"$c) ]; then
-        mkdir $(echo "part4testing/"$a"/"$b"/"$c)
+      if [ ! -e $(echo "Part4/"$a"/"$b"/"$c) ]; then
+        mkdir $(echo "Part4/"$a"/"$b"/"$c)
       fi
       if [ "$a" == "manysmall" ]; then
         dl=1
@@ -37,25 +37,25 @@ for a in manysmall fewlarge mixed ; do
       else
         f=35
       fi
-      echo "" > $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref")
+      echo "" > $(echo "Part4/"$a"/"$b"/"$c"/strings.ref")
       for d in $(seq $dl $dh); do
-        if [ ! -e $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") ]; then
-          touch $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref")
+        if [ ! -e $(echo "Part4/"$a"/"$b"/"$c"/strings.ref") ]; then
+          touch $(echo "Part4/"$a"/"$b"/"$c"/strings.ref")
         fi
-        ./refstr $(echo $b) -refSize $(echo $e) -pageLimit $(echo $f) $(echo "-o") $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") a 
-#        echo "part4testing/"$a"/"$b"/"$c"/strings.ref" 
+        ./refstr $(echo $b) -refSize $(echo $e) -pageLimit $(echo $f) $(echo "-o") $(echo "Part4/"$a"/"$b"/"$c"/strings.ref") a 
+        sleep 0.1
       done
       for h in 2c-10 2c-3 fifo lru ; do
-        if [ ! -e $(echo "part4testing/"$a"/"$b"/"$c"/"$h) ]; then
-          mkdir $(echo "part4testing/"$a"/"$b"/"$c"/"$h)
+        if [ ! -e $(echo "Part4/"$a"/"$b"/"$c"/"$h) ]; then
+          mkdir $(echo "Part4/"$a"/"$b"/"$c"/"$h)
         fi
         for i in highmemory lowmemory ; do
-          if [ ! -e $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i) ]; then
-            mkdir $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i)
+          if [ ! -e $(echo "Part4/"$a"/"$b"/"$c"/"$h"/"$i) ]; then
+            mkdir $(echo "Part4/"$a"/"$b"/"$c"/"$h"/"$i)
           fi
           for j in hightq lowtq ; do
-            if [ ! -e $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j) ]; then
-              mkdir $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j)
+            if [ ! -e $(echo "Part4/"$a"/"$b"/"$c"/"$h"/"$i"/"$j) ]; then
+              mkdir $(echo "Part4/"$a"/"$b"/"$c"/"$h"/"$i"/"$j)
             fi
             if [ "$h" == "fifo" ]; then
               harg="FIFO"
@@ -78,13 +78,13 @@ for a in manysmall fewlarge mixed ; do
             fi
 
 
-            if [ ! -e $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/inpu.txt") ]; then
-              touch $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/input.txt")
+            if [ ! -e $(echo "Part4/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/inpu.txt") ]; then
+              touch $(echo "Part4/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/input.txt")
             fi
 
-            ./genInputFile.sh $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/input.txt") -sim YES --algorithm $(echo $harg) -tq $(echo $tq) --frames $(echo $mem) -sc RR -ref $(echo "part4testing/"$a"/"$b"/"$c"/strings.ref") $(echo "-t") $(seq -f "0" -s " " $d)
- #           echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/input.txt"
-            ./sim $(echo "-loc-"$b) $(echo "part4testing/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/input.txt") >> part4results
+            ./genInputFile.sh $(echo "Part4/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/input.txt") -sim YES --algorithm $(echo $harg) -tq $(echo $tq) --frames $(echo $mem) -sc RR -ref $(echo "Part4/"$a"/"$b"/"$c"/strings.ref") $(echo "-t") $(seq -f "0" -s " " $d)
+            sleep 0.1
+            ./sim $(echo "-loc-"$b) $(echo "Part4/"$a"/"$b"/"$c"/"$h"/"$i"/"$j"/input.txt") >> Part4/part4results
           done
         done
       done
